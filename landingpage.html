@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoRX - AI-Powered Personalized Medicine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-purple': '#4A2A8A',
+                        'calm-blue': '#3A7BD5',
+                        'vibrant-teal': '#00D4B1',
+                        'accent-magenta': '#E94B97',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4A2A8A 0%, #3A7BD5 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .neural-network {
+            background-image: radial-gradient(circle at 10% 20%, rgba(74, 42, 138, 0.05) 0%, rgba(58, 123, 213, 0.05) 90%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neural-network::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,30 Q50,10 90,30 T90,70 Q50,90 10,70 T10,30' stroke='%234A2A8A' stroke-width='0.5' fill='none' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            opacity: 0.3;
+            animation: patternFloat 60s linear infinite;
+        }
+        
+        @keyframes patternFloat {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+        
+        .dna-pattern {
+            position: relative;
+        }
+        
+        .dna-pattern::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,10 Q30,30 50,10 M10,30 Q30,50 50,30 M10,50 Q30,70 50,50' stroke='%233A7BD5' stroke-width='1' fill='none' opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+            opacity: 0.1;
+            animation: dnaFloat 40s linear infinite;
+        }
+        
+        @keyframes dnaFloat {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; }
+        }
+        
+        .step-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(233, 75, 151, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(233, 75, 151, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(233, 75, 151, 0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-in-left.active, .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scale-in.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .rotate-in {
+            opacity: 0;
+            transform: rotate(-10deg) scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .rotate-in.active {
+            opacity: 1;
+            transform: rotate(0) scale(1);
+        }
+        
+        /* DNA Animation */
+        .dna-helix {
+            animation: dnaRotate 15s linear infinite;
+        }
+        
+        @keyframes dnaRotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        .node-pulse {
+            animation: nodePulse 3s infinite alternate;
+        }
+        
+        @keyframes nodePulse {
+            0% { r: 6; }
+            100% { r: 8; }
+        }
+        
+        .connection-flash {
+            animation: connectionFlash 4s infinite;
+            stroke-dasharray: 10;
+        }
+        
+        @keyframes connectionFlash {
+            0% { stroke-dashoffset: 0; opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 20; opacity: 0.3; }
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Floating animation for icons */
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Typing cursor animation */
+        .typing::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Shimmer effect */
+        .shimmer {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0.2) 50%, 
+                rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4 px-6 md:px-12 lg:px-20 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <svg class="h-8 w-8 text-deep-purple float" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="ml-2 text-xl font-bold text-deep-purple">EvoRX</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">Home</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-deep-purple transition-colors">How It Works</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">About</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">Contact</a>
+            </div>
+            <div>
+                <button class="hidden md:block bg-accent-magenta hover:bg-opacity-90 text-white font-medium py-2 px-6 rounded-full transition-all pulse-animation">
+                    Get Started
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-deep-purple">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-16 left-0 w-full h-screen bg-white shadow-lg md:hidden">
+            <div class="flex flex-col p-6 space-y-6">
+                <a href="#" class="text-deep-purple font-medium text-lg">Home</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-deep-purple transition-colors text-lg">How It Works</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors text-lg">About</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors text-lg">Contact</a>
+                <button class="bg-accent-magenta hover:bg-opacity-90 text-white font-medium py-3 px-6 rounded-full transition-all w-full">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="neural-network pt-32 pb-20 px-6 md:px-12 lg:px-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 slide-in-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-deep-purple leading-tight mb-6 typing" id="hero-title">
+                    Personalized Medicine, <br>Powered by AI
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg fade-in">
+                    EvoRX uses advanced artificial intelligence to create tailored treatment plans based on your unique genetic profile, medical history, and lifestyle factors.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 fade-in" style="transition-delay: 0.2s;">
+                    <button class="bg-accent-magenta hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-full transition-all pulse-animation">
+                        Start Your Journey
+                    </button>
+                    <button class="border-2 border-deep-purple text-deep-purple font-medium py-3 px-8 rounded-full hover:bg-deep-purple hover:text-white transition-all">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center slide-in-right">
+                <svg class="w-full max-w-md dna-helix" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- DNA Helix -->
+                    <path d="M250,50 C300,100 200,150 250,200 C300,250 200,300 250,350" stroke="#4A2A8A" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M250,50 C200,100 300,150 250,200 C200,250 300,300 250,350" stroke="#3A7BD5" stroke-width="3" stroke-linecap="round"/>
+                    
+                    <!-- Connecting lines -->
+                    <line x1="250" y1="50" x2="300" y2="50" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="50" x2="200" y2="50" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    
+                    <line x1="250" y1="100" x2="320" y2="100" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="100" x2="180" y2="100" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    
+                    <line x1="250" y1="150" x2="300" y2="150" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="150" x2="200" y2="150" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    
+                    <line x1="250" y1="200" x2="320" y2="200" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="200" x2="180" y2="200" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    
+                    <line x1="250" y1="250" x2="300" y2="250" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="250" x2="200" y2="250" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    
+                    <line x1="250" y1="300" x2="320" y2="300" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="300" x2="180" y2="300" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    
+                    <line x1="250" y1="350" x2="300" y2="350" stroke="#4A2A8A" stroke-width="2" class="connection-flash"/>
+                    <line x1="250" y1="350" x2="200" y2="350" stroke="#3A7BD5" stroke-width="2" class="connection-flash"/>
+                    
+                    <!-- Nodes -->
+                    <circle cx="250" cy="50" r="8" fill="#E94B97" class="node-pulse" style="animation-delay: 0s;"/>
+                    <circle cx="250" cy="100" r="8" fill="#00D4B1" class="node-pulse" style="animation-delay: 0.5s;"/>
+                    <circle cx="250" cy="150" r="8" fill="#E94B97" class="node-pulse" style="animation-delay: 1s;"/>
+                    <circle cx="250" cy="200" r="8" fill="#00D4B1" class="node-pulse" style="animation-delay: 1.5s;"/>
+                    <circle cx="250" cy="250" r="8" fill="#E94B97" class="node-pulse" style="animation-delay: 2s;"/>
+                    <circle cx="250" cy="300" r="8" fill="#00D4B1" class="node-pulse" style="animation-delay: 2.5s;"/>
+                    <circle cx="250" cy="350" r="8" fill="#E94B97" class="node-pulse" style="animation-delay: 3s;"/>
+                    
+                    <!-- Neural network connections -->
+                    <path d="M100,150 Q175,100 250,150" stroke="#4A2A8A" stroke-width="1.5" stroke-dasharray="5,5" class="connection-flash"/>
+                    <path d="M250,150 Q325,200 400,150" stroke="#3A7BD5" stroke-width="1.5" stroke-dasharray="5,5" class="connection-flash"/>
+                    <path d="M100,250 Q175,300 250,250" stroke="#4A2A8A" stroke-width="1.5" stroke-dasharray="5,5" class="connection-flash"/>
+                    <path d="M250,250 Q325,200 400,250" stroke="#3A7BD5" stroke-width="1.5" stroke-dasharray="5,5" class="connection-flash"/>
+                    
+                    <circle cx="100" cy="150" r="6" fill="#4A2A8A" class="node-pulse" style="animation-delay: 1.2s;"/>
+                    <circle cx="400" cy="150" r="6" fill="#3A7BD5" class="node-pulse" style="animation-delay: 0.7s;"/>
+                    <circle cx="100" cy="250" r="6" fill="#4A2A8A" class="node-pulse" style="animation-delay: 2.2s;"/>
+                    <circle cx="400" cy="250" r="6" fill="#3A7BD5" class="node-pulse" style="animation-delay: 1.7s;"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-6 md:px-12 lg:px-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-deep-purple mb-4">Revolutionizing Healthcare</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our platform combines cutting-edge AI technology with medical expertise to deliver truly personalized healthcare solutions.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center fade-in scale-in" style="transition-delay: 0.1s;">
+                <div class="bg-deep-purple bg-opacity-10 p-4 rounded-full mb-6 float">
+                    <svg class="h-8 w-8 text-deep-purple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9C3 10.1046 3.89543 11 5 11H9C10.1046 11 11 10.1046 11 9V5C11 3.89543 10.1046 3 9 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 13H5C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H9C10.1046 21 11 20.1046 11 19V15C11 13.8954 10.1046 13 9 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 3H15C13.8954 3 13 3.89543 13 5V9C13 10.1046 13.8954 11 15 11H19C20.1046 11 21 10.1046 21 9V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13 17L21 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 13L17 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-deep-purple mb-3">Precision Medicine</h3>
+                <p class="text-gray-600">
+                    Treatments tailored to your unique genetic makeup, ensuring maximum effectiveness with minimal side effects.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center fade-in scale-in" style="transition-delay: 0.3s;">
+                <div class="bg-calm-blue bg-opacity-10 p-4 rounded-full mb-6 float" style="animation-delay: 0.2s;">
+                    <svg class="h-8 w-8 text-calm-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5843 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6643 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.258 9.77251 19.9887C9.5799 19.7194 9.31074 19.5143 9 19.4C8.69838 19.2669 8.36381 19.2272 8.03941 19.286C7.71502 19.3448 7.41568 19.4995 7.18 19.73L7.12 19.79C6.93425 19.976 6.71368 20.1235 6.47088 20.2241C6.22808 20.3248 5.96783 20.3766 5.705 20.3766C5.44217 20.3766 5.18192 20.3248 4.93912 20.2241C4.69632 20.1235 4.47575 19.976 4.29 19.79C4.10405 19.6043 3.95653 19.3837 3.85588 19.1409C3.75523 18.8981 3.70343 18.6378 3.70343 18.375C3.70343 18.1122 3.75523 17.8519 3.85588 17.6091C3.95653 17.3663 4.10405 17.1457 4.29 16.96L4.35 16.9C4.58054 16.6643 4.73519 16.365 4.794 16.0406C4.85282 15.7162 4.81312 15.3816 4.68 15.08C4.55324 14.7842 4.34276 14.532 4.07447 14.3543C3.80618 14.1766 3.49179 14.0813 3.17 14.08H3C2.46957 14.08 1.96086 13.8693 1.58579 13.4942C1.21071 13.1191 1 12.6104 1 12.08C1 11.5496 1.21071 11.0409 1.58579 10.6658C1.96086 10.2907 2.46957 10.08 3 10.08H3.09C3.42099 10.0723 3.742 9.96512 4.0113 9.77251C4.28059 9.5799 4.48572 9.31074 4.6 9C4.73312 8.69838 4.77282 8.36381 4.714 8.03941C4.65519 7.71502 4.50054 7.41568 4.27 7.18L4.21 7.12C4.02405 6.93425 3.87653 6.71368 3.77588 6.47088C3.67523 6.22808 3.62343 5.96783 3.62343 5.705C3.62343 5.44217 3.67523 5.18192 3.77588 4.93912C3.87653 4.69632 4.02405 4.47575 4.21 4.29C4.39575 4.10405 4.61632 3.95653 4.85912 3.85588C5.10192 3.75523 5.36217 3.70343 5.625 3.70343C5.88783 3.70343 6.14808 3.75523 6.39088 3.85588C6.63368 3.95653 6.85425 4.10405 7.04 4.29L7.1 4.35C7.33568 4.58054 7.63502 4.73519 7.95941 4.794C8.28381 4.85282 8.61838 4.81312 8.92 4.68H9C9.29577 4.55324 9.54802 4.34276 9.72569 4.07447C9.90337 3.80618 9.99872 3.49179 10 3.17V3C10 2.46957 10.2107 1.96086 10.5858 1.58579C10.9609 1.21071 11.4696 1 12 1C12.5304 1 13.0391 1.21071 13.4142 1.58579C13.7893 1.96086 14 2.46957 14 3V3.09C14.0013 3.41179 14.0966 3.72618 14.2743 3.99447C14.452 4.26276 14.7042 4.47324 15 4.6C15.3016 4.73312 15.6362 4.77282 15.9606 4.714C16.285 4.65519 16.5843 4.50054 16.82 4.27L16.88 4.21C17.0657 4.02405 17.2863 3.87653 17.5291 3.77588C17.7719 3.67523 18.0322 3.62343 18.295 3.62343C18.5578 3.62343 18.8181 3.67523 19.0609 3.77588C19.3037 3.87653 19.5243 4.02405 19.71 4.21C19.896 4.39575 20.0435 4.61632 20.1441 4.85912C20.2448 5.10192 20.2966 5.36217 20.2966 5.625C20.2966 5.88783 20.2448 6.14808 20.1441 6.39088C20.0435 6.63368 19.896 6.85425 19.71 7.04L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-calm-blue mb-3">Smart Monitoring</h3>
+                <p class="text-gray-600">
+                    Continuous health tracking and analysis that adapts to your changing needs and provides real-time insights.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center fade-in scale-in" style="transition-delay: 0.5s;">
+                <div class="bg-vibrant-teal bg-opacity-10 p-4 rounded-full mb-6 float" style="animation-delay: 0.4s;">
+                    <svg class="h-8 w-8 text-vibrant-teal" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-vibrant-teal mb-3">Secure Data</h3>
+                <p class="text-gray-600">
+                    Bank-level encryption and privacy controls ensure your sensitive health information remains protected.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6 md:px-12 lg:px-20 dna-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-purple mb-4">How It Works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our simple three-step process makes personalized medicine accessible to everyone.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 step-card relative fade-in rotate-in" style="transition-delay: 0.1s;">
+                    <div class="absolute -top-5 -left-5 bg-deep-purple text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                    <div class="mb-6 h-48 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="40" y="60" width="120" height="80" rx="4" stroke="#4A2A8A" stroke-width="4"/>
+                            <path d="M40 80H160" stroke="#4A2A8A" stroke-width="4"/>
+                            <circle cx="50" cy="70" r="4" fill="#E94B97" class="node-pulse" style="animation-delay: 0.1s;"/>
+                            <circle cx="65" cy="70" r="4" fill="#00D4B1" class="node-pulse" style="animation-delay: 0.3s;"/>
+                            <circle cx="80" cy="70" r="4" fill="#3A7BD5" class="node-pulse" style="animation-delay: 0.5s;"/>
+                            <path d="M60 110L80 130L140 90" stroke="#00D4B1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="shimmer"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-deep-purple mb-3">Complete Your Profile</h3>
+                    <p class="text-gray-600">
+                        Answer a comprehensive questionnaire about your health history, lifestyle, and goals. Optionally, connect your genetic testing data.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 step-card relative fade-in rotate-in" style="transition-delay: 0.3s;">
+                    <div class="absolute -top-5 -left-5 bg-calm-blue text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                    <div class="mb-6 h-48 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 40V160" stroke="#3A7BD5" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="100" cy="60" r="20" fill="#3A7BD5" fill-opacity="0.2" stroke="#3A7BD5" stroke-width="4"/>
+                            <circle cx="100" cy="100" r="20" fill="#4A2A8A" fill-opacity="0.2" stroke="#4A2A8A" stroke-width="4">
+                                <animate attributeName="r" values="18;22;18" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="100" cy="140" r="20" fill="#E94B97" fill-opacity="0.2" stroke="#E94B97" stroke-width="4"/>
+                            <path d="M85 60L95 70L115 50" stroke="#3A7BD5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="shimmer"/>
+                            <path d="M90 100H110" stroke="#4A2A8A" stroke-width="3" stroke-linecap="round">
+                                <animate attributeName="stroke-width" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M100 90V110" stroke="#4A2A8A" stroke-width="3" stroke-linecap="round">
+                                <animate attributeName="stroke-width" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M90 140H110" stroke="#E94B97" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-calm-blue mb-3">AI Analysis</h3>
+                    <p class="text-gray-600">
+                        Our advanced algorithms analyze your data to identify patterns, risks, and opportunities for health optimization.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 step-card relative fade-in rotate-in" style="transition-delay: 0.5s;">
+                    <div class="absolute -top-5 -left-5 bg-accent-magenta text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                    <div class="mb-6 h-48 flex items-center justify-center">
+                        <svg class="w-32 h-32" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M60 140H140V60H60V140Z" stroke="#E94B97" stroke-width="4"/>
+                            <path d="M60 80H140" stroke="#E94B97" stroke-width="4"/>
+                            <path d="M80 60V140" stroke="#E94B97" stroke-width="4"/>
+                            <circle cx="70" cy="70" r="5" fill="#4A2A8A" class="node-pulse" style="animation-delay: 0.7s;"/>
+                            <rect x="90" y="65" width="40" height="10" rx="2" fill="#3A7BD5" class="shimmer"/>
+                            <rect x="65" y="90" width="10" height="10" rx="2" fill="#00D4B1">
+                                <animate attributeName="fill-opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+                            </rect>
+                            <rect x="65" y="110" width="10" height="10" rx="2" fill="#00D4B1">
+                                <animate attributeName="fill-opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                            </rect>
+                            <rect x="65" y="130" width="10" height="10" rx="2" fill="#00D4B1">
+                                <animate attributeName="fill-opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" begin="1s"/>
+                            </rect>
+                            <rect x="90" y="90" width="40" height="10" rx="2" fill="#3A7BD5" class="shimmer"/>
+                            <rect x="90" y="110" width="40" height="10" rx="2" fill="#3A7BD5" class="shimmer"/>
+                            <rect x="90" y="130" width="40" height="10" rx="2" fill="#3A7BD5" class="shimmer"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-accent-magenta mb-3">Personalized Plan</h3>
+                    <p class="text-gray-600">
+                        Receive your customized health plan with specific recommendations for medications, supplements, diet, and lifestyle changes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 px-6 md:px-12 lg:px-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-purple mb-4">Success Stories</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    See how EvoRX has transformed the lives of our patients.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg fade-in slide-in-left" style="transition-delay: 0.1s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent-magenta">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "After years of trying different medications for my chronic migraines, EvoRX identified a treatment plan that reduced my episodes by 80%. Life-changing doesn't begin to describe it."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-deep-purple text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">JD</div>
+                        <div class="ml-3">
+                            <p class="font-medium text-deep-purple">Jennifer D.</p>
+                            <p class="text-sm text-gray-500">Marketing Executive</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg fade-in" style="transition-delay: 0.3s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent-magenta">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "The personalized nutrition plan from EvoRX helped me manage my diabetes better than any standard treatment I've tried. My blood sugar levels are now consistently in the normal range."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-calm-blue text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">MT</div>
+                        <div class="ml-3">
+                            <p class="font-medium text-calm-blue">Michael T.</p>
+                            <p class="text-sm text-gray-500">Retired Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg fade-in slide-in-right" style="transition-delay: 0.5s;">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent-magenta">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                        <div class="text-accent-magenta ml-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "As an athlete, I was looking for that extra edge. EvoRX's personalized supplement regimen improved my recovery time by 40% and helped me achieve my personal best."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-vibrant-teal text-white rounded-full w-10 h-10 flex items-center justify-center font-bold">SL</div>
+                        <div class="ml-3">
+                            <p class="font-medium text-vibrant-teal">Sarah L.</p>
+                            <p class="text-sm text-gray-500">Professional Athlete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 md:px-12 lg:px-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-2/3 mb-10 md:mb-0 fade-in slide-in-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Healthcare?</h2>
+                <p class="text-lg opacity-90 max-w-xl">
+                    Join thousands of patients who have discovered the power of truly personalized medicine. Start your journey today.
+                </p>
+            </div>
+            <div class="fade-in slide-in-right">
+                <button class="bg-accent-magenta hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-full transition-all pulse-animation">
+                    Get Started Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6 md:px-12 lg:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="fade-in" style="transition-delay: 0.1s;">
+                    <div class="flex items-center mb-6">
+                        <svg class="h-8 w-8 text-white float" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">EvoRX</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Revolutionizing healthcare through AI-powered personalized medicine.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.2s;">
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.3s;">
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="fade-in" style="transition-delay: 0.4s;">
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="text-gray-400">support@evorx.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span class="text-gray-400">+1 (800) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="text-gray-400">123 Innovation Way<br>San Francisco, CA 94107</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm fade-in" style="transition-delay: 0.5s;">
+                <p>&copy; 2023 EvoRX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activate all animations that should start immediately
+            setTimeout(function() {
+                document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in, .scale-in, .rotate-in').forEach(function(element) {
+                    if (element.getBoundingClientRect().top < window.innerHeight) {
+                        element.classList.add('active');
+                    }
+                });
+            }, 100);
+            
+            // Set up intersection observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in, .scale-in, .rotate-in').forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Typing animation for hero title
+            const heroTitle = document.getElementById('hero-title');
+            if (heroTitle) {
+                const text = heroTitle.textContent;
+                heroTitle.textContent = '';
+                heroTitle.classList.add('typing');
+                
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        heroTitle.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    } else {
+                        heroTitle.classList.remove('typing');
+                    }
+                };
+                
+                setTimeout(typeWriter, 500);
+            }
+            
+            // Mobile menu functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                // Close mobile menu when clicking on a link
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for fixed header
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967a741697528510',t:'MTc1MzkzNzIwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
