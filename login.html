@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoRX - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-purple': '#4A148C',
+                        'medium-purple': '#7B1FA2',
+                        'light-purple': '#E1BEE7',
+                        'magenta': '#D81B60',
+                        'magenta-light': '#EC407A',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+        
+        .network-bg {
+            background-color: #FFFFFF;
+            background-image: radial-gradient(#E1BEE7 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .network-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 20, 140, 0.05) 0%, rgba(216, 27, 96, 0.05) 100%);
+            z-index: 1;
+        }
+        
+        .network-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            opacity: 0.3;
+            overflow: hidden;
+        }
+        
+        .line {
+            position: absolute;
+            background: linear-gradient(90deg, rgba(74, 20, 140, 0) 0%, rgba(74, 20, 140, 0.5) 50%, rgba(74, 20, 140, 0) 100%);
+            height: 1px;
+            width: 100%;
+            animation: flow 8s infinite linear;
+            opacity: 0;
+        }
+        
+        .line:nth-child(1) {
+            top: 15%;
+            animation-delay: 0s;
+        }
+        
+        .line:nth-child(2) {
+            top: 35%;
+            animation-delay: 2s;
+        }
+        
+        .line:nth-child(3) {
+            top: 55%;
+            animation-delay: 4s;
+        }
+        
+        .line:nth-child(4) {
+            top: 75%;
+            animation-delay: 6s;
+        }
+        
+        .vertical-line {
+            position: absolute;
+            background: linear-gradient(180deg, rgba(74, 20, 140, 0) 0%, rgba(74, 20, 140, 0.5) 50%, rgba(74, 20, 140, 0) 100%);
+            width: 1px;
+            height: 100%;
+            animation: flow-vertical 8s infinite linear;
+            opacity: 0;
+        }
+        
+        .vertical-line:nth-child(5) {
+            left: 20%;
+            animation-delay: 1s;
+        }
+        
+        .vertical-line:nth-child(6) {
+            left: 40%;
+            animation-delay: 3s;
+        }
+        
+        .vertical-line:nth-child(7) {
+            left: 60%;
+            animation-delay: 5s;
+        }
+        
+        .vertical-line:nth-child(8) {
+            left: 80%;
+            animation-delay: 7s;
+        }
+        
+        @keyframes flow {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes flow-vertical {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+        
+        .login-container {
+            position: relative;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(74, 20, 140, 0.1);
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .input-group input {
+            border: 2px solid #E1BEE7;
+            transition: all 0.3s ease;
+        }
+        
+        .input-group input:focus {
+            border-color: #7B1FA2;
+            box-shadow: 0 0 0 3px rgba(123, 31, 162, 0.1);
+        }
+        
+        .input-group label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 0 0.25rem;
+            color: #9CA3AF;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+            top: 0;
+            font-size: 0.75rem;
+            color: #7B1FA2;
+        }
+        
+        .login-btn {
+            background: linear-gradient(90deg, #D81B60 0%, #EC407A 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(216, 27, 96, 0.2);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(216, 27, 96, 0.3);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(216, 27, 96, 0.3);
+        }
+        
+        .logo-container {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .password-toggle:hover {
+            color: #7B1FA2;
+        }
+    </style>
+</head>
+<body>
+    <div class="network-bg min-h-screen flex items-center justify-center p-4">
+        <!-- Network Lines Animation -->
+        <div class="network-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="vertical-line"></div>
+            <div class="vertical-line"></div>
+            <div class="vertical-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+        
+        <!-- Login Container -->
+        <div class="login-container w-full max-w-md p-8 md:p-10">
+            <!-- Logo -->
+            <div class="logo-container flex justify-center mb-8">
+                <svg class="h-16 w-16 text-deep-purple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <!-- EvoRX Text Logo -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-deep-purple">EvoRX</h1>
+                <p class="text-gray-500 text-sm mt-1">AI-Powered Medical Platform</p>
+            </div>
+            
+            <!-- Welcome Text -->
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800">Welcome Back</h2>
+                <p class="text-gray-500 mt-1">Sign in to access your secure medical dashboard</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-6">
+                <!-- Email Input -->
+                <div class="input-group">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="w-full px-4 py-3 rounded-lg outline-none" 
+                        placeholder=" " 
+                        required
+                    >
+                    <label for="email">Email</label>
+                </div>
+                
+                <!-- Password Input -->
+                <div class="input-group">
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="w-full px-4 py-3 rounded-lg outline-none" 
+                        placeholder=" " 
+                        required
+                    >
+                    <label for="password">Password</label>
+                    <span class="password-toggle" id="passwordToggle">
+                        <i class="far fa-eye"></i>
+                    </span>
+                </div>
+                
+                <!-- Forgot Password Link -->
+                <div class="text-right">
+                    <a href="#" class="text-medium-purple hover:text-deep-purple text-sm transition-colors">
+                        Forgot Password?
+                    </a>
+                </div>
+                
+                <!-- Login Button -->
+                <button 
+                    type="submit" 
+                    class="login-btn w-full py-3 rounded-lg text-white font-semibold"
+                >
+                    Sign In
+                </button>
+                
+                <!-- Security Note -->
+                <div class="text-center text-xs text-gray-500 mt-6 flex items-center justify-center">
+                    <i class="fas fa-lock mr-2"></i>
+                    <span>Secure, encrypted connection</span>
+                </div>
+            </form>
+            
+            <!-- Sign Up Link -->
+            <div class="text-center mt-8">
+                <p class="text-gray-600">
+                    Don't have an account? 
+                    <a href="#" class="text-medium-purple hover:text-deep-purple font-medium transition-colors">
+                        Create Account
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            const passwordToggle = document.getElementById('passwordToggle');
+            const loginForm = document.getElementById('loginForm');
+            
+            // Toggle password visibility
+            passwordToggle.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle eye icon
+                passwordToggle.innerHTML = type === 'password' ? 
+                    '<i class="far fa-eye"></i>' : 
+                    '<i class="far fa-eye-slash"></i>';
+            });
+            
+            // Form submission (prevent default for demo)
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Add login animation
+                const loginBtn = document.querySelector('.login-btn');
+                loginBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Signing In...';
+                loginBtn.disabled = true;
+                
+                // Simulate login process
+                setTimeout(() => {
+                    loginBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Success!';
+                    
+                    // Reset after demo
+                    setTimeout(() => {
+                        loginBtn.innerHTML = 'Sign In';
+                        loginBtn.disabled = false;
+                    }, 2000);
+                }, 1500);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967ad45aa4f885d6',t:'MTc1Mzk0MTE0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
