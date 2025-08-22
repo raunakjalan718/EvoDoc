@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoRX - How It Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-purple': '#4A148C',
+                        'medium-purple': '#7B1FA2',
+                        'light-purple': '#E1BEE7',
+                        'deep-blue': '#1A237E',
+                        'medium-blue': '#3949AB',
+                        'light-blue': '#C5CAE9',
+                        'magenta': '#D81B60',
+                        'light-magenta': '#F8BBD0',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+        }
+        
+        .hero-pattern {
+            background-color: #4A148C;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237B1FA2' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .step-card {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+            opacity: 0.1;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+        
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover .icon-container {
+            transform: scale(1.1);
+        }
+        
+        .step-card:hover .icon {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .connector {
+            position: absolute;
+            height: 3px;
+            background: linear-gradient(90deg, #7B1FA2, #D81B60);
+            top: 40px;
+            z-index: 1;
+        }
+        
+        .connector-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid #D81B60;
+            top: -6px;
+            right: -1px;
+        }
+        
+        .connector-vertical {
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(180deg, #7B1FA2, #D81B60);
+            left: 50%;
+            z-index: 1;
+        }
+        
+        .connector-vertical-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid #D81B60;
+            bottom: -1px;
+            left: -6.5px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4A148C, #D81B60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, #7B1FA2, #D81B60);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(216, 27, 96, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(216, 27, 96, 0.3);
+        }
+        
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(216, 27, 96, 0.3);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 1;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            opacity: 0.1;
+        }
+        
+        @media (max-width: 768px) {
+            .connector, .connector-vertical {
+                display: none;
+            }
+            
+            .step-number {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <svg class="h-10 w-10 text-deep-purple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="ml-3 text-xl font-bold text-deep-purple">EvoRX</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">Home</a>
+                <a href="#" class="text-deep-purple font-medium">How It Works</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">Benefits</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">About Us</a>
+                <a href="#" class="text-gray-600 hover:text-deep-purple transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hidden md:inline-block px-4 py-2 text-deep-purple border border-deep-purple rounded-lg hover:bg-deep-purple hover:text-white transition-colors">Sign In</a>
+                <a href="#" class="px-4 py-2 bg-deep-purple text-white rounded-lg hover:bg-medium-purple transition-colors">Get Started</a>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-pattern text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-6">How EvoRX Works</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">
+                Discover how our AI-powered platform delivers personalized medicine tailored to your unique genetic profile and health needs.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Process Timeline Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-deep-purple mb-4">Your Journey to Personalized Healthcare</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our innovative approach combines cutting-edge AI technology with medical expertise to create a treatment plan that's uniquely yours.
+                </p>
+            </div>
+            
+            <!-- Desktop Timeline -->
+            <div class="hidden md:block relative">
+                <!-- Step 1 -->
+                <div class="flex items-center mb-24 relative">
+                    <div class="w-1/3 pr-8">
+                        <div class="step-card bg-white p-8 relative">
+                            <div class="step-number text-deep-purple">1</div>
+                            <div class="icon-container bg-light-blue">
+                                <svg class="w-10 h-10 text-deep-blue icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z"></path>
+                                    <path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-deep-blue mt-6 mb-3">Data Collection</h3>
+                            <p class="text-gray-600">
+                                We collect your health data, including genetic information, medical history, and lifestyle factors through our secure platform.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="connector w-1/3">
+                        <div class="connector-arrow"></div>
+                    </div>
+                    
+                    <div class="w-1/3 pl-8">
+                        <div class="step-card bg-white p-8 relative">
+                            <div class="step-number text-medium-blue">2</div>
+                            <div class="icon-container bg-light-purple">
+                                <svg class="w-10 h-10 text-medium-purple icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-medium-purple mt-6 mb-3">AI Analysis</h3>
+                            <p class="text-gray-600">
+                                Our advanced AI algorithms analyze your data to identify patterns and determine the most effective treatment approaches for your unique profile.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flex items-center mb-24 relative">
+                    <div class="w-1/3 pr-8">
+                        <div class="step-card bg-white p-8 relative">
+                            <div class="step-number text-magenta">3</div>
+                            <div class="icon-container bg-light-magenta">
+                                <svg class="w-10 h-10 text-magenta icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-magenta mt-6 mb-3">Personalized Plan</h3>
+                            <p class="text-gray-600">
+                                Our medical team reviews the AI recommendations and creates your personalized treatment plan, tailored specifically to your needs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="connector w-1/3">
+                        <div class="connector-arrow"></div>
+                    </div>
+                    
+                    <div class="w-1/3 pl-8">
+                        <div class="step-card bg-white p-8 relative">
+                            <div class="step-number text-deep-blue">4</div>
+                            <div class="icon-container bg-light-blue">
+                                <svg class="w-10 h-10 text-deep-blue icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-deep-blue mt-6 mb-3">Doctor Consultation</h3>
+                            <p class="text-gray-600">
+                                Connect with our healthcare professionals to discuss your personalized plan and address any questions or concerns you may have.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="flex items-center relative">
+                    <div class="w-1/3 pr-8">
+                        <div class="step-card bg-white p-8 relative">
+                            <div class="step-number text-medium-purple">5</div>
+                            <div class="icon-container bg-light-purple">
+                                <svg class="w-10 h-10 text-medium-purple icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-medium-purple mt-6 mb-3">Treatment Delivery</h3>
+                            <p class="text-gray-600">
+                                Receive your personalized medications and treatment plan, delivered securely to your door with clear instructions for optimal results.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="connector w-1/3">
+                        <div class="connector-arrow"></div>
+                    </div>
+                    
+                    <div class="w-1/3 pl-8">
+                        <div class="step-card bg-white p-8 relative">
+                            <div class="step-number text-magenta">6</div>
+                            <div class="icon-container bg-light-magenta">
+                                <svg class="w-10 h-10 text-magenta icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-magenta mt-6 mb-3">Ongoing Optimization</h3>
+                            <p class="text-gray-600">
+                                We continuously monitor your progress and adjust your treatment plan as needed, ensuring optimal results throughout your health journey.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Timeline -->
+            <div class="md:hidden space-y-8">
+                <!-- Step 1 -->
+                <div class="step-card bg-white p-6 relative">
+                    <div class="step-number text-deep-purple">1</div>
+                    <div class="icon-container bg-light-blue mb-4">
+                        <svg class="w-8 h-8 text-deep-blue icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z"></path>
+                            <path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-deep-blue mb-2">Data Collection</h3>
+                    <p class="text-gray-600 text-sm">
+                        We collect your health data, including genetic information, medical history, and lifestyle factors through our secure platform.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card bg-white p-6 relative">
+                    <div class="step-number text-medium-blue">2</div>
+                    <div class="icon-container bg-light-purple mb-4">
+                        <svg class="w-8 h-8 text-medium-purple icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-medium-purple mb-2">AI Analysis</h3>
+                    <p class="text-gray-600 text-sm">
+                        Our advanced AI algorithms analyze your data to identify patterns and determine the most effective treatment approaches for your unique profile.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-card bg-white p-6 relative">
+                    <div class="step-number text-magenta">3</div>
+                    <div class="icon-container bg-light-magenta mb-4">
+                        <svg class="w-8 h-8 text-magenta icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 4h3a3 3 0 006 0h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm2.5 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm2.45 4a2.5 2.5 0 10-4.9 0h4.9zM12 9a1 1 0 100 2h3a1 1 0 100-2h-3zm-1 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-magenta mb-2">Personalized Plan</h3>
+                    <p class="text-gray-600 text-sm">
+                        Our medical team reviews the AI recommendations and creates your personalized treatment plan, tailored specifically to your needs.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-card bg-white p-6 relative">
+                    <div class="step-number text-deep-blue">4</div>
+                    <div class="icon-container bg-light-blue mb-4">
+                        <svg class="w-8 h-8 text-deep-blue icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-deep-blue mb-2">Doctor Consultation</h3>
+                    <p class="text-gray-600 text-sm">
+                        Connect with our healthcare professionals to discuss your personalized plan and address any questions or concerns you may have.
+                    </p>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="step-card bg-white p-6 relative">
+                    <div class="step-number text-medium-purple">5</div>
+                    <div class="icon-container bg-light-purple mb-4">
+                        <svg class="w-8 h-8 text-medium-purple icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-medium-purple mb-2">Treatment Delivery</h3>
+                    <p class="text-gray-600 text-sm">
+                        Receive your personalized medications and treatment plan, delivered securely to your door with clear instructions for optimal results.
+                    </p>
+                </div>
+                
+                <!-- Step 6 -->
+                <div class="step-card bg-white p-6 relative">
+                    <div class="step-number text-magenta">6</div>
+                    <div class="icon-container bg-light-magenta mb-4">
+                        <svg class="w-8 h-8 text-magenta icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-magenta mb-2">Ongoing Optimization</h3>
+                    <p class="text-gray-600 text-sm">
+                        We continuously monitor your progress and adjust your treatment plan as needed, ensuring optimal results throughout your health journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Benefits Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-deep-purple mb-4">The EvoRX Advantage</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our personalized medicine approach offers significant benefits over traditional one-size-fits-all treatments.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
+                    <div class="feature-icon bg-light-blue text-deep-blue">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-deep-blue mb-2">Enhanced Effectiveness</h3>
+                    <p class="text-gray-600">
+                        Treatments tailored to your genetic profile are up to 70% more effective than standard approaches.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
+                    <div class="feature-icon bg-light-purple text-medium-purple">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-medium-purple mb-2">Reduced Side Effects</h3>
+                    <p class="text-gray-600">
+                        Personalized dosing and medication selection minimizes adverse reactions and side effects.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm feature-card">
+                    <div class="feature-icon bg-light-magenta text-magenta">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-magenta mb-2">Faster Results</h3>
+                    <p class="text-gray-600">
+                        Patients typically see meaningful improvements 40% faster than with conventional treatments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-deep-purple mb-4">Success Stories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Hear from patients who have experienced the benefits of our personalized medicine approach.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-light-blue bg-opacity-20 rounded-xl p-6 relative">
+                    <div class="quote-mark text-deep-blue">"</div>
+                    <p class="text-gray-700 mb-4 relative z-10">
+                        After years of trying different medications with limited success, EvoRX's personalized approach finally gave me relief from my chronic condition. The difference is remarkable.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-deep-blue text-white flex items-center justify-center font-bold">
+                            JD
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold text-deep-blue">James D.</h4>
+                            <p class="text-xs text-gray-500">Patient since 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-light-purple bg-opacity-20 rounded-xl p-6 relative">
+                    <div class="quote-mark text-medium-purple">"</div>
+                    <p class="text-gray-700 mb-4 relative z-10">
+                        As a physician, I've seen firsthand how EvoRX's personalized medicine platform has transformed outcomes for my patients. The AI-driven insights are invaluable to my practice.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-medium-purple text-white flex items-center justify-center font-bold">
+                            SM
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold text-medium-purple">Dr. Sarah M.</h4>
+                            <p class="text-xs text-gray-500">Cardiologist</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-light-magenta bg-opacity-20 rounded-xl p-6 relative">
+                    <div class="quote-mark text-magenta">"</div>
+                    <p class="text-gray-700 mb-4 relative z-10">
+                        The continuous monitoring and adjustment of my treatment plan has made all the difference. My health metrics have improved significantly in just three months.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-magenta text-white flex items-center justify-center font-bold">
+                            LT
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold text-magenta">Lisa T.</h4>
+                            <p class="text-xs text-gray-500">Patient since 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-deep-purple mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Find answers to common questions about our personalized medicine approach.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-deep-purple mb-2">How is EvoRX different from traditional healthcare?</h3>
+                    <p class="text-gray-600">
+                        Unlike traditional one-size-fits-all approaches, EvoRX uses your unique genetic profile, medical history, and lifestyle factors to create a truly personalized treatment plan that's optimized specifically for you.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-deep-purple mb-2">Is genetic testing required?</h3>
+                    <p class="text-gray-600">
+                        While genetic testing provides valuable insights that enhance personalization, it's not mandatory. We can still create an effective personalized plan based on your medical history, current health status, and lifestyle factors.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-deep-purple mb-2">How long does it take to see results?</h3>
+                    <p class="text-gray-600">
+                        Many patients report noticeable improvements within the first 4-6 weeks of starting their personalized treatment plan. However, the timeline can vary depending on your specific condition and health goals.
+                    </p>
+                </div>
+                
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-deep-purple mb-2">Is EvoRX covered by insurance?</h3>
+                    <p class="text-gray-600">
+                        We work with many major insurance providers, and coverage varies depending on your specific plan. Our team will help you understand your coverage options before you begin.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-deep-purple mb-2">How secure is my health data?</h3>
+                    <p class="text-gray-600">
+                        We take data security extremely seriously. All your health information is protected with bank-level encryption and complies with HIPAA regulations. We never share your data without your explicit consent.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-deep-purple text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your Personalized Health Journey?</h2>
+            <p class="text-lg opacity-90 max-w-2xl mx-auto mb-8">
+                Join thousands of patients who have experienced the benefits of truly personalized medicine with EvoRX.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#" class="px-8 py-3 bg-white text-deep-purple font-semibold rounded-lg hover:bg-light-purple transition-colors">
+                    Create Your Account
+                </a>
+                <a href="#" class="px-8 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ml-3 text-xl font-bold">EvoRX</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Revolutionizing healthcare through personalized medicine and advanced AI technology.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">HIPAA Compliance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2023 EvoRX. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967b1074544ed966',t:'MTc1Mzk0MzYwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

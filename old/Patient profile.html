@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoRX - Patient Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563EB',
+                        'primary-light': '#DBEAFE',
+                        'primary-dark': '#1E40AF',
+                        'accent': '#3B82F6',
+                        'accent-light': '#EFF6FF',
+                        'gray-light': '#F8FAFC',
+                        'gray-medium': '#E2E8F0',
+                        'gray-dark': '#64748B',
+                        'success': '#10B981',
+                        'success-light': '#D1FAE5',
+                        'warning': '#F59E0B',
+                        'warning-light': '#FEF3C7',
+                        'danger': '#EF4444',
+                        'danger-light': '#FEE2E2',
+                        'info': '#0EA5E9',
+                        'info-light': '#E0F2FE',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F1F5F9;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-button {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #2563EB;
+            transition: width 0.3s ease;
+        }
+        
+        .tab-button.active::after {
+            width: 100%;
+        }
+        
+        .tab-button:hover::after {
+            width: 100%;
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+        
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+            transform: translateY(-2px);
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-success {
+            background-color: #D1FAE5;
+            color: #047857;
+        }
+        
+        .badge-warning {
+            background-color: #FEF3C7;
+            color: #B45309;
+        }
+        
+        .badge-danger {
+            background-color: #FEE2E2;
+            color: #B91C1C;
+        }
+        
+        .badge-info {
+            background-color: #E0F2FE;
+            color: #0369A1;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #E2E8F0;
+            overflow: hidden;
+        }
+        
+        .progress-value {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        .table-row {
+            transition: background-color 0.2s ease;
+        }
+        
+        .table-row:hover {
+            background-color: #F8FAFC;
+        }
+        
+        .expandable-section {
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            max-height: 0;
+        }
+        
+        .expandable-section.expanded {
+            max-height: 1000px;
+        }
+        
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .rotate-icon.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            padding-bottom: 30px;
+        }
+        
+        .chart-bar {
+            position: absolute;
+            bottom: 30px;
+            width: 30px;
+            background: linear-gradient(to top, #2563EB, #60A5FA);
+            border-radius: 6px 6px 0 0;
+            transition: height 1s ease;
+        }
+        
+        .chart-label {
+            position: absolute;
+            bottom: -25px;
+            width: 30px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #64748B;
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: #1E293B;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .avatar {
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #DBEAFE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #2563EB;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #E2E8F0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #2563EB;
+            border: 2px solid white;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-date {
+            font-size: 0.75rem;
+            color: #64748B;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .lab-result-card {
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        .lab-result-card:hover {
+            border-left-color: #2563EB;
+        }
+        
+        .symptom-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            background-color: #EFF6FF;
+            color: #2563EB;
+            transition: all 0.3s ease;
+        }
+        
+        .symptom-tag:hover {
+            background-color: #2563EB;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .symptom-tag i {
+            margin-right: 0.35rem;
+        }
+        
+        .vital-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #ffffff, #f5f7fa);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+        
+        .vital-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+        }
+        
+        .vital-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #DBEAFE, #EFF6FF);
+        }
+        
+        .vital-card:hover .vital-icon {
+            transform: scale(1.1);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        
+        .header-bg {
+            background: linear-gradient(120deg, #2563EB, #3B82F6);
+        }
+        
+        .severity-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .severity-high {
+            background-color: #EF4444;
+        }
+        
+        .severity-medium {
+            background-color: #F59E0B;
+        }
+        
+        .severity-low {
+            background-color: #10B981;
+        }
+        
+        .severity-inactive {
+            background-color: #E2E8F0;
+        }
+        
+        .btn {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(145deg, #3B82F6, #2563EB);
+            color: white;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(145deg, #2563EB, #1D4ED8);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px rgba(37, 99, 235, 0.25);
+        }
+        
+        .btn-outline {
+            border: 1px solid #2563EB;
+            color: #2563EB;
+            background-color: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: #EFF6FF;
+            transform: translateY(-1px);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-left: 15px;
+            font-weight: 600;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 18px;
+            background-color: #2563EB;
+            border-radius: 2px;
+        }
+        
+        .data-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .data-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .data-card-header {
+            padding: 16px;
+            border-bottom: 1px solid #E2E8F0;
+            background-color: #F8FAFC;
+        }
+        
+        .data-card-body {
+            padding: 16px;
+        }
+        
+        .tab-nav {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .tab-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        
+        .status-active {
+            background-color: #10B981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+        
+        .patient-header {
+            background: linear-gradient(to right, #EFF6FF, #F8FAFC);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+        
+        .chart-grid-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #E2E8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">EvoRX</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <button class="p-2 text-gray-dark hover:text-primary transition-colors relative">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="p-2 text-gray-dark hover:text-primary transition-colors relative">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-danger rounded-full"></span>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="avatar w-9 h-9 bg-primary-light text-primary shadow-soft">
+                            <span>DR</span>
+                        </div>
+                        <div class="ml-2 hidden md:block">
+                            <div class="text-sm font-medium">Dr. Rebecca Chen</div>
+                            <div class="text-xs text-gray-dark">Endocrinologist</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-6">
+            <!-- Breadcrumb -->
+            <div class="flex items-center text-sm text-gray-dark mb-6">
+                <a href="#" class="hover:text-primary transition-colors">Dashboard</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <a href="#" class="hover:text-primary transition-colors">Patients</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-gray-dark">Patient Profile</span>
+            </div>
+            
+            <!-- Patient Header -->
+            <div class="patient-header p-6 mb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="avatar w-16 h-16 text-2xl bg-primary-light text-primary shadow-soft">
+                            <span>JD</span>
+                        </div>
+                        <div class="ml-4">
+                            <div class="flex items-center">
+                                <h1 class="text-2xl font-bold text-gray-900">John Doe</h1>
+                                <div class="flex items-center ml-3">
+                                    <span class="status-indicator status-active"></span>
+                                    <span class="text-sm font-medium text-success">Active Patient</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap items-center mt-1 text-gray-dark">
+                                <div class="flex items-center mr-4 mb-1 md:mb-0">
+                                    <i class="fas fa-id-card mr-2 text-primary"></i>
+                                    <span>ID: P-20230615-0042</span>
+                                </div>
+                                <div class="flex items-center mr-4 mb-1 md:mb-0">
+                                    <i class="fas fa-birthday-cake mr-2 text-primary"></i>
+                                    <span>42 years old (DOB: 05/12/1981)</span>
+                                </div>
+                                <div class="flex items-center mb-1 md:mb-0">
+                                    <i class="fas fa-venus-mars mr-2 text-primary"></i>
+                                    <span>Male</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2">
+                        <button class="btn btn-primary flex items-center px-4 py-2 rounded-lg">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            <span>Schedule Appointment</span>
+                        </button>
+                        <button class="btn btn-outline flex items-center px-4 py-2 rounded-lg">
+                            <i class="fas fa-file-medical mr-2"></i>
+                            <span>Add Note</span>
+                        </button>
+                        <button class="flex items-center p-2 text-gray-dark hover:text-primary transition-colors">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                    <div class="vital-card p-4">
+                        <div class="flex items-center">
+                            <div class="vital-icon text-primary">
+                                <i class="fas fa-heartbeat text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-dark">Heart Rate</div>
+                                <div class="text-xl font-bold">78 <span class="text-sm font-normal">bpm</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vital-card p-4">
+                        <div class="flex items-center">
+                            <div class="vital-icon text-primary">
+                                <i class="fas fa-stethoscope text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-dark">Blood Pressure</div>
+                                <div class="text-xl font-bold">120/80 <span class="text-sm font-normal">mmHg</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vital-card p-4">
+                        <div class="flex items-center">
+                            <div class="vital-icon text-primary">
+                                <i class="fas fa-weight text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-dark">Weight</div>
+                                <div class="text-xl font-bold">182 <span class="text-sm font-normal">lbs</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vital-card p-4">
+                        <div class="flex items-center">
+                            <div class="vital-icon text-primary">
+                                <i class="fas fa-temperature-high text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-dark">Temperature</div>
+                                <div class="text-xl font-bold">98.6 <span class="text-sm font-normal">°F</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabs Navigation -->
+            <div class="bg-white rounded-xl shadow-soft mb-6">
+                <div class="border-b border-gray-medium">
+                    <div class="tab-nav">
+                        <button class="tab-button active px-6 py-4 text-primary font-medium" data-tab="medical-history">
+                            <i class="fas fa-notes-medical mr-2"></i>
+                            Medical History
+                        </button>
+                        <button class="tab-button px-6 py-4 text-gray-dark font-medium" data-tab="treatments">
+                            <i class="fas fa-pills mr-2"></i>
+                            Past Treatments & Reviews
+                        </button>
+                        <button class="tab-button px-6 py-4 text-gray-dark font-medium" data-tab="symptoms">
+                            <i class="fas fa-clipboard-list mr-2"></i>
+                            Current Symptoms
+                        </button>
+                        <button class="tab-button px-6 py-4 text-gray-dark font-medium" data-tab="lab-results">
+                            <i class="fas fa-flask mr-2"></i>
+                            Lab Results
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="p-6">
+                    <!-- Medical History Tab -->
+                    <div id="medical-history" class="tab-content active">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Left Column -->
+                            <div class="md:col-span-2">
+                                <h2 class="section-title text-lg font-bold mb-4">Medical Conditions</h2>
+                                
+                                <!-- Expandable Sections -->
+                                <div class="space-y-4">
+                                    <!-- Chronic Conditions -->
+                                    <div class="card bg-white border border-gray-medium">
+                                        <div class="p-4 cursor-pointer flex justify-between items-center expandable-header" data-target="chronic-conditions">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3">
+                                                    <i class="fas fa-heartbeat"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium">Chronic Conditions</h3>
+                                                    <p class="text-sm text-gray-dark">2 active conditions</p>
+                                                </div>
+                                            </div>
+                                            <i class="fas fa-chevron-down text-gray-dark rotate-icon"></i>
+                                        </div>
+                                        <div class="expandable-section" id="chronic-conditions">
+                                            <div class="border-t border-gray-medium p-4">
+                                                <div class="space-y-4">
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Type 2 Diabetes</h4>
+                                                            <p class="text-sm text-gray-dark">Diagnosed: Jan 15, 2018</p>
+                                                        </div>
+                                                        <span class="badge badge-warning">
+                                                            <i class="fas fa-exclamation-circle mr-1"></i>
+                                                            Monitoring
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Hypertension</h4>
+                                                            <p class="text-sm text-gray-dark">Diagnosed: Mar 22, 2019</p>
+                                                        </div>
+                                                        <span class="badge badge-success">
+                                                            <i class="fas fa-check-circle mr-1"></i>
+                                                            Controlled
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Allergies -->
+                                    <div class="card bg-white border border-gray-medium">
+                                        <div class="p-4 cursor-pointer flex justify-between items-center expandable-header" data-target="allergies">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 rounded-xl bg-danger-light text-danger flex items-center justify-center mr-3">
+                                                    <i class="fas fa-allergies"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium">Allergies</h3>
+                                                    <p class="text-sm text-gray-dark">3 known allergies</p>
+                                                </div>
+                                            </div>
+                                            <i class="fas fa-chevron-down text-gray-dark rotate-icon"></i>
+                                        </div>
+                                        <div class="expandable-section" id="allergies">
+                                            <div class="border-t border-gray-medium p-4">
+                                                <div class="space-y-4">
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Penicillin</h4>
+                                                            <p class="text-sm text-gray-dark">Severity: Moderate</p>
+                                                        </div>
+                                                        <span class="badge badge-danger">
+                                                            <i class="fas fa-exclamation-triangle mr-1"></i>
+                                                            Medication
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Shellfish</h4>
+                                                            <p class="text-sm text-gray-dark">Severity: Severe</p>
+                                                        </div>
+                                                        <span class="badge badge-danger">
+                                                            <i class="fas fa-utensils mr-1"></i>
+                                                            Food
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Pollen</h4>
+                                                            <p class="text-sm text-gray-dark">Severity: Mild</p>
+                                                        </div>
+                                                        <span class="badge badge-warning">
+                                                            <i class="fas fa-leaf mr-1"></i>
+                                                            Environmental
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Surgeries -->
+                                    <div class="card bg-white border border-gray-medium">
+                                        <div class="p-4 cursor-pointer flex justify-between items-center expandable-header" data-target="surgeries">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 rounded-xl bg-info-light text-info flex items-center justify-center mr-3">
+                                                    <i class="fas fa-procedures"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium">Surgeries</h3>
+                                                    <p class="text-sm text-gray-dark">1 past surgery</p>
+                                                </div>
+                                            </div>
+                                            <i class="fas fa-chevron-down text-gray-dark rotate-icon"></i>
+                                        </div>
+                                        <div class="expandable-section" id="surgeries">
+                                            <div class="border-t border-gray-medium p-4">
+                                                <div class="space-y-4">
+                                                    <div>
+                                                        <h4 class="font-medium">Appendectomy</h4>
+                                                        <p class="text-sm text-gray-dark">Date: Sep 12, 2015</p>
+                                                        <p class="text-sm text-gray-dark">Hospital: Memorial General Hospital</p>
+                                                        <p class="text-sm text-gray-dark">Surgeon: Dr. Michael Stevens</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Family History -->
+                                    <div class="card bg-white border border-gray-medium">
+                                        <div class="p-4 cursor-pointer flex justify-between items-center expandable-header" data-target="family-history">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium">Family History</h3>
+                                                    <p class="text-sm text-gray-dark">3 relevant conditions</p>
+                                                </div>
+                                            </div>
+                                            <i class="fas fa-chevron-down text-gray-dark rotate-icon"></i>
+                                        </div>
+                                        <div class="expandable-section" id="family-history">
+                                            <div class="border-t border-gray-medium p-4">
+                                                <div class="space-y-4">
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Type 2 Diabetes</h4>
+                                                            <p class="text-sm text-gray-dark">Relation: Father</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Hypertension</h4>
+                                                            <p class="text-sm text-gray-dark">Relation: Father, Paternal Grandmother</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-between items-start">
+                                                        <div>
+                                                            <h4 class="font-medium">Coronary Artery Disease</h4>
+                                                            <p class="text-sm text-gray-dark">Relation: Paternal Grandfather</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column -->
+                            <div>
+                                <!-- Current Medications -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Current Medications</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div class="flex items-start">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-capsules"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Metformin</h4>
+                                                    <p class="text-sm text-gray-dark">500mg, twice daily</p>
+                                                    <p class="text-xs text-gray-dark">Prescribed: Jan 20, 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-pills"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Lisinopril</h4>
+                                                    <p class="text-sm text-gray-dark">10mg, once daily</p>
+                                                    <p class="text-xs text-gray-dark">Prescribed: Mar 15, 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-tablets"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Atorvastatin</h4>
+                                                    <p class="text-sm text-gray-dark">20mg, once daily</p>
+                                                    <p class="text-xs text-gray-dark">Prescribed: Mar 15, 2023</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Lifestyle Factors -->
+                                <div class="card bg-white border border-gray-medium">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Lifestyle Factors</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Physical Activity</span>
+                                                    <span class="text-sm text-gray-dark">Moderate</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-info" style="width: 60%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Diet Quality</span>
+                                                    <span class="text-sm text-gray-dark">Good</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-success" style="width: 75%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Sleep Quality</span>
+                                                    <span class="text-sm text-gray-dark">Fair</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-warning" style="width: 45%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Stress Level</span>
+                                                    <span class="text-sm text-gray-dark">High</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-danger" style="width: 80%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Past Treatments & Reviews Tab -->
+                    <div id="treatments" class="tab-content">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Left Column - Treatment Timeline -->
+                            <div class="md:col-span-2">
+                                <h2 class="section-title text-lg font-bold mb-4">Treatment History</h2>
+                                
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">June 15, 2023</div>
+                                        <div class="timeline-content">
+                                            <div class="flex justify-between mb-2">
+                                                <h4 class="font-medium">Medication Adjustment</h4>
+                                                <span class="badge badge-info">Recent</span>
+                                            </div>
+                                            <p class="text-sm text-gray-dark mb-2">
+                                                Increased Metformin dosage from 500mg to 1000mg daily due to elevated HbA1c levels.
+                                            </p>
+                                            <div class="flex items-center text-xs text-gray-dark">
+                                                <i class="fas fa-user-md mr-1"></i>
+                                                <span>Dr. Rebecca Chen</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">March 15, 2023</div>
+                                        <div class="timeline-content">
+                                            <div class="flex justify-between mb-2">
+                                                <h4 class="font-medium">New Medication</h4>
+                                                <span class="badge badge-success">Effective</span>
+                                            </div>
+                                            <p class="text-sm text-gray-dark mb-2">
+                                                Started on Atorvastatin 20mg daily to manage elevated cholesterol levels.
+                                            </p>
+                                            <div class="flex items-center text-xs text-gray-dark">
+                                                <i class="fas fa-user-md mr-1"></i>
+                                                <span>Dr. Rebecca Chen</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">January 20, 2023</div>
+                                        <div class="timeline-content">
+                                            <div class="flex justify-between mb-2">
+                                                <h4 class="font-medium">Medication Review</h4>
+                                                <span class="badge badge-warning">Adjustment Needed</span>
+                                            </div>
+                                            <p class="text-sm text-gray-dark mb-2">
+                                                Continued Metformin 500mg and Lisinopril 10mg. Blood glucose still above target range.
+                                            </p>
+                                            <div class="flex items-center text-xs text-gray-dark">
+                                                <i class="fas fa-user-md mr-1"></i>
+                                                <span>Dr. Rebecca Chen</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">October 5, 2022</div>
+                                        <div class="timeline-content">
+                                            <div class="flex justify-between mb-2">
+                                                <h4 class="font-medium">Lifestyle Intervention</h4>
+                                                <span class="badge badge-info">Recommendation</span>
+                                            </div>
+                                            <p class="text-sm text-gray-dark mb-2">
+                                                Referred to nutritionist for dietary counseling. Recommended 30 minutes of moderate exercise 5 days per week.
+                                            </p>
+                                            <div class="flex items-center text-xs text-gray-dark">
+                                                <i class="fas fa-user-md mr-1"></i>
+                                                <span>Dr. Rebecca Chen</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">July 12, 2022</div>
+                                        <div class="timeline-content">
+                                            <div class="flex justify-between mb-2">
+                                                <h4 class="font-medium">Initial Treatment Plan</h4>
+                                                <span class="badge badge-success">Baseline</span>
+                                            </div>
+                                            <p class="text-sm text-gray-dark mb-2">
+                                                Started on Metformin 500mg daily and Lisinopril 10mg daily for management of Type 2 Diabetes and Hypertension.
+                                            </p>
+                                            <div class="flex items-center text-xs text-gray-dark">
+                                                <i class="fas fa-user-md mr-1"></i>
+                                                <span>Dr. Rebecca Chen</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column - Treatment Effectiveness -->
+                            <div>
+                                <h2 class="section-title text-lg font-bold mb-4">Treatment Effectiveness</h2>
+                                
+                                <!-- Blood Glucose Trend -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Blood Glucose Trend</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="chart-container">
+                                            <!-- Chart grid lines -->
+                                            <div class="chart-grid-line" style="bottom: 150px;"></div>
+                                            <div class="chart-grid-line" style="bottom: 100px;"></div>
+                                            <div class="chart-grid-line" style="bottom: 50px;"></div>
+                                            
+                                            <div class="chart-bar" style="left: 20px; height: 120px;" data-value="145">
+                                                <div class="chart-label">Jan</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 70px; height: 140px;" data-value="155">
+                                                <div class="chart-label">Feb</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 120px; height: 130px;" data-value="150">
+                                                <div class="chart-label">Mar</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 170px; height: 110px;" data-value="140">
+                                                <div class="chart-label">Apr</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 220px; height: 100px;" data-value="135">
+                                                <div class="chart-label">May</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 270px; height: 90px;" data-value="130">
+                                                <div class="chart-label">Jun</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between mt-8 text-xs text-gray-dark">
+                                            <div>Target: &lt;130 mg/dL</div>
+                                            <div>Current: 130 mg/dL</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Blood Pressure Trend -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Blood Pressure Trend</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="chart-container">
+                                            <!-- Chart grid lines -->
+                                            <div class="chart-grid-line" style="bottom: 150px;"></div>
+                                            <div class="chart-grid-line" style="bottom: 100px;"></div>
+                                            <div class="chart-grid-line" style="bottom: 50px;"></div>
+                                            
+                                            <div class="chart-bar" style="left: 20px; height: 140px;" data-value="140/90">
+                                                <div class="chart-label">Jan</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 70px; height: 135px;" data-value="138/88">
+                                                <div class="chart-label">Feb</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 120px; height: 130px;" data-value="135/85">
+                                                <div class="chart-label">Mar</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 170px; height: 125px;" data-value="130/85">
+                                                <div class="chart-label">Apr</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 220px; height: 120px;" data-value="125/82">
+                                                <div class="chart-label">May</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 270px; height: 120px;" data-value="120/80">
+                                                <div class="chart-label">Jun</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between mt-8 text-xs text-gray-dark">
+                                            <div>Target: &lt;130/80 mmHg</div>
+                                            <div>Current: 120/80 mmHg</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Medication Adherence -->
+                                <div class="card bg-white border border-gray-medium">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Medication Adherence</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Metformin</span>
+                                                    <span class="text-sm text-gray-dark">95%</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-success" style="width: 95%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Lisinopril</span>
+                                                    <span class="text-sm text-gray-dark">90%</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-success" style="width: 90%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between mb-1">
+                                                    <span class="text-sm font-medium">Atorvastatin</span>
+                                                    <span class="text-sm text-gray-dark">85%</span>
+                                                </div>
+                                                <div class="progress-bar">
+                                                    <div class="progress-value bg-info" style="width: 85%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Current Symptoms Tab -->
+                    <div id="symptoms" class="tab-content">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Left Column -->
+                            <div class="md:col-span-2">
+                                <h2 class="section-title text-lg font-bold mb-4">Reported Symptoms</h2>
+                                
+                                <!-- Recent Symptoms -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <div class="flex justify-between items-center">
+                                            <h3 class="font-medium text-primary">Recent Symptoms</h3>
+                                            <span class="text-xs text-gray-dark">Last updated: June 18, 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="flex flex-wrap mb-4">
+                                            <div class="symptom-tag">
+                                                <i class="fas fa-dizzy"></i>
+                                                Fatigue
+                                            </div>
+                                            <div class="symptom-tag">
+                                                <i class="fas fa-head-side-cough"></i>
+                                                Dry Cough
+                                            </div>
+                                            <div class="symptom-tag">
+                                                <i class="fas fa-eye"></i>
+                                                Blurred Vision
+                                            </div>
+                                            <div class="symptom-tag">
+                                                <i class="fas fa-tint"></i>
+                                                Increased Thirst
+                                            </div>
+                                            <div class="symptom-tag">
+                                                <i class="fas fa-toilet"></i>
+                                                Frequent Urination
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="space-y-6">
+                                            <div class="p-4 bg-gray-light rounded-xl">
+                                                <h4 class="font-medium mb-2">Fatigue</h4>
+                                                <div class="flex items-center mb-3">
+                                                    <div class="text-sm mr-2">Severity:</div>
+                                                    <div class="flex">
+                                                        <span class="severity-dot severity-high mr-1"></span>
+                                                        <span class="severity-dot severity-high mr-1"></span>
+                                                        <span class="severity-dot severity-high mr-1"></span>
+                                                        <span class="severity-dot severity-inactive mr-1"></span>
+                                                        <span class="severity-dot severity-inactive"></span>
+                                                    </div>
+                                                    <span class="ml-2 text-xs text-gray-dark">(Moderate to Severe)</span>
+                                                </div>
+                                                <p class="text-sm text-gray-dark">
+                                                    Moderate to severe fatigue, especially in the afternoons. Affecting daily activities and work performance.
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="p-4 bg-gray-light rounded-xl">
+                                                <h4 class="font-medium mb-2">Blurred Vision</h4>
+                                                <div class="flex items-center mb-3">
+                                                    <div class="text-sm mr-2">Severity:</div>
+                                                    <div class="flex">
+                                                        <span class="severity-dot severity-high mr-1"></span>
+                                                        <span class="severity-dot severity-high mr-1"></span>
+                                                        <span class="severity-dot severity-inactive mr-1"></span>
+                                                        <span class="severity-dot severity-inactive mr-1"></span>
+                                                        <span class="severity-dot severity-inactive"></span>
+                                                    </div>
+                                                    <span class="ml-2 text-xs text-gray-dark">(Moderate)</span>
+                                                </div>
+                                                <p class="text-sm text-gray-dark">
+                                                    Intermittent blurred vision, particularly after periods of high blood glucose. More noticeable in the evenings.
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="p-4 bg-gray-light rounded-xl">
+                                                <h4 class="font-medium mb-2">Increased Thirst & Frequent Urination</h4>
+                                                <div class="flex items-center mb-3">
+                                                    <div class="text-sm mr-2">Severity:</div>
+                                                    <div class="flex">
+                                                        <span class="severity-dot severity-medium mr-1"></span>
+                                                        <span class="severity-dot severity-medium mr-1"></span>
+                                                        <span class="severity-dot severity-inactive mr-1"></span>
+                                                        <span class="severity-dot severity-inactive mr-1"></span>
+                                                        <span class="severity-dot severity-inactive"></span>
+                                                    </div>
+                                                    <span class="ml-2 text-xs text-gray-dark">(Moderate)</span>
+                                                </div>
+                                                <p class="text-sm text-gray-dark">
+                                                    Moderate thirst throughout the day. Urinating approximately 8-10 times daily, including 2-3 times during the night.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Symptom Tracking -->
+                                <div class="card bg-white border border-gray-medium">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Symptom Tracking</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="overflow-x-auto">
+                                            <table class="min-w-full">
+                                                <thead>
+                                                    <tr class="bg-gray-light">
+                                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider rounded-tl-lg">Date</th>
+                                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Symptom</th>
+                                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Severity</th>
+                                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Duration</th>
+                                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider rounded-tr-lg">Notes</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="divide-y divide-gray-medium">
+                                                    <tr class="table-row">
+                                                        <td class="px-4 py-3 text-sm">Jun 18, 2023</td>
+                                                        <td class="px-4 py-3 text-sm">Fatigue</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <span class="badge badge-danger">Severe</span>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">All day</td>
+                                                        <td class="px-4 py-3 text-sm">Worse after meals</td>
+                                                    </tr>
+                                                    <tr class="table-row">
+                                                        <td class="px-4 py-3 text-sm">Jun 17, 2023</td>
+                                                        <td class="px-4 py-3 text-sm">Blurred Vision</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <span class="badge badge-warning">Moderate</span>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">Evening</td>
+                                                        <td class="px-4 py-3 text-sm">After dinner</td>
+                                                    </tr>
+                                                    <tr class="table-row">
+                                                        <td class="px-4 py-3 text-sm">Jun 16, 2023</td>
+                                                        <td class="px-4 py-3 text-sm">Fatigue</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <span class="badge badge-warning">Moderate</span>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">Afternoon</td>
+                                                        <td class="px-4 py-3 text-sm">After lunch</td>
+                                                    </tr>
+                                                    <tr class="table-row">
+                                                        <td class="px-4 py-3 text-sm">Jun 15, 2023</td>
+                                                        <td class="px-4 py-3 text-sm">Frequent Urination</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <span class="badge badge-warning">Moderate</span>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">All day</td>
+                                                        <td class="px-4 py-3 text-sm">8 times during day, 2 at night</td>
+                                                    </tr>
+                                                    <tr class="table-row">
+                                                        <td class="px-4 py-3 text-sm">Jun 14, 2023</td>
+                                                        <td class="px-4 py-3 text-sm">Dry Cough</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <span class="badge badge-info">Mild</span>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">Morning</td>
+                                                        <td class="px-4 py-3 text-sm">Upon waking</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column -->
+                            <div>
+                                <!-- Symptom Analysis -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Symptom Analysis</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h4 class="text-sm font-medium mb-2">Symptom Correlation</h4>
+                                                <div class="flex items-center mb-2">
+                                                    <div class="w-3 h-3 rounded-full bg-danger mr-2"></div>
+                                                    <span class="text-sm">Strong correlation with blood glucose levels</span>
+                                                </div>
+                                                <div class="flex items-center mb-2">
+                                                    <div class="w-3 h-3 rounded-full bg-warning mr-2"></div>
+                                                    <span class="text-sm">Moderate correlation with medication timing</span>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <div class="w-3 h-3 rounded-full bg-info mr-2"></div>
+                                                    <span class="text-sm">Possible correlation with stress levels</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="p-4 bg-primary-light rounded-xl">
+                                                <h4 class="text-sm font-medium mb-2 text-primary">AI Insights</h4>
+                                                <p class="text-sm text-gray-dark mb-2">
+                                                    Symptoms suggest suboptimal glucose control. Recent increase in fatigue and blurred vision may indicate need for medication adjustment.
+                                                </p>
+                                                <div class="flex items-center text-primary text-sm">
+                                                    <i class="fas fa-robot mr-1"></i>
+                                                    <span>Generated by EvoRX AI</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Glucose Monitoring -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Glucose Monitoring</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div class="flex justify-between items-center p-3 bg-warning-light rounded-xl">
+                                                <div>
+                                                    <div class="text-sm text-gray-dark">Today's Average</div>
+                                                    <div class="text-xl font-bold">142 <span class="text-sm font-normal">mg/dL</span></div>
+                                                </div>
+                                                <div class="badge badge-warning">Above Target</div>
+                                            </div>
+                                            
+                                            <div class="p-3 bg-gray-light rounded-xl">
+                                                <div class="flex justify-between mb-2">
+                                                    <span class="text-sm">Fasting (6:30 AM)</span>
+                                                    <span class="text-sm font-medium">130 mg/dL</span>
+                                                </div>
+                                                <div class="flex justify-between mb-2">
+                                                    <span class="text-sm">Before Lunch (11:45 AM)</span>
+                                                    <span class="text-sm font-medium">145 mg/dL</span>
+                                                </div>
+                                                <div class="flex justify-between mb-2">
+                                                    <span class="text-sm">After Lunch (1:30 PM)</span>
+                                                    <span class="text-sm font-medium">168 mg/dL</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span class="text-sm">Before Dinner (6:15 PM)</span>
+                                                    <span class="text-sm font-medium">125 mg/dL</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Recommendations -->
+                                <div class="card bg-white border border-gray-medium pulse-animation">
+                                    <div class="p-4 border-b border-gray-medium bg-primary text-white">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-lightbulb mr-2"></i>
+                                            <h3 class="font-medium">Recommendations</h3>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div class="p-3 bg-gray-light rounded-xl">
+                                                <h4 class="font-medium">Consider Medication Adjustment</h4>
+                                                <p class="text-sm text-gray-dark">
+                                                    Current symptoms and glucose readings suggest need for potential adjustment to diabetes medication regimen.
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="p-3 bg-gray-light rounded-xl">
+                                                <h4 class="font-medium">Additional Testing</h4>
+                                                <p class="text-sm text-gray-dark">
+                                                    Recommend HbA1c test and comprehensive metabolic panel to assess overall diabetes control.
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="p-3 bg-gray-light rounded-xl">
+                                                <h4 class="font-medium">Lifestyle Modifications</h4>
+                                                <p class="text-sm text-gray-dark">
+                                                    Suggest reducing carbohydrate intake at lunch to help manage post-meal glucose spikes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lab Results Tab -->
+                    <div id="lab-results" class="tab-content">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Left Column -->
+                            <div class="md:col-span-2">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h2 class="section-title text-lg font-bold">Recent Lab Results</h2>
+                                    <div class="flex items-center">
+                                        <button class="btn btn-primary flex items-center px-3 py-1 text-sm mr-2">
+                                            <i class="fas fa-plus mr-1"></i>
+                                            <span>Add Results</span>
+                                        </button>
+                                        <div class="relative">
+                                            <select class="appearance-none bg-white border border-gray-medium rounded-lg px-3 py-1 pr-8 text-sm focus:outline-none focus:border-primary">
+                                                <option>Last 6 months</option>
+                                                <option>Last 12 months</option>
+                                                <option>All results</option>
+                                            </select>
+                                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-dark">
+                                                <i class="fas fa-chevron-down text-xs"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Lab Results Table -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full">
+                                            <thead>
+                                                <tr class="bg-gray-light">
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider rounded-tl-lg">Test</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Result</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Reference Range</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Status</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider">Date</th>
+                                                    <th class="px-4 py-3 text-left text-xs font-medium text-gray-dark uppercase tracking-wider rounded-tr-lg">Trend</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-medium">
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">HbA1c</div>
+                                                        <div class="text-xs text-gray-dark">Glycated Hemoglobin</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">7.2%</td>
+                                                    <td class="px-4 py-3 text-sm">4.0 - 5.6%</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-warning">Elevated</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-warning">
+                                                            <i class="fas fa-arrow-down mr-1"></i>
+                                                            <span class="text-sm">0.3%</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">FPG</div>
+                                                        <div class="text-xs text-gray-dark">Fasting Plasma Glucose</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">130 mg/dL</td>
+                                                    <td class="px-4 py-3 text-sm">70 - 99 mg/dL</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-warning">Elevated</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-warning">
+                                                            <i class="fas fa-arrow-down mr-1"></i>
+                                                            <span class="text-sm">5 mg/dL</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">Total Cholesterol</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">195 mg/dL</td>
+                                                    <td class="px-4 py-3 text-sm">&lt; 200 mg/dL</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-success">Normal</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-success">
+                                                            <i class="fas fa-arrow-down mr-1"></i>
+                                                            <span class="text-sm">15 mg/dL</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">LDL Cholesterol</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">110 mg/dL</td>
+                                                    <td class="px-4 py-3 text-sm">&lt; 100 mg/dL</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-warning">Borderline</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-success">
+                                                            <i class="fas fa-arrow-down mr-1"></i>
+                                                            <span class="text-sm">12 mg/dL</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">HDL Cholesterol</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">45 mg/dL</td>
+                                                    <td class="px-4 py-3 text-sm">&gt; 40 mg/dL</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-success">Normal</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-success">
+                                                            <i class="fas fa-arrow-up mr-1"></i>
+                                                            <span class="text-sm">3 mg/dL</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">Triglycerides</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">160 mg/dL</td>
+                                                    <td class="px-4 py-3 text-sm">&lt; 150 mg/dL</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-warning">Elevated</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-warning">
+                                                            <i class="fas fa-arrow-down mr-1"></i>
+                                                            <span class="text-sm">10 mg/dL</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="table-row">
+                                                    <td class="px-4 py-3">
+                                                        <div class="font-medium">eGFR</div>
+                                                        <div class="text-xs text-gray-dark">Estimated Glomerular Filtration Rate</div>
+                                                    </td>
+                                                    <td class="px-4 py-3 font-medium">85 mL/min</td>
+                                                    <td class="px-4 py-3 text-sm">&gt; 60 mL/min</td>
+                                                    <td class="px-4 py-3">
+                                                        <span class="badge badge-success">Normal</span>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">Jun 10, 2023</td>
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-info">
+                                                            <i class="fas fa-equals mr-1"></i>
+                                                            <span class="text-sm">No change</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <!-- Previous Lab Results -->
+                                <h3 class="section-title text-lg font-medium mb-4">Previous Lab Results</h3>
+                                <div class="space-y-4">
+                                    <div class="lab-result-card bg-white border border-gray-medium p-4">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <h4 class="font-medium">Comprehensive Metabolic Panel</h4>
+                                                <p class="text-sm text-gray-dark">March 15, 2023</p>
+                                            </div>
+                                            <button class="text-primary hover:text-primary-dark transition-colors">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="lab-result-card bg-white border border-gray-medium p-4">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <h4 class="font-medium">Lipid Panel</h4>
+                                                <p class="text-sm text-gray-dark">March 15, 2023</p>
+                                            </div>
+                                            <button class="text-primary hover:text-primary-dark transition-colors">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="lab-result-card bg-white border border-gray-medium p-4">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <h4 class="font-medium">HbA1c</h4>
+                                                <p class="text-sm text-gray-dark">December 10, 2022</p>
+                                            </div>
+                                            <button class="text-primary hover:text-primary-dark transition-colors">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="lab-result-card bg-white border border-gray-medium p-4">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <h4 class="font-medium">Comprehensive Metabolic Panel</h4>
+                                                <p class="text-sm text-gray-dark">December 10, 2022</p>
+                                            </div>
+                                            <button class="text-primary hover:text-primary-dark transition-colors">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column -->
+                            <div>
+                                <!-- Lab Trends -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">HbA1c Trend</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="chart-container">
+                                            <!-- Chart grid lines -->
+                                            <div class="chart-grid-line" style="bottom: 150px;"></div>
+                                            <div class="chart-grid-line" style="bottom: 100px;"></div>
+                                            <div class="chart-grid-line" style="bottom: 50px;"></div>
+                                            
+                                            <div class="chart-bar" style="left: 20px; height: 160px;" data-value="8.1">
+                                                <div class="chart-label">Dec '22</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 70px; height: 150px;" data-value="7.9">
+                                                <div class="chart-label">Jan '23</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 120px; height: 145px;" data-value="7.8">
+                                                <div class="chart-label">Feb '23</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 170px; height: 140px;" data-value="7.6">
+                                                <div class="chart-label">Mar '23</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 220px; height: 135px;" data-value="7.5">
+                                                <div class="chart-label">Apr '23</div>
+                                            </div>
+                                            <div class="chart-bar" style="left: 270px; height: 130px;" data-value="7.2">
+                                                <div class="chart-label">Jun '23</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between mt-8 text-xs text-gray-dark">
+                                            <div>Target: &lt;6.5%</div>
+                                            <div>Current: 7.2%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Lab Analysis -->
+                                <div class="card bg-white border border-gray-medium mb-6">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Lab Analysis</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div>
+                                                <h4 class="text-sm font-medium mb-2">Key Findings</h4>
+                                                <ul class="text-sm text-gray-dark space-y-2">
+                                                    <li class="flex items-start p-2 bg-gray-light rounded-lg">
+                                                        <i class="fas fa-circle text-xs mt-1 mr-2 text-warning"></i>
+                                                        <span>HbA1c remains above target but shows consistent improvement over the past 6 months.</span>
+                                                    </li>
+                                                    <li class="flex items-start p-2 bg-gray-light rounded-lg">
+                                                        <i class="fas fa-circle text-xs mt-1 mr-2 text-success"></i>
+                                                        <span>Lipid profile showing positive response to statin therapy with significant reduction in LDL and total cholesterol.</span>
+                                                    </li>
+                                                    <li class="flex items-start p-2 bg-gray-light rounded-lg">
+                                                        <i class="fas fa-circle text-xs mt-1 mr-2 text-warning"></i>
+                                                        <span>Triglycerides remain elevated despite improvement, suggesting need for dietary modifications.</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            
+                                            <div class="p-4 bg-primary-light rounded-xl">
+                                                <h4 class="text-sm font-medium mb-2 text-primary">AI Insights</h4>
+                                                <p class="text-sm text-gray-dark mb-2">
+                                                    Current lab trends indicate improving but suboptimal diabetes control. Consider increasing Metformin dosage or adding a second-line agent such as an SGLT2 inhibitor.
+                                                </p>
+                                                <div class="flex items-center text-primary text-sm">
+                                                    <i class="fas fa-robot mr-1"></i>
+                                                    <span>Generated by EvoRX AI</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Upcoming Tests -->
+                                <div class="card bg-white border border-gray-medium">
+                                    <div class="p-4 border-b border-gray-medium bg-accent-light">
+                                        <h3 class="font-medium text-primary">Recommended Tests</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="space-y-4">
+                                            <div class="flex items-start p-3 bg-gray-light rounded-xl">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Quarterly HbA1c</h4>
+                                                    <p class="text-sm text-gray-dark">Due: September 10, 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-gray-light rounded-xl">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Annual Comprehensive Metabolic Panel</h4>
+                                                    <p class="text-sm text-gray-dark">Due: December 10, 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-gray-light rounded-xl">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Annual Lipid Panel</h4>
+                                                    <p class="text-sm text-gray-dark">Due: December 10, 2023</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-start p-3 bg-gray-light rounded-xl">
+                                                <div class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-3 flex-shrink-0">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium">Annual Microalbumin/Creatinine Ratio</h4>
+                                                    <p class="text-sm text-gray-dark">Due: December 10, 2023</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-medium py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ml-2 text-sm font-medium text-primary">EvoRX</span>
+                    </div>
+                    <div class="text-xs text-gray-dark">
+                        © 2023 EvoRX. All rights reserved. | <a href="#" class="text-primary hover:underline">Privacy Policy</a> | <a href="#" class="text-primary hover:underline">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab Navigation
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Expandable Sections
+            const expandableHeaders = document.querySelectorAll('.expandable-header');
+            
+            expandableHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const targetId = header.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    const rotateIcon = header.querySelector('.rotate-icon');
+                    
+                    targetSection.classList.toggle('expanded');
+                    rotateIcon.classList.toggle('rotated');
+                });
+                
+                // Expand the first section by default
+                if (header === expandableHeaders[0]) {
+                    const targetId = header.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    const rotateIcon = header.querySelector('.rotate-icon');
+                    
+                    targetSection.classList.add('expanded');
+                    rotateIcon.classList.add('rotated');
+                }
+            });
+            
+            // Animate chart bars on load
+            const chartBars = document.querySelectorAll('.chart-bar');
+            
+            chartBars.forEach(bar => {
+                const height = bar.style.height;
+                bar.style.height = '0';
+                
+                setTimeout(() => {
+                    bar.style.height = height;
+                }, 300);
+            });
+            
+            // Animate progress bars on load
+            const progressBars = document.querySelectorAll('.progress-value');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+            
+            // Add hover effect to chart bars
+            chartBars.forEach(bar => {
+                const value = bar.getAttribute('data-value');
+                
+                bar.addEventListener('mouseenter', () => {
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'absolute bg-gray-900 text-white px-2 py-1 rounded text-xs -mt-8 left-1/2 transform -translate-x-1/2';
+                    tooltip.style.whiteSpace = 'nowrap';
+                    tooltip.textContent = value;
+                    bar.appendChild(tooltip);
+                });
+                
+                bar.addEventListener('mouseleave', () => {
+                    const tooltip = bar.querySelector('div');
+                    if (tooltip) {
+                        tooltip.remove();
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967b260f64bc3fba',t:'MTc1Mzk0NDQ5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
