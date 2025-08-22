@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvoRX - Treatment Recommendation Wizard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4F46E5',
+                        'primary-light': '#EEF2FF',
+                        'primary-dark': '#4338CA',
+                        'secondary': '#8B5CF6',
+                        'secondary-light': '#F5F3FF',
+                        'secondary-dark': '#7C3AED',
+                        'accent': '#A78BFA',
+                        'accent-light': '#EDE9FE',
+                        'gray-light': '#F9FAFB',
+                        'gray-medium': '#E5E7EB',
+                        'gray-dark': '#6B7280',
+                        'success': '#10B981',
+                        'success-light': '#D1FAE5',
+                        'warning': '#F59E0B',
+                        'warning-light': '#FEF3C7',
+                        'danger': '#EF4444',
+                        'danger-light': '#FEE2E2',
+                        'info': '#3B82F6',
+                        'info-light': '#DBEAFE',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+                        'card': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F7FA;
+        }
+        
+        .wizard-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .step-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #E5E7EB;
+            overflow: hidden;
+        }
+        
+        .progress-value {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #4F46E5 0%, #8B5CF6 100%);
+            transition: width 0.5s ease;
+        }
+        
+        .step-indicator {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .step-indicator.completed {
+            background-color: #4F46E5;
+            color: white;
+        }
+        
+        .step-indicator.active {
+            background-color: white;
+            color: #4F46E5;
+            border: 2px solid #4F46E5;
+        }
+        
+        .step-indicator.inactive {
+            background-color: #E5E7EB;
+            color: #6B7280;
+        }
+        
+        .step-line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #E5E7EB;
+            transition: background-color 0.3s ease;
+        }
+        
+        .step-line.completed {
+            background-color: #4F46E5;
+        }
+        
+        .symptom-tag {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+        
+        .symptom-tag.selected {
+            background-color: #4F46E5;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .symptom-tag:hover:not(.selected) {
+            background-color: #EEF2FF;
+            transform: translateY(-1px);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4F46E5, #8B5CF6);
+            color: white;
+            box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4338CA, #7C3AED);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-outline {
+            border: 1px solid #4F46E5;
+            color: #4F46E5;
+            background-color: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: #EEF2FF;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background-color: #E5E7EB;
+            color: #4B5563;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #D1D5DB;
+        }
+        
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+        
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid #E5E7EB;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .custom-checkbox.checked {
+            background-color: #4F46E5;
+            border-color: #4F46E5;
+        }
+        
+        .custom-checkbox.checked i {
+            display: block;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .custom-checkbox i {
+            display: none;
+        }
+        
+        .severity-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, #10B981, #F59E0B, #EF4444);
+            outline: none;
+        }
+        
+        .severity-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #4F46E5;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .severity-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #4F46E5;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recommendation-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .recommendation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .primary-recommendation {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .primary-recommendation::before {
+            content: 'Recommended';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: linear-gradient(135deg, #4F46E5, #8B5CF6);
+            color: white;
+            padding: 5px 40px;
+            font-size: 12px;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #EEF2FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #4F46E5;
+        }
+        
+        .header-bg {
+            background: linear-gradient(135deg, #4F46E5, #8B5CF6);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #1F2937;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .tooltip .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #1F2937 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header-bg shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-white">EvoRX</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-white/80 hover:text-white transition-colors">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="avatar">
+                            <span>JD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <div class="wizard-container">
+                <!-- Wizard Header -->
+                <div class="glass-card mb-8 p-6 rounded-xl">
+                    <h1 class="text-2xl font-bold text-gray-900 mb-2">Treatment Recommendation Wizard</h1>
+                    <p class="text-gray-dark mb-6">Answer a few questions to get personalized treatment recommendations for your condition.</p>
+                    
+                    <!-- Progress Steps -->
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center flex-grow">
+                            <div class="step-indicator completed" id="step-indicator-1">1</div>
+                            <div class="step-line completed" id="step-line-1"></div>
+                            <div class="step-indicator active" id="step-indicator-2">2</div>
+                            <div class="step-line" id="step-line-2"></div>
+                            <div class="step-indicator inactive" id="step-indicator-3">3</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Labels -->
+                    <div class="flex justify-between text-sm mb-2">
+                        <div class="text-primary font-medium">1. Symptoms</div>
+                        <div class="text-primary font-medium">2. Medical History</div>
+                        <div class="text-gray-dark">3. Get Recommendation</div>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-value" id="progress-bar" style="width: 50%"></div>
+                    </div>
+                </div>
+                
+                <!-- Step 1: Symptoms (Hidden initially) -->
+                <div class="step-content" id="step-1">
+                    <div class="glass-card p-6 rounded-xl mb-6">
+                        <h2 class="text-xl font-bold text-gray-900 mb-4">What symptoms are you experiencing?</h2>
+                        <p class="text-gray-dark mb-6">Select all symptoms that apply to your current condition.</p>
+                        
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="headache">
+                                <i class="fas fa-head-side-ache mr-2"></i>Headache
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="fever">
+                                <i class="fas fa-temperature-high mr-2"></i>Fever
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="cough">
+                                <i class="fas fa-head-side-cough mr-2"></i>Cough
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="sore-throat">
+                                <i class="fas fa-lungs-virus mr-2"></i>Sore Throat
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="fatigue">
+                                <i class="fas fa-bed mr-2"></i>Fatigue
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="body-aches">
+                                <i class="fas fa-user-injured mr-2"></i>Body Aches
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="congestion">
+                                <i class="fas fa-head-side mr-2"></i>Congestion
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="nausea">
+                                <i class="fas fa-stomach mr-2"></i>Nausea
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="dizziness">
+                                <i class="fas fa-dizzy mr-2"></i>Dizziness
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="shortness-of-breath">
+                                <i class="fas fa-lungs mr-2"></i>Shortness of Breath
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="chest-pain">
+                                <i class="fas fa-heartbeat mr-2"></i>Chest Pain
+                            </div>
+                            <div class="symptom-tag px-4 py-2 bg-white border border-gray-medium rounded-full text-sm" data-symptom="rash">
+                                <i class="fas fa-allergies mr-2"></i>Rash
+                            </div>
+                        </div>
+                        
+                        <div id="selected-symptoms-container" class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Selected Symptoms Details</h3>
+                            <p class="text-gray-dark text-sm italic mb-4" id="no-symptoms-message">Please select at least one symptom above to provide more details.</p>
+                            
+                            <div class="space-y-6" id="symptoms-details">
+                                <!-- Symptom details will be added here dynamically -->
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <button class="btn btn-secondary px-6 py-2" disabled>Previous</button>
+                            <button class="btn btn-primary px-6 py-2" id="next-to-step-2">Next: Medical History</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Medical History -->
+                <div class="step-content active" id="step-2">
+                    <div class="glass-card p-6 rounded-xl mb-6">
+                        <h2 class="text-xl font-bold text-gray-900 mb-4">Tell us about your medical history</h2>
+                        <p class="text-gray-dark mb-6">This information helps us provide more accurate treatment recommendations.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <!-- Basic Information -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Basic Information</h3>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                                    <input type="number" class="w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your age">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                                    <select class="custom-select w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option value="" selected disabled>Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Weight (kg)</label>
+                                    <input type="number" class="w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your weight">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Height (cm)</label>
+                                    <input type="number" class="w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your height">
+                                </div>
+                            </div>
+                            
+                            <!-- Medical Conditions -->
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Medical Conditions</h3>
+                                <p class="text-sm text-gray-dark mb-4">Select all conditions that apply to you:</p>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox mr-3" data-condition="diabetes">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <label class="text-sm text-gray-700">Diabetes</label>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox mr-3" data-condition="hypertension">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <label class="text-sm text-gray-700">Hypertension (High Blood Pressure)</label>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox mr-3" data-condition="asthma">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <label class="text-sm text-gray-700">Asthma</label>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox mr-3" data-condition="heart-disease">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <label class="text-sm text-gray-700">Heart Disease</label>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox mr-3" data-condition="thyroid">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <label class="text-sm text-gray-700">Thyroid Disorder</label>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="custom-checkbox mr-3" data-condition="kidney-disease">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <label class="text-sm text-gray-700">Kidney Disease</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Allergies -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Allergies</h3>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Do you have any allergies?</label>
+                                <div class="flex space-x-4">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="allergies-yes" name="allergies" class="mr-2">
+                                        <label for="allergies-yes" class="text-sm text-gray-700">Yes</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="allergies-no" name="allergies" class="mr-2" checked>
+                                        <label for="allergies-no" class="text-sm text-gray-700">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="allergies-container" class="hidden">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Please specify your allergies:</label>
+                                <div class="flex flex-wrap gap-2 mb-2">
+                                    <div class="symptom-tag px-3 py-1 bg-white border border-gray-medium rounded-full text-sm" data-allergy="penicillin">Penicillin</div>
+                                    <div class="symptom-tag px-3 py-1 bg-white border border-gray-medium rounded-full text-sm" data-allergy="sulfa">Sulfa Drugs</div>
+                                    <div class="symptom-tag px-3 py-1 bg-white border border-gray-medium rounded-full text-sm" data-allergy="nsaids">NSAIDs</div>
+                                    <div class="symptom-tag px-3 py-1 bg-white border border-gray-medium rounded-full text-sm" data-allergy="aspirin">Aspirin</div>
+                                    <div class="symptom-tag px-3 py-1 bg-white border border-gray-medium rounded-full text-sm" data-allergy="latex">Latex</div>
+                                </div>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Other allergies (separate with commas)">
+                            </div>
+                        </div>
+                        
+                        <!-- Current Medications -->
+                        <div class="mb-8">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Current Medications</h3>
+                            
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Are you currently taking any medications?</label>
+                                <div class="flex space-x-4">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="medications-yes" name="medications" class="mr-2">
+                                        <label for="medications-yes" class="text-sm text-gray-700">Yes</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="medications-no" name="medications" class="mr-2" checked>
+                                        <label for="medications-no" class="text-sm text-gray-700">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="medications-container" class="hidden">
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Please list your current medications:</label>
+                                    <textarea class="w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" rows="3" placeholder="Enter medications, dosage, and frequency (e.g., Lisinopril 10mg daily)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <button class="btn btn-outline px-6 py-2" id="back-to-step-1">Previous: Symptoms</button>
+                            <button class="btn btn-primary px-6 py-2" id="next-to-step-3">Next: Get Recommendation</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Recommendations -->
+                <div class="step-content" id="step-3">
+                    <div class="glass-card p-6 rounded-xl mb-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-gray-900">Your Treatment Recommendations</h2>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-dark mr-2">Last updated:</span>
+                                <span class="text-sm font-medium">June 24, 2023</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Summary -->
+                        <div class="bg-primary-light p-4 rounded-xl mb-6">
+                            <h3 class="font-medium text-primary mb-2">Summary</h3>
+                            <p class="text-sm text-gray-700 mb-2">Based on your symptoms and medical history, we've generated personalized treatment recommendations for you.</p>
+                            <div class="flex flex-wrap gap-2 mb-2">
+                                <div class="px-3 py-1 bg-white border border-primary text-primary rounded-full text-xs">Headache</div>
+                                <div class="px-3 py-1 bg-white border border-primary text-primary rounded-full text-xs">Fever</div>
+                                <div class="px-3 py-1 bg-white border border-primary text-primary rounded-full text-xs">Fatigue</div>
+                                <div class="px-3 py-1 bg-white border border-primary text-primary rounded-full text-xs">Sore Throat</div>
+                            </div>
+                            <div class="text-xs text-gray-dark">
+                                <span class="font-medium">Note:</span> These recommendations are not a substitute for professional medical advice. Please consult with a healthcare provider.
+                            </div>
+                        </div>
+                        
+                        <!-- Primary Recommendation -->
+                        <div class="recommendation-card primary-recommendation bg-white border border-primary shadow-card mb-6">
+                            <div class="bg-primary p-4">
+                                <h3 class="font-medium text-white">Primary Recommendation</h3>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-primary-light text-primary flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-pills text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-lg">Acetaminophen + Rest + Fluids</h4>
+                                        <p class="text-sm text-gray-dark">For relief of fever, headache, and general discomfort</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-4 mb-6">
+                                    <div>
+                                        <h5 class="text-sm font-medium mb-1">Dosage</h5>
+                                        <p class="text-sm text-gray-700">Acetaminophen 500mg, 1-2 tablets every 6 hours as needed (not to exceed 4000mg in 24 hours)</p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h5 class="text-sm font-medium mb-1">Instructions</h5>
+                                        <ul class="text-sm text-gray-700 space-y-1 list-disc pl-5">
+                                            <li>Take with food or milk to reduce stomach upset</li>
+                                            <li>Rest as much as possible</li>
+                                            <li>Drink plenty of fluids (water, clear broths, or electrolyte solutions)</li>
+                                            <li>Use a humidifier or take steamy showers to help with congestion</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div>
+                                        <h5 class="text-sm font-medium mb-1">Expected Outcome</h5>
+                                        <p class="text-sm text-gray-700">Symptoms should begin to improve within 24-48 hours. Fever and headache relief typically occurs within 30-60 minutes after taking acetaminophen.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <button class="btn btn-outline px-4 py-2 text-sm">
+                                        <i class="fas fa-print mr-1"></i>
+                                        Print Details
+                                    </button>
+                                    <button class="btn btn-primary px-4 py-2 text-sm">
+                                        <i class="fas fa-calendar-plus mr-1"></i>
+                                        Schedule Follow-up
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Alternative Recommendations -->
+                        <h3 class="font-medium text-lg mb-4">Alternative Recommendations</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <!-- Alternative 1 -->
+                            <div class="recommendation-card bg-white border border-gray-medium">
+                                <div class="bg-gray-light p-4">
+                                    <h3 class="font-medium text-gray-900">Alternative 1</h3>
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex items-start mb-4">
+                                        <div class="w-10 h-10 rounded-xl bg-secondary-light text-secondary flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-capsules"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium">Ibuprofen</h4>
+                                            <p class="text-sm text-gray-dark">For relief of fever, headache, and inflammation</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="space-y-2 mb-4">
+                                        <div>
+                                            <h5 class="text-xs font-medium mb-1">Dosage</h5>
+                                            <p class="text-xs text-gray-700">200-400mg every 6 hours as needed</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <h5 class="text-xs font-medium mb-1">Note</h5>
+                                            <p class="text-xs text-gray-700">Take with food. Not recommended if you have certain conditions.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-outline w-full px-3 py-1 text-sm">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Alternative 2 -->
+                            <div class="recommendation-card bg-white border border-gray-medium">
+                                <div class="bg-gray-light p-4">
+                                    <h3 class="font-medium text-gray-900">Alternative 2</h3>
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex items-start mb-4">
+                                        <div class="w-10 h-10 rounded-xl bg-secondary-light text-secondary flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-mortar-pestle"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium">Herbal Remedies</h4>
+                                            <p class="text-sm text-gray-dark">Natural approaches for symptom relief</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="space-y-2 mb-4">
+                                        <div>
+                                            <h5 class="text-xs font-medium mb-1">Includes</h5>
+                                            <p class="text-xs text-gray-700">Honey & lemon tea, ginger, echinacea</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <h5 class="text-xs font-medium mb-1">Note</h5>
+                                            <p class="text-xs text-gray-700">Complementary approach, may take longer for symptom relief</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-outline w-full px-3 py-1 text-sm">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- When to Seek Medical Care -->
+                        <div class="bg-danger-light p-4 rounded-xl mb-6">
+                            <h3 class="font-medium text-danger mb-2">When to Seek Medical Care</h3>
+                            <p class="text-sm text-gray-700 mb-2">Contact a healthcare provider immediately if you experience any of the following:</p>
+                            <ul class="text-sm text-gray-700 space-y-1 list-disc pl-5">
+                                <li>Difficulty breathing or shortness of breath</li>
+                                <li>Persistent chest pain or pressure</li>
+                                <li>Fever above 103°F (39.4°C) that doesn't respond to medication</li>
+                                <li>Severe headache with confusion or altered mental status</li>
+                                <li>Severe persistent vomiting</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <button class="btn btn-outline px-6 py-2" id="back-to-step-2">Previous: Medical History</button>
+                            <button class="btn btn-primary px-6 py-2">
+                                <i class="fas fa-download mr-2"></i>
+                                Save Recommendations
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-medium py-4">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <svg class="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 12L12 16L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 16L12 20L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ml-2 text-sm font-medium text-primary">EvoRX</span>
+                    </div>
+                    <div class="text-xs text-gray-dark">
+                        © 2023 EvoRX. All rights reserved. | <a href="#" class="text-primary hover:underline">Privacy Policy</a> | <a href="#" class="text-primary hover:underline">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Step navigation
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            const step3 = document.getElementById('step-3');
+            
+            const stepIndicator1 = document.getElementById('step-indicator-1');
+            const stepIndicator2 = document.getElementById('step-indicator-2');
+            const stepIndicator3 = document.getElementById('step-indicator-3');
+            
+            const stepLine1 = document.getElementById('step-line-1');
+            const stepLine2 = document.getElementById('step-line-2');
+            
+            const progressBar = document.getElementById('progress-bar');
+            
+            const nextToStep2Button = document.getElementById('next-to-step-2');
+            const backToStep1Button = document.getElementById('back-to-step-1');
+            const nextToStep3Button = document.getElementById('next-to-step-3');
+            const backToStep2Button = document.getElementById('back-to-step-2');
+            
+            // Go to Step 2
+            nextToStep2Button.addEventListener('click', function() {
+                step1.classList.remove('active');
+                step2.classList.add('active');
+                
+                stepIndicator1.classList.remove('active');
+                stepIndicator1.classList.add('completed');
+                
+                stepIndicator2.classList.remove('inactive');
+                stepIndicator2.classList.add('active');
+                
+                progressBar.style.width = '50%';
+            });
+            
+            // Go back to Step 1
+            backToStep1Button.addEventListener('click', function() {
+                step2.classList.remove('active');
+                step1.classList.add('active');
+                
+                stepIndicator1.classList.remove('completed');
+                stepIndicator1.classList.add('active');
+                
+                stepIndicator2.classList.remove('active');
+                stepIndicator2.classList.add('inactive');
+                
+                progressBar.style.width = '25%';
+            });
+            
+            // Go to Step 3
+            nextToStep3Button.addEventListener('click', function() {
+                step2.classList.remove('active');
+                step3.classList.add('active');
+                
+                stepIndicator2.classList.remove('active');
+                stepIndicator2.classList.add('completed');
+                
+                stepIndicator3.classList.remove('inactive');
+                stepIndicator3.classList.add('active');
+                
+                stepLine2.classList.add('completed');
+                
+                progressBar.style.width = '100%';
+            });
+            
+            // Go back to Step 2
+            backToStep2Button.addEventListener('click', function() {
+                step3.classList.remove('active');
+                step2.classList.add('active');
+                
+                stepIndicator2.classList.remove('completed');
+                stepIndicator2.classList.add('active');
+                
+                stepIndicator3.classList.remove('active');
+                stepIndicator3.classList.add('inactive');
+                
+                stepLine2.classList.remove('completed');
+                
+                progressBar.style.width = '50%';
+            });
+            
+            // Symptom tags selection
+            const symptomTags = document.querySelectorAll('.symptom-tag');
+            const symptomsDetails = document.getElementById('symptoms-details');
+            const noSymptomsMessage = document.getElementById('no-symptoms-message');
+            
+            symptomTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    updateSelectedSymptoms();
+                });
+            });
+            
+            function updateSelectedSymptoms() {
+                const selectedSymptoms = document.querySelectorAll('.symptom-tag.selected');
+                
+                if (selectedSymptoms.length > 0) {
+                    noSymptomsMessage.style.display = 'none';
+                    symptomsDetails.innerHTML = '';
+                    
+                    selectedSymptoms.forEach(symptom => {
+                        const symptomName = symptom.textContent.trim();
+                        const symptomId = symptom.getAttribute('data-symptom');
+                        
+                        const symptomDetail = document.createElement('div');
+                        symptomDetail.className = 'p-4 bg-gray-light rounded-xl';
+                        symptomDetail.innerHTML = `
+                            <h4 class="font-medium mb-3">${symptomName}</h4>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">When did this symptom start?</label>
+                                <select class="custom-select w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="" selected disabled>Select time</option>
+                                    <option value="today">Today</option>
+                                    <option value="yesterday">Yesterday</option>
+                                    <option value="2-3-days">2-3 days ago</option>
+                                    <option value="4-7-days">4-7 days ago</option>
+                                    <option value="1-2-weeks">1-2 weeks ago</option>
+                                    <option value="more-than-2-weeks">More than 2 weeks ago</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Severity</label>
+                                <div class="flex items-center">
+                                    <span class="text-xs text-gray-dark mr-2">Mild</span>
+                                    <input type="range" class="severity-slider flex-grow" min="1" max="10" value="5">
+                                    <span class="text-xs text-gray-dark ml-2">Severe</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Additional notes</label>
+                                <textarea class="w-full px-4 py-2 border border-gray-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" rows="2" placeholder="Any specific details about this symptom..."></textarea>
+                            </div>
+                        `;
+                        
+                        symptomsDetails.appendChild(symptomDetail);
+                    });
+                } else {
+                    noSymptomsMessage.style.display = 'block';
+                    symptomsDetails.innerHTML = '';
+                }
+            }
+            
+            // Custom checkboxes
+            const customCheckboxes = document.querySelectorAll('.custom-checkbox');
+            
+            customCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                });
+            });
+            
+            // Allergies radio buttons
+            const allergiesYes = document.getElementById('allergies-yes');
+            const allergiesNo = document.getElementById('allergies-no');
+            const allergiesContainer = document.getElementById('allergies-container');
+            
+            allergiesYes.addEventListener('change', function() {
+                if (this.checked) {
+                    allergiesContainer.classList.remove('hidden');
+                }
+            });
+            
+            allergiesNo.addEventListener('change', function() {
+                if (this.checked) {
+                    allergiesContainer.classList.add('hidden');
+                }
+            });
+            
+            // Medications radio buttons
+            const medicationsYes = document.getElementById('medications-yes');
+            const medicationsNo = document.getElementById('medications-no');
+            const medicationsContainer = document.getElementById('medications-container');
+            
+            medicationsYes.addEventListener('change', function() {
+                if (this.checked) {
+                    medicationsContainer.classList.remove('hidden');
+                }
+            });
+            
+            medicationsNo.addEventListener('change', function() {
+                if (this.checked) {
+                    medicationsContainer.classList.add('hidden');
+                }
+            });
+            
+            // Allergy tags selection
+            const allergyTags = document.querySelectorAll('#allergies-container .symptom-tag');
+            
+            allergyTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967b2bfa40383fba',t:'MTc1Mzk0NDczNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
