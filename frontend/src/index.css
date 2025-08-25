@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.btn {
+  @apply px-4 py-2 rounded font-medium transition duration-200;
+}
+
+.btn-primary {
+  @apply bg-red-700 text-white hover:bg-red-800;
+}
+
+.btn-outline {
+  @apply border border-gray-800 text-gray-800 hover:bg-gray-100;
+}
+
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-red-700;
+}
+
+.card {
+  @apply bg-white p-6 rounded shadow-md;
+}
