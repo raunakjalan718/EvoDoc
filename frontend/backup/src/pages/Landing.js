@@ -1,60 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import DOTS from 'vantajs/dist/vanta.dots.min';
+import DOTS from 'vanta/dist/vanta.dots.min'; // Corrected import path
 import * as THREE from 'three';
 
 const Landing = () => {
   const [vantaEffect, setVantaEffect] = useState(null);
   const vantaRef = useRef(null);
-  
+
   useEffect(() => {
-    // Load three.js script
-    const threeScript = document.createElement('script');
-    threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
-    document.body.appendChild(threeScript);
-    
-    // Load vanta script
-    const vantaScript = document.createElement('script');
-    vantaScript.src = 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js';
-    document.body.appendChild(vantaScript);
-    
-    vantaScript.onload = () => {
-      if (!vantaEffect && vantaRef.current) {
-        setVantaEffect(
-          DOTS({
-            el: vantaRef.current,
-            THREE: THREE,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: '#e53e3e',
-            color2: '#ffffff',
-            backgroundColor: '#ffffff',
-            size: 3.00,
-            spacing: 30.00,
-            showLines: false
-          })
-        );
-      }
-    };
-    
+    // Initialize Vanta effect only if it hasn't been created yet
+    if (!vantaEffect && vantaRef.current) {
+      setVantaEffect(
+        DOTS({
+          el: vantaRef.current,
+          THREE: THREE, // Pass the imported THREE object
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: '#e53e3e',
+          color2: '#ffffff',
+          backgroundColor: '#ffffff',
+          size: 3.00,
+          spacing: 30.00,
+          showLines: false
+        })
+      );
+    }
+
+    // Cleanup function to destroy the Vanta effect when the component unmounts
     return () => {
       if (vantaEffect) vantaEffect.destroy();
-      document.body.removeChild(threeScript);
-      document.body.removeChild(vantaScript);
     };
-  }, [vantaEffect]);
+  }, [vantaEffect]); // Dependency array ensures this runs only when vantaEffect changes
 
   return (
+    // Make sure the ref is attached to the element you want the background on
     <div className="relative min-h-screen" ref={vantaRef}>
-      {/* Background will be applied to this div by Vanta */}
       
-      {/* Hero Section */}
-      <div className="container mx-auto px-6 pt-24 pb-12">
+      {/* Hero Section (Your content goes here, inside the main div) */}
+      <div className="relative z-10 container mx-auto px-6 pt-24 pb-12"> {/* Added z-10 to ensure content is on top */}
         <div className="flex flex-col lg:flex-row items-center mt-16">
           {/* Left Column - Text */}
           <div className="w-full lg:w-1/2 mb-10 lg:mb-0">

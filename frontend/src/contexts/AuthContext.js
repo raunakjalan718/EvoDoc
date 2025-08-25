@@ -1,112 +1,103 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
-// Define API URL
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1';
-
-// Create a basic API service inline (to avoid the module not found error)
-const authAPI = {
-  login: (username, password) => 
-    axios.post(`${API_URL}/token/`, { username, password }),
-  
-  register: (userData) => 
-    axios.post(`${API_URL}/register/`, userData),
-  
-  getCurrentUser: () => {
-    const token = localStorage.getItem('token');
-    return axios.get(`${API_URL}/users/me/`, {
-      headers: { Authorization: `Bearer ${token}` }
-    });
-  }
-};
-
+// Create context
 const AuthContext = createContext();
 
+// Auth provider component
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  // Check if we have a token on mount
+  
+  // Mock function to check if user is logged in (replace with actual API calls)
   useEffect(() => {
     const checkLoggedIn = async () => {
       try {
+        // Check if token exists in local storage
         const token = localStorage.getItem('token');
+        
         if (token) {
-          // Check if token is expired
-          const decoded = jwtDecode(token);
-          const currentTime = Date.now() / 1000;
-          if (decoded.exp < currentTime) {
-            localStorage.removeItem('token');
-            localStorage.removeItem('refreshToken');
-            setCurrentUser(null);
-          } else {
-            const response = await authAPI.getCurrentUser();
-            setCurrentUser(response.data);
-          }
+          // In a real app, you would verify the token with your backend
+          // Mock user data for demo purposes
+          const storedUser = JSON.parse(localStorage.getItem('user'));
+          setCurrentUser(storedUser);
         }
-      } catch (err) {
-        console.error("Authentication error:", err);
+      } catch (error) {
+        console.error('Authentication error:', error);
         localStorage.removeItem('token');
-        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('user');
       } finally {
         setLoading(false);
       }
     };
-
+    
     checkLoggedIn();
   }, []);
-
-  const login = async (username, password) => {
-    try {
-      setError(null);
-      const response = await authAPI.login(username, password);
-      localStorage.setItem('token', response.data.access);
-      localStorage.setItem('refreshToken', response.data.refresh);
-      
-      // Get user details
-      const userResponse = await authAPI.getCurrentUser();
-      setCurrentUser(userResponse.data);
-      return userResponse.data;
-    } catch (err) {
-      setError(err.response?.data?.detail || 'Login failed');
-      throw err;
-    }
+  
+  // Mock login function
+  const login = async (email, password, role = null) => {
+    // In a real app, you'd make an API call to your backend
+    // Simulating a successful login for demo
+    const mockUser = {
+      id: '123',
+      name: role === 'doctor' ? 'Dr. Sarah Johnson' : (role === 'admin' ? 'Admin User' : 'John Doe'),
+      email: email,
+      role: role || 'patient', // Default to patient
+      profileImage: null
+    };
+    
+    // Store token and user in local storage
+    localStorage.setItem('token', 'mock-jwt-token');
+    localStorage.setItem('user', JSON.stringify(mockUser));
+    
+    setCurrentUser(mockUser);
+    return mockUser;
   };
-
+  
+  // Mock registration function
   const register = async (userData) => {
-    try {
-      setError(null);
-      await authAPI.register(userData);
-      return await login(userData.username, userData.password);
-    } catch (err) {
-      setError(err.response?.data || 'Registration failed');
-      throw err;
-    }
+    // In a real app, you'd make an API call to your backend
+    // Simulating a successful registration for demo
+    const mockUser = {
+      id: '123',
+      name: userData.name || 'New User',
+      email: userData.email,
+      role: userData.role || 'patient', // Default to patient
+      profileImage: null
+    };
+    
+    // Store token and user in local storage
+    localStorage.setItem('token', 'mock-jwt-token');
+    localStorage.setItem('user', JSON.stringify(mockUser));
+    
+    setCurrentUser(mockUser);
+    return mockUser;
   };
-
+  
+  // Logout function
   const logout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('user');
     setCurrentUser(null);
   };
-
+  
+  // Context value
+  const value = {
+    currentUser,
+    loading,
+    login,
+    register,
+    logout,
+    isAuthenticated: !!currentUser
+  };
+  
   return (
-    <AuthContext.Provider value={{
-      currentUser,
-      loading,
-      error,
-      login,
-      register,
-      logout,
-      isAuthenticated: !!currentUser,
-      isPatient: currentUser?.user_type === 'patient',
-      isDoctor: currentUser?.user_type === 'doctor',
-    }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+// Custom hook to use the auth context
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
