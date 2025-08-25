@@ -1,68 +1,128 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
+import { AuthProvider } from './contexts/AuthContext';
 
-// Import components
-import Navbar from './components/core/Navbar';
+// Public pages
+import Landing from './pages/public/Landing';
+import Login from './pages/public/Login';
+import Register from './pages/public/Register';
+import NotFound from './pages/public/NotFound';
 
-// Import pages
-import Landing from './pages/Landing';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import NotFound from './pages/NotFound';
+// Patient pages
+import PatientDashboard from './pages/patient/Dashboard';
+import PatientTreatments from './pages/patient/Treatments';
+import PatientProfile from './pages/patient/Profile';
+
+// Doctor pages
+import DoctorDashboard from './pages/doctor/Dashboard';
+import DoctorPatients from './pages/doctor/Patients';
+import DoctorPrescribe from './pages/doctor/Prescribe';
+
+// Admin pages
+import AdminDashboard from './pages/admin/Dashboard';
 
 // Protected route component
-const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated, loading } = useAuth();
-  
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin-slow w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full"></div>
-      </div>
-    );
-  }
+const ProtectedRoute = ({ children, requiredRole }) => {
+  // In a real app, you would check if the user is authenticated
+  // and has the required role
+  const isAuthenticated = localStorage.getItem('token');
+  const userRole = localStorage.getItem('userRole');
   
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
   
+  if (requiredRole && userRole !== requiredRole) {
+    return <Navigate to="/" />;
+  }
+  
   return children;
 };
 
-// Main App component
-const AppContent = () => {
-  return (
-    <Router>
-      <Navbar />
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route 
-            path="/dashboard" 
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } 
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </AnimatePresence>
-    </Router>
-  );
-};
-
-const App = () => {
+function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <Router>
+        <Navbar />
+        <main className="app-main">
+          <Routes>
+            {/* Public routes */}
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            
+            {/* Patient routes */}
+            <Route 
+              path="/patient/dashboard" 
+              element={
+                <ProtectedRoute requiredRole="patient">
+                  <PatientDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/patient/treatments" 
+              element={
+                <ProtectedRoute requiredRole="patient">
+                  <PatientTreatments />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/patient/profile" 
+              element={
+                <ProtectedRoute requiredRole="patient">
+                  <PatientProfile />
+                </ProtectedRoute>
+              } 
+            />
+            
+            {/* Doctor routes */}
+            <Route 
+              path="/doctor/dashboard" 
+              element={
+                <ProtectedRoute requiredRole="doctor">
+                  <DoctorDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/doctor/patients" 
+              element={
+                <ProtectedRoute requiredRole="doctor">
+                  <DoctorPatients />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/doctor/prescribe" 
+              element={
+                <ProtectedRoute requiredRole="doctor">
+                  <DoctorPrescribe />
+                </ProtectedRoute>
+              } 
+            />
+            
+            {/* Admin routes */}
+            <Route 
+              path="/admin/dashboard" 
+              element={
+                <ProtectedRoute requiredRole="admin">
+                  <AdminDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            
+            {/* 404 route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
     </AuthProvider>
   );
-};
+}
 
 export default App;
