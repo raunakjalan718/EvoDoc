@@ -1,0 +1,196 @@
+id,appointment_id,doctor_id,medication_id,dosage,frequency,instructions,start_date,end_date,created_at
+1,1,2,2,80 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-06,2025-08-28T12:00:06.954292
+2,1,2,1,40 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.954292
+3,1,2,5,500 mg,as needed,Take in the morning,2025-08-28,2025-09-04,2025-08-28T12:00:06.954292
+4,3,2,2,80 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-04,2025-08-28T12:00:06.492792
+5,4,4,4,500 mg,twice daily,Take in the morning,2025-08-28,2025-09-08,2025-08-28T12:00:06.449444
+6,4,4,9,40 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-06,2025-08-28T12:00:06.449444
+7,4,4,7,200 mcg,four times daily,Take before bedtime,2025-08-28,2025-09-08,2025-08-28T12:00:06.449444
+8,5,9,4,500 mg,three times daily,Take with food,2025-08-28,2025-09-05,2025-08-28T12:00:06.993884
+9,7,7,2,80 mg,three times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.051875
+10,7,7,6,Standard dose,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.051875
+11,8,2,2,80 mg,as needed,Take before bedtime,2025-08-28,2025-09-09,2025-08-28T12:00:06.980954
+12,8,2,7,200 mcg,as needed,Take on an empty stomach,2025-08-28,2025-09-05,2025-08-28T12:00:06.980954
+13,8,2,10,800 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.980954
+14,11,9,2,80 mg,once daily,Take in the morning,2025-08-28,2025-09-08,2025-08-28T12:00:06.170442
+15,11,9,4,500 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.170442
+16,16,3,6,Standard dose,three times daily,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.399638
+17,24,8,2,80 mg,twice daily,Take in the morning,2025-08-28,2025-09-10,2025-08-28T12:00:06.690630
+18,24,8,3,2000 mg,three times daily,Drink plenty of water with this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.690630
+19,24,8,4,500 mg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.690630
+20,25,9,1,40 mg,three times daily,Take in the morning,2025-08-28,2025-09-08,2025-08-28T12:00:06.957640
+21,27,8,4,500 mg,as needed,Drink plenty of water with this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.143040
+22,29,10,8,10 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.292913
+23,32,2,5,500 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.035143
+24,36,3,10,800 mg,three times daily,Take on an empty stomach,2025-08-28,2025-09-06,2025-08-28T12:00:06.029038
+25,36,3,7,200 mcg,as needed,Take in the morning,2025-08-28,2025-09-05,2025-08-28T12:00:06.029038
+26,36,3,9,40 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-05,2025-08-28T12:00:06.029038
+27,37,1,3,2000 mg,four times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.749558
+28,38,5,7,200 mcg,as needed,Take before bedtime,2025-08-28,2025-09-04,2025-08-28T12:00:06.139105
+29,38,5,8,10 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.139105
+30,39,2,6,Standard dose,four times daily,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.788727
+31,39,2,2,80 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.788727
+32,39,2,5,500 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-06,2025-08-28T12:00:06.788727
+33,40,3,2,80 mg,twice daily,Take before bedtime,2025-08-28,2025-09-06,2025-08-28T12:00:06.421902
+34,40,3,5,500 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.421902
+35,40,3,4,500 mg,as needed,Take before bedtime,2025-08-28,2025-09-11,2025-08-28T12:00:06.421902
+36,41,3,2,80 mg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-08,2025-08-28T12:00:06.163361
+37,43,6,1,40 mg,twice daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.221913
+38,44,4,8,10 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-06,2025-08-28T12:00:06.640891
+39,45,4,8,10 mg,as needed,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.420095
+40,46,4,10,800 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-07,2025-08-28T12:00:06.801200
+41,46,4,7,200 mcg,three times daily,Take in the morning,2025-08-28,2025-09-09,2025-08-28T12:00:06.801200
+42,46,4,4,500 mg,four times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.801200
+43,47,2,4,500 mg,twice daily,Take with food,2025-08-28,2025-09-09,2025-08-28T12:00:06.234612
+44,49,8,10,800 mg,as needed,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.927827
+45,50,4,2,80 mg,once daily,Take on an empty stomach,2025-08-28,2025-09-05,2025-08-28T12:00:06.999764
+46,51,7,6,Standard dose,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.384191
+47,52,2,8,10 mg,as needed,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.547365
+48,52,2,4,500 mg,twice daily,Continue until prescription is finished,2025-08-28,2025-09-11,2025-08-28T12:00:06.547365
+49,53,4,4,500 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.952095
+50,53,4,2,80 mg,three times daily,Take in the morning,2025-08-28,2025-09-10,2025-08-28T12:00:06.952095
+51,54,7,1,40 mg,once daily,Take in the morning,2025-08-28,2025-09-09,2025-08-28T12:00:06.711367
+52,54,7,2,80 mg,once daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.711367
+53,55,9,9,40 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-10,2025-08-28T12:00:06.523304
+54,57,8,5,500 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-05,2025-08-28T12:00:06.300885
+55,60,8,9,40 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.801626
+56,60,8,2,80 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-07,2025-08-28T12:00:06.801626
+57,61,9,7,200 mcg,four times daily,Take in the morning,2025-08-28,2025-09-07,2025-08-28T12:00:06.167403
+58,63,3,1,40 mg,four times daily,Take with food,2025-08-28,2025-09-10,2025-08-28T12:00:06.614783
+59,63,3,3,2000 mg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-11,2025-08-28T12:00:06.614783
+60,64,10,7,200 mcg,four times daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.484591
+61,64,10,9,40 mg,three times daily,Take on an empty stomach,2025-08-28,2025-09-04,2025-08-28T12:00:06.484591
+62,65,10,9,40 mg,once daily,Take with food,2025-08-28,2025-09-11,2025-08-28T12:00:06.991800
+63,65,10,1,40 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-06,2025-08-28T12:00:06.991800
+64,65,10,6,Standard dose,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.991800
+65,68,4,2,80 mg,as needed,Take with food,2025-08-28,2025-09-07,2025-08-28T12:00:06.969882
+66,69,8,2,80 mg,as needed,Avoid alcohol while taking this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.868067
+67,69,8,4,500 mg,as needed,Take with food,2025-08-28,2025-09-10,2025-08-28T12:00:06.868067
+68,71,2,10,800 mg,three times daily,Take on an empty stomach,2025-08-28,2025-09-09,2025-08-28T12:00:06.493790
+69,71,2,9,40 mg,twice daily,Take before bedtime,2025-08-28,2025-09-10,2025-08-28T12:00:06.493790
+70,71,2,6,Standard dose,twice daily,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.493790
+71,73,5,6,Standard dose,once daily,Take in the morning,2025-08-28,2025-09-05,2025-08-28T12:00:06.172162
+72,73,5,2,80 mg,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.172162
+73,74,9,5,500 mg,once daily,Take on an empty stomach,2025-08-28,2025-09-09,2025-08-28T12:00:06.019202
+74,74,9,3,2000 mg,three times daily,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.019202
+75,74,9,6,Standard dose,as needed,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.019202
+76,77,5,9,40 mg,once daily,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.647099
+77,77,5,1,40 mg,once daily,Take with food,2025-08-28,2025-09-06,2025-08-28T12:00:06.647099
+78,77,5,5,500 mg,three times daily,Take before bedtime,2025-08-28,2025-09-07,2025-08-28T12:00:06.647099
+79,78,5,6,Standard dose,as needed,Take in the morning,2025-08-28,2025-09-08,2025-08-28T12:00:06.432752
+80,78,5,4,500 mg,once daily,Take with food,2025-08-28,2025-09-10,2025-08-28T12:00:06.432752
+81,78,5,5,500 mg,three times daily,Take with food,2025-08-28,2025-09-04,2025-08-28T12:00:06.432752
+82,81,8,3,2000 mg,twice daily,Drink plenty of water with this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.774483
+83,81,8,5,500 mg,as needed,Drink plenty of water with this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.774483
+84,83,6,1,40 mg,twice daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.739706
+85,83,6,2,80 mg,three times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-06,2025-08-28T12:00:06.739706
+86,83,6,9,40 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-04,2025-08-28T12:00:06.739706
+87,90,4,6,Standard dose,three times daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.964264
+88,90,4,1,40 mg,once daily,Take before bedtime,2025-08-28,2025-09-10,2025-08-28T12:00:06.964264
+89,94,4,3,2000 mg,twice daily,Take in the morning,2025-08-28,2025-09-04,2025-08-28T12:00:06.689524
+90,94,4,4,500 mg,twice daily,Drink plenty of water with this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.689524
+91,94,4,10,800 mg,four times daily,Continue until prescription is finished,2025-08-28,2025-09-07,2025-08-28T12:00:06.689524
+92,99,10,3,2000 mg,four times daily,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.796688
+93,99,10,2,80 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.796688
+94,101,10,6,Standard dose,twice daily,Take on an empty stomach,2025-08-28,2025-09-04,2025-08-28T12:00:06.497995
+95,101,10,5,500 mg,twice daily,Take in the morning,2025-08-28,2025-09-09,2025-08-28T12:00:06.497995
+96,105,5,2,80 mg,three times daily,Drink plenty of water with this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.189391
+97,105,5,5,500 mg,as needed,Take before bedtime,2025-08-28,2025-09-04,2025-08-28T12:00:06.189391
+98,107,3,5,500 mg,twice daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.089321
+99,109,7,2,80 mg,as needed,Take in the morning,2025-08-28,2025-09-09,2025-08-28T12:00:06.705753
+100,110,4,6,Standard dose,four times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.205332
+101,110,4,7,200 mcg,three times daily,Take with food,2025-08-28,2025-09-10,2025-08-28T12:00:06.205332
+102,110,4,2,80 mg,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.205332
+103,111,8,7,200 mcg,three times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.128860
+104,111,8,2,80 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.128860
+105,113,10,5,500 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.019656
+106,113,10,7,200 mcg,as needed,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.019656
+107,113,10,6,Standard dose,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.019656
+108,114,5,3,2000 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.150027
+109,114,5,5,500 mg,three times daily,Take before bedtime,2025-08-28,2025-09-07,2025-08-28T12:00:06.150027
+110,114,5,7,200 mcg,four times daily,Continue until prescription is finished,2025-08-28,2025-09-09,2025-08-28T12:00:06.150027
+111,115,1,8,10 mg,twice daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.127497
+112,115,1,10,800 mg,twice daily,Drink plenty of water with this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.127497
+113,118,7,9,40 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-07,2025-08-28T12:00:06.749640
+114,118,7,6,Standard dose,three times daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.749640
+115,120,9,1,40 mg,once daily,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.681909
+116,125,8,2,80 mg,as needed,Take on an empty stomach,2025-08-28,2025-09-10,2025-08-28T12:00:06.626579
+117,125,8,8,10 mg,four times daily,Take in the morning,2025-08-28,2025-09-07,2025-08-28T12:00:06.626579
+118,125,8,7,200 mcg,twice daily,Drink plenty of water with this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.626579
+119,127,8,7,200 mcg,twice daily,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.156239
+120,128,6,9,40 mg,twice daily,Continue until prescription is finished,2025-08-28,2025-09-05,2025-08-28T12:00:06.854453
+121,129,4,3,2000 mg,as needed,Avoid alcohol while taking this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.830186
+122,129,4,8,10 mg,four times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.830186
+123,130,7,8,10 mg,four times daily,Take before bedtime,2025-08-28,2025-09-07,2025-08-28T12:00:06.437415
+124,130,7,3,2000 mg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-11,2025-08-28T12:00:06.437415
+125,130,7,10,800 mg,twice daily,Take before bedtime,2025-08-28,2025-09-11,2025-08-28T12:00:06.437415
+126,136,8,5,500 mg,twice daily,Take before bedtime,2025-08-28,2025-09-09,2025-08-28T12:00:06.960365
+127,137,7,9,40 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.012914
+128,137,7,2,80 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-06,2025-08-28T12:00:06.012914
+129,141,7,4,500 mg,four times daily,Take before bedtime,2025-08-28,2025-09-11,2025-08-28T12:00:06.689262
+130,141,7,2,80 mg,four times daily,Take with food,2025-08-28,2025-09-07,2025-08-28T12:00:06.689262
+131,141,7,7,200 mcg,four times daily,Take in the morning,2025-08-28,2025-09-04,2025-08-28T12:00:06.689262
+132,142,5,7,200 mcg,three times daily,Take before bedtime,2025-08-28,2025-09-10,2025-08-28T12:00:06.334267
+133,142,5,8,10 mg,four times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.334267
+134,142,5,1,40 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.334267
+135,144,7,8,10 mg,four times daily,Take before bedtime,2025-08-28,2025-09-10,2025-08-28T12:00:06.741965
+136,144,7,1,40 mg,twice daily,Continue until prescription is finished,2025-08-28,2025-09-11,2025-08-28T12:00:06.741965
+137,148,10,10,800 mg,as needed,Take with food,2025-08-28,2025-09-10,2025-08-28T12:00:06.946852
+138,149,4,10,800 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.417245
+139,149,4,1,40 mg,twice daily,Take with food,2025-08-28,2025-09-08,2025-08-28T12:00:06.417245
+140,149,4,2,80 mg,four times daily,Take before bedtime,2025-08-28,2025-09-07,2025-08-28T12:00:06.417245
+141,153,4,6,Standard dose,four times daily,Take before bedtime,2025-08-28,2025-09-10,2025-08-28T12:00:06.457825
+142,153,4,10,800 mg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-05,2025-08-28T12:00:06.457825
+143,156,1,1,40 mg,once daily,Take before bedtime,2025-08-28,2025-09-07,2025-08-28T12:00:06.818631
+144,156,1,9,40 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.818631
+145,157,2,4,500 mg,twice daily,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.666112
+146,158,2,3,2000 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.259099
+147,158,2,4,500 mg,as needed,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.259099
+148,158,2,10,800 mg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-09,2025-08-28T12:00:06.259099
+149,159,3,10,800 mg,as needed,Drink plenty of water with this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.921256
+150,162,5,5,500 mg,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.459917
+151,163,8,10,800 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.074499
+152,163,8,7,200 mcg,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.074499
+153,164,7,5,500 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-05,2025-08-28T12:00:06.772763
+154,165,8,1,40 mg,three times daily,Take with food,2025-08-28,2025-09-09,2025-08-28T12:00:06.119093
+155,165,8,6,Standard dose,once daily,Continue until prescription is finished,2025-08-28,2025-09-10,2025-08-28T12:00:06.119093
+156,165,8,7,200 mcg,four times daily,Take with food,2025-08-28,2025-09-10,2025-08-28T12:00:06.119093
+157,168,7,8,10 mg,four times daily,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.059167
+158,168,7,3,2000 mg,as needed,Continue until prescription is finished,2025-08-28,2025-09-11,2025-08-28T12:00:06.059167
+159,169,8,7,200 mcg,three times daily,Continue until prescription is finished,2025-08-28,2025-09-07,2025-08-28T12:00:06.755696
+160,169,8,5,500 mg,once daily,Take before bedtime,2025-08-28,2025-09-11,2025-08-28T12:00:06.755696
+161,170,4,8,10 mg,as needed,Avoid alcohol while taking this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.860088
+162,171,6,1,40 mg,three times daily,Take on an empty stomach,2025-08-28,2025-09-11,2025-08-28T12:00:06.610955
+163,171,6,8,10 mg,twice daily,Take before bedtime,2025-08-28,2025-09-08,2025-08-28T12:00:06.610955
+164,172,9,5,500 mg,as needed,Take with food,2025-08-28,2025-09-07,2025-08-28T12:00:06.659523
+165,172,9,10,800 mg,once daily,Take on an empty stomach,2025-08-28,2025-09-10,2025-08-28T12:00:06.659523
+166,173,5,9,40 mg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.884592
+167,173,5,4,500 mg,four times daily,Continue until prescription is finished,2025-08-28,2025-09-04,2025-08-28T12:00:06.884592
+168,174,6,5,500 mg,twice daily,Take in the morning,2025-08-28,2025-09-07,2025-08-28T12:00:06.378357
+169,177,4,10,800 mg,four times daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.858238
+170,177,4,6,Standard dose,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-09,2025-08-28T12:00:06.858238
+171,180,8,8,10 mg,three times daily,Take before bedtime,2025-08-28,2025-09-07,2025-08-28T12:00:06.318494
+172,180,8,5,500 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-07,2025-08-28T12:00:06.318494
+173,181,8,2,80 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-07,2025-08-28T12:00:06.214987
+174,181,8,9,40 mg,four times daily,Take before bedtime,2025-08-28,2025-09-08,2025-08-28T12:00:06.214987
+175,183,7,4,500 mg,three times daily,Take on an empty stomach,2025-08-28,2025-09-09,2025-08-28T12:00:06.898921
+176,185,4,5,500 mg,once daily,Drink plenty of water with this medication,2025-08-28,2025-09-06,2025-08-28T12:00:06.608183
+177,186,10,1,40 mg,as needed,Take before bedtime,2025-08-28,2025-09-06,2025-08-28T12:00:06.241012
+178,186,10,10,800 mg,four times daily,Take with food,2025-08-28,2025-09-04,2025-08-28T12:00:06.241012
+179,187,8,5,500 mg,four times daily,Take before bedtime,2025-08-28,2025-09-06,2025-08-28T12:00:06.232996
+180,187,8,8,10 mg,once daily,Take before bedtime,2025-08-28,2025-09-11,2025-08-28T12:00:06.232996
+181,187,8,9,40 mg,once daily,Continue until prescription is finished,2025-08-28,2025-09-05,2025-08-28T12:00:06.232996
+182,188,5,8,10 mg,as needed,Drink plenty of water with this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.039556
+183,188,5,2,80 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-08,2025-08-28T12:00:06.039556
+184,189,4,4,500 mg,once daily,Avoid alcohol while taking this medication,2025-08-28,2025-09-10,2025-08-28T12:00:06.103418
+185,190,9,10,800 mg,four times daily,Take in the morning,2025-08-28,2025-09-08,2025-08-28T12:00:06.641519
+186,190,9,4,500 mg,as needed,Take in the morning,2025-08-28,2025-09-08,2025-08-28T12:00:06.641519
+187,190,9,7,200 mcg,as needed,Avoid alcohol while taking this medication,2025-08-28,2025-09-04,2025-08-28T12:00:06.641519
+188,191,10,2,80 mg,three times daily,Drink plenty of water with this medication,2025-08-28,2025-09-05,2025-08-28T12:00:06.905326
+189,191,10,4,500 mg,twice daily,Take on an empty stomach,2025-08-28,2025-09-06,2025-08-28T12:00:06.905326
+190,191,10,9,40 mg,as needed,Take with food,2025-08-28,2025-09-06,2025-08-28T12:00:06.905326
+191,195,7,7,200 mcg,four times daily,Drink plenty of water with this medication,2025-08-28,2025-09-11,2025-08-28T12:00:06.168700
+192,200,5,1,40 mg,three times daily,Drink plenty of water with this medication,2025-08-28,2025-09-08,2025-08-28T12:00:06.214820
+193,200,5,4,500 mg,four times daily,Take with food,2025-08-28,2025-09-07,2025-08-28T12:00:06.214820
+194,202,10,10,800 mg,four times daily,Take with food,2025-08-28,2025-09-07,2025-08-28T12:00:06.361276
+195,202,10,4,500 mg,twice daily,Take before bedtime,2025-08-28,2025-09-06,2025-08-28T12:00:06.361276

@@ -1,0 +1,11 @@
+id,name,description
+1,Penicillin,Allergy to penicillin-based antibiotics
+2,Sulfa drugs,Allergy to sulfonamide medications
+3,Aspirin,Allergy to aspirin and related compounds
+4,NSAIDs,Allergy to non-steroidal anti-inflammatory drugs
+5,Shellfish,Allergy to shellfish proteins
+6,Nuts,Allergy to tree nuts or peanuts
+7,Latex,Allergy to latex rubber proteins
+8,Contrast Dye,Allergy to radiographic contrast materials
+9,Eggs,Allergy to egg proteins
+10,Dairy,Allergy or intolerance to dairy products

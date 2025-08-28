@@ -1,0 +1,42 @@
+id,medication_id,name,description,frequency,severity
+1,1,Dry cough,Common side effect of medication,0.15,3
+2,1,Dizziness,Common side effect of medication,0.08,4
+3,1,Headache,Common side effect of medication,0.05,2
+4,1,Hyperkalemia,Common side effect of medication,0.02,6
+5,2,Muscle pain,Common side effect of medication,0.1,4
+6,2,Liver enzyme elevation,Common side effect of medication,0.03,5
+7,2,Headache,Common side effect of medication,0.05,2
+8,2,Insomnia,Common side effect of medication,0.02,3
+9,3,Diarrhea,Common side effect of medication,0.2,3
+10,3,Nausea,Common side effect of medication,0.15,3
+11,3,Vitamin B12 deficiency,Common side effect of medication,0.04,4
+12,3,Metallic taste,Common side effect of medication,0.08,2
+13,4,Diarrhea,Common side effect of medication,0.12,3
+14,4,Rash,Common side effect of medication,0.08,4
+15,4,Nausea,Common side effect of medication,0.06,2
+16,4,Candidiasis,Common side effect of medication,0.03,4
+17,5,Diarrhea,Common side effect of medication,0.1,3
+18,5,Nausea,Common side effect of medication,0.07,2
+19,5,QT prolongation,Common side effect of medication,0.01,7
+20,5,Abdominal pain,Common side effect of medication,0.05,3
+21,6,Tremor,Common side effect of medication,0.15,3
+22,6,Tachycardia,Common side effect of medication,0.08,4
+23,6,Headache,Common side effect of medication,0.06,2
+24,6,Nervousness,Common side effect of medication,0.12,3
+25,7,Palpitations,Common side effect of medication,0.04,4
+26,7,Insomnia,Common side effect of medication,0.03,3
+27,7,Weight loss,Common side effect of medication,0.03,2
+28,7,Anxiety,Common side effect of medication,0.05,3
+29,8,Peripheral edema,Common side effect of medication,0.12,3
+30,8,Headache,Common side effect of medication,0.06,2
+31,8,Dizziness,Common side effect of medication,0.04,3
+32,8,Flushing,Common side effect of medication,0.08,2
+33,9,Headache,Common side effect of medication,0.07,2
+34,9,Diarrhea,Common side effect of medication,0.06,3
+35,9,Vitamin B12 deficiency,Common side effect of medication,0.03,4
+36,9,Increased fracture risk,Common side effect of medication,0.02,5
+37,10,Stomach pain,Common side effect of medication,0.1,4
+38,10,Heartburn,Common side effect of medication,0.12,3
+39,10,Dizziness,Common side effect of medication,0.05,3
+40,10,Edema,Common side effect of medication,0.04,4
+41,10,GI bleeding,Common side effect of medication,0.01,8

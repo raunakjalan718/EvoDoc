@@ -1,0 +1,11 @@
+id,name,description,typical_dosage
+1,Lisinopril,ACE inhibitor for hypertension,10-40mg daily
+2,Atorvastatin,Statin for cholesterol reduction,10-80mg daily
+3,Metformin,First-line medication for type 2 diabetes,500-2000mg daily
+4,Amoxicillin,Penicillin antibiotic,250-500mg three times daily
+5,Azithromycin,Macrolide antibiotic,"500mg on day 1, then 250mg daily"
+6,Albuterol,Bronchodilator for asthma,1-2 puffs every 4-6 hours as needed
+7,Levothyroxine,Thyroid hormone replacement,25-200mcg daily
+8,Amlodipine,Calcium channel blocker for hypertension,5-10mg daily
+9,Omeprazole,Proton pump inhibitor for acid reflux,20-40mg daily
+10,Ibuprofen,NSAID for pain and inflammation,200-800mg every 4-6 hours

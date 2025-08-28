@@ -1,0 +1,38 @@
+# Data processing
+pandas==2.0.0
+numpy==1.23.5
+scikit-learn==1.2.2
+xgboost==1.7.5
+matplotlib==3.7.1
+seaborn==0.12.2
+
+# Machine learning frameworks
+torch==2.0.1
+transformers==4.29.0
+
+# Database
+sqlalchemy==2.0.9
+psycopg2-binary==2.9.6
+
+# API
+fastapi==0.95.1
+uvicorn==0.22.0
+pydantic==1.10.7
+
+# Data generation and testing
+faker==18.4.0
+pytest==7.3.1
+
+# Utilities
+python-dotenv==1.0.0
+jupyter==1.0.0
+requests==2.28.2
+tqdm==4.65.0
+
+# Document processing
+pypdf2==3.0.1
+
+# JWT Authentication
+python-jose==3.3.0
+passlib==1.7.4
+bcrypt==4.0.1
