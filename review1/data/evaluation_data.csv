@@ -1,0 +1,1581 @@
+subject_id,diagnosis,medication,effectiveness,gender,age
+1000,Allergic Rhinitis,Cetirizine,8,M,18
+1000,Allergic Rhinitis,Fluticasone,8,M,18
+1000,Allergic Rhinitis,Ciprofloxacin,1,M,18
+1000,Allergic Rhinitis,Hydrochlorothiazide,1,M,18
+1001,Migraine,Sumatriptan,8,F,33
+1001,Migraine,Topiramate,8,F,33
+1001,Migraine,Albuterol,1,F,33
+1001,Migraine,Lisinopril,1,F,33
+1001,Hypertension,Lisinopril,8,F,33
+1001,Hypertension,Amlodipine,9,F,33
+1001,Hypertension,Fluticasone,3,F,33
+1001,Hypertension,Topiramate,2,F,33
+1001,Asthma,Albuterol,8,F,33
+1001,Asthma,Fluticasone,8,F,33
+1001,Asthma,Trimethoprim,2,F,33
+1001,Asthma,Amlodipine,1,F,33
+1002,Urinary Tract Infection,Nitrofurantoin,7,M,41
+1002,Urinary Tract Infection,Ciprofloxacin,8,M,41
+1002,Urinary Tract Infection,Ibuprofen,3,M,41
+1002,Urinary Tract Infection,Acetaminophen,2,M,41
+1002,Pneumonia,Azithromycin,8,M,41
+1002,Pneumonia,Amoxicillin,9,M,41
+1002,Pneumonia,Budesonide,1,M,41
+1002,Pneumonia,Ibuprofen,1,M,41
+1002,Influenza,Oseltamivir,7,M,41
+1002,Influenza,Acetaminophen,6,M,41
+1002,Influenza,Nitrofurantoin,1,M,41
+1002,Influenza,Sumatriptan,1,M,41
+1003,Gastroenteritis,Ondansetron,9,M,27
+1003,Gastroenteritis,Loperamide,8,M,27
+1003,Gastroenteritis,Amlodipine,4,M,27
+1003,Gastroenteritis,Doxycycline,2,M,27
+1003,Depression,Sertraline,8,M,27
+1003,Depression,Escitalopram,8,M,27
+1003,Depression,Propranolol,3,M,27
+1003,Depression,Tiotropium,1,M,27
+1004,Hypertension,Lisinopril,8,F,39
+1004,Hypertension,Amlodipine,7,F,39
+1004,Hypertension,Fluticasone,2,F,39
+1004,Hypertension,Topiramate,1,F,39
+1004,Gastroenteritis,Ondansetron,8,F,39
+1004,Gastroenteritis,Loperamide,6,F,39
+1004,Gastroenteritis,Amlodipine,1,F,39
+1004,Gastroenteritis,Doxycycline,1,F,39
+1004,Depression,Sertraline,8,F,39
+1004,Depression,Escitalopram,8,F,39
+1004,Depression,Propranolol,2,F,39
+1004,Depression,Tiotropium,2,F,39
+1005,Bronchitis,Azithromycin,10,F,35
+1005,Bronchitis,Amoxicillin,7,F,35
+1005,Bronchitis,Metformin,1,F,35
+1005,Bronchitis,Nitrofurantoin,1,F,35
+1006,Pneumonia,Azithromycin,8,F,32
+1006,Pneumonia,Amoxicillin,8,F,32
+1006,Pneumonia,Budesonide,1,F,32
+1006,Pneumonia,Ibuprofen,2,F,32
+1006,Common Cold,Acetaminophen,6,F,32
+1006,Common Cold,Ibuprofen,7,F,32
+1006,Common Cold,Nitrofurantoin,1,F,32
+1006,Common Cold,Topiramate,1,F,32
+1006,Migraine,Sumatriptan,6,F,32
+1006,Migraine,Topiramate,5,F,32
+1006,Migraine,Albuterol,1,F,32
+1006,Migraine,Lisinopril,1,F,32
+1007,Osteoarthritis,Celecoxib,8,F,19
+1007,Osteoarthritis,Ibuprofen,7,F,19
+1007,Osteoarthritis,Ondansetron,1,F,19
+1007,Osteoarthritis,Trimethoprim,2,F,19
+1007,Gastroenteritis,Ondansetron,5,F,19
+1007,Gastroenteritis,Loperamide,7,F,19
+1007,Gastroenteritis,Amlodipine,2,F,19
+1007,Gastroenteritis,Doxycycline,1,F,19
+1008,Depression,Sertraline,6,F,28
+1008,Depression,Escitalopram,9,F,28
+1008,Depression,Propranolol,2,F,28
+1008,Depression,Tiotropium,1,F,28
+1008,Osteoarthritis,Celecoxib,7,F,28
+1008,Osteoarthritis,Ibuprofen,7,F,28
+1008,Osteoarthritis,Ondansetron,2,F,28
+1008,Osteoarthritis,Trimethoprim,1,F,28
+1009,COPD,Albuterol,9,F,32
+1009,COPD,Tiotropium,9,F,32
+1009,COPD,Loperamide,3,F,32
+1009,COPD,Sitagliptin,3,F,32
+1009,Common Cold,Acetaminophen,7,F,32
+1009,Common Cold,Ibuprofen,7,F,32
+1009,Common Cold,Nitrofurantoin,2,F,32
+1009,Common Cold,Topiramate,1,F,32
+1009,Migraine,Sumatriptan,8,F,32
+1009,Migraine,Topiramate,6,F,32
+1009,Migraine,Albuterol,3,F,32
+1009,Migraine,Lisinopril,1,F,32
+1010,Hypertension,Lisinopril,8,F,25
+1010,Hypertension,Amlodipine,7,F,25
+1010,Hypertension,Fluticasone,3,F,25
+1010,Hypertension,Topiramate,2,F,25
+1011,Urinary Tract Infection,Nitrofurantoin,8,F,34
+1011,Urinary Tract Infection,Ciprofloxacin,9,F,34
+1011,Urinary Tract Infection,Ibuprofen,3,F,34
+1011,Urinary Tract Infection,Acetaminophen,3,F,34
+1012,Hypertension,Lisinopril,9,F,24
+1012,Hypertension,Amlodipine,9,F,24
+1012,Hypertension,Fluticasone,3,F,24
+1012,Hypertension,Topiramate,3,F,24
+1013,Anxiety,Sertraline,8,M,38
+1013,Anxiety,Escitalopram,7,M,38
+1013,Anxiety,Oseltamivir,2,M,38
+1013,Anxiety,Sumatriptan,1,M,38
+1014,Pneumonia,Azithromycin,9,F,36
+1014,Pneumonia,Amoxicillin,7,F,36
+1014,Pneumonia,Budesonide,2,F,36
+1014,Pneumonia,Ibuprofen,2,F,36
+1015,Depression,Sertraline,10,M,28
+1015,Depression,Escitalopram,8,M,28
+1015,Depression,Propranolol,3,M,28
+1015,Depression,Tiotropium,1,M,28
+1015,Urinary Tract Infection,Nitrofurantoin,10,M,28
+1015,Urinary Tract Infection,Ciprofloxacin,7,M,28
+1015,Urinary Tract Infection,Ibuprofen,4,M,28
+1015,Urinary Tract Infection,Acetaminophen,1,M,28
+1016,Hypertension,Lisinopril,7,F,24
+1016,Hypertension,Amlodipine,6,F,24
+1016,Hypertension,Fluticasone,2,F,24
+1016,Hypertension,Topiramate,2,F,24
+1016,Urinary Tract Infection,Nitrofurantoin,10,F,24
+1016,Urinary Tract Infection,Ciprofloxacin,8,F,24
+1016,Urinary Tract Infection,Ibuprofen,1,F,24
+1016,Urinary Tract Infection,Acetaminophen,3,F,24
+1016,Bronchitis,Azithromycin,7,F,24
+1016,Bronchitis,Amoxicillin,9,F,24
+1016,Bronchitis,Metformin,1,F,24
+1016,Bronchitis,Nitrofurantoin,2,F,24
+1017,Gastroenteritis,Ondansetron,9,M,40
+1017,Gastroenteritis,Loperamide,6,M,40
+1017,Gastroenteritis,Amlodipine,1,M,40
+1017,Gastroenteritis,Doxycycline,1,M,40
+1018,Influenza,Oseltamivir,8,M,25
+1018,Influenza,Acetaminophen,5,M,25
+1018,Influenza,Nitrofurantoin,2,M,25
+1018,Influenza,Sumatriptan,1,M,25
+1018,Type 2 Diabetes,Metformin,7,M,25
+1018,Type 2 Diabetes,Sitagliptin,10,M,25
+1018,Type 2 Diabetes,Amlodipine,2,M,25
+1018,Type 2 Diabetes,Bismuth subsalicylate,1,M,25
+1018,Bronchitis,Azithromycin,7,M,25
+1018,Bronchitis,Amoxicillin,8,M,25
+1018,Bronchitis,Metformin,1,M,25
+1018,Bronchitis,Nitrofurantoin,3,M,25
+1019,Anxiety,Sertraline,8,F,18
+1019,Anxiety,Escitalopram,8,F,18
+1019,Anxiety,Oseltamivir,2,F,18
+1019,Anxiety,Sumatriptan,1,F,18
+1019,Asthma,Albuterol,8,F,18
+1019,Asthma,Fluticasone,7,F,18
+1019,Asthma,Trimethoprim,1,F,18
+1019,Asthma,Amlodipine,2,F,18
+1020,Urinary Tract Infection,Nitrofurantoin,8,M,46
+1020,Urinary Tract Infection,Ciprofloxacin,8,M,46
+1020,Urinary Tract Infection,Ibuprofen,2,M,46
+1020,Urinary Tract Infection,Acetaminophen,3,M,46
+1021,Migraine,Sumatriptan,8,F,45
+1021,Migraine,Topiramate,8,F,45
+1021,Migraine,Albuterol,1,F,45
+1021,Migraine,Lisinopril,1,F,45
+1021,Asthma,Albuterol,9,F,45
+1021,Asthma,Fluticasone,7,F,45
+1021,Asthma,Trimethoprim,4,F,45
+1021,Asthma,Amlodipine,1,F,45
+1022,Migraine,Sumatriptan,8,F,27
+1022,Migraine,Topiramate,7,F,27
+1022,Migraine,Albuterol,1,F,27
+1022,Migraine,Lisinopril,1,F,27
+1022,Type 2 Diabetes,Metformin,10,F,27
+1022,Type 2 Diabetes,Sitagliptin,9,F,27
+1022,Type 2 Diabetes,Amlodipine,2,F,27
+1022,Type 2 Diabetes,Bismuth subsalicylate,1,F,27
+1023,Allergic Rhinitis,Cetirizine,5,F,21
+1023,Allergic Rhinitis,Fluticasone,8,F,21
+1023,Allergic Rhinitis,Ciprofloxacin,2,F,21
+1023,Allergic Rhinitis,Hydrochlorothiazide,1,F,21
+1023,Gastroenteritis,Ondansetron,9,F,21
+1023,Gastroenteritis,Loperamide,8,F,21
+1023,Gastroenteritis,Amlodipine,1,F,21
+1023,Gastroenteritis,Doxycycline,1,F,21
+1023,Bronchitis,Azithromycin,8,F,21
+1023,Bronchitis,Amoxicillin,8,F,21
+1023,Bronchitis,Metformin,1,F,21
+1023,Bronchitis,Nitrofurantoin,2,F,21
+1024,Type 2 Diabetes,Metformin,7,M,31
+1024,Type 2 Diabetes,Sitagliptin,6,M,31
+1024,Type 2 Diabetes,Amlodipine,2,M,31
+1024,Type 2 Diabetes,Bismuth subsalicylate,1,M,31
+1025,Pneumonia,Azithromycin,10,F,39
+1025,Pneumonia,Amoxicillin,9,F,39
+1025,Pneumonia,Budesonide,1,F,39
+1025,Pneumonia,Ibuprofen,1,F,39
+1026,Type 2 Diabetes,Metformin,10,M,37
+1026,Type 2 Diabetes,Sitagliptin,8,M,37
+1026,Type 2 Diabetes,Amlodipine,3,M,37
+1026,Type 2 Diabetes,Bismuth subsalicylate,1,M,37
+1027,Hypertension,Lisinopril,8,F,43
+1027,Hypertension,Amlodipine,8,F,43
+1027,Hypertension,Fluticasone,1,F,43
+1027,Hypertension,Topiramate,2,F,43
+1027,Osteoarthritis,Celecoxib,9,F,43
+1027,Osteoarthritis,Ibuprofen,7,F,43
+1027,Osteoarthritis,Ondansetron,2,F,43
+1027,Osteoarthritis,Trimethoprim,2,F,43
+1027,Depression,Sertraline,8,F,43
+1027,Depression,Escitalopram,9,F,43
+1027,Depression,Propranolol,3,F,43
+1027,Depression,Tiotropium,3,F,43
+1028,Urinary Tract Infection,Nitrofurantoin,8,F,26
+1028,Urinary Tract Infection,Ciprofloxacin,9,F,26
+1028,Urinary Tract Infection,Ibuprofen,3,F,26
+1028,Urinary Tract Infection,Acetaminophen,3,F,26
+1029,Bronchitis,Azithromycin,8,F,30
+1029,Bronchitis,Amoxicillin,6,F,30
+1029,Bronchitis,Metformin,1,F,30
+1029,Bronchitis,Nitrofurantoin,2,F,30
+1029,Common Cold,Acetaminophen,7,F,30
+1029,Common Cold,Ibuprofen,8,F,30
+1029,Common Cold,Nitrofurantoin,1,F,30
+1029,Common Cold,Topiramate,2,F,30
+1029,COPD,Albuterol,8,F,30
+1029,COPD,Tiotropium,9,F,30
+1029,COPD,Loperamide,3,F,30
+1029,COPD,Sitagliptin,2,F,30
+1030,Type 2 Diabetes,Metformin,8,M,32
+1030,Type 2 Diabetes,Sitagliptin,8,M,32
+1030,Type 2 Diabetes,Amlodipine,2,M,32
+1030,Type 2 Diabetes,Bismuth subsalicylate,2,M,32
+1030,Osteoarthritis,Celecoxib,7,M,32
+1030,Osteoarthritis,Ibuprofen,7,M,32
+1030,Osteoarthritis,Ondansetron,1,M,32
+1030,Osteoarthritis,Trimethoprim,1,M,32
+1030,Influenza,Oseltamivir,9,M,32
+1030,Influenza,Acetaminophen,6,M,32
+1030,Influenza,Nitrofurantoin,2,M,32
+1030,Influenza,Sumatriptan,1,M,32
+1031,Type 2 Diabetes,Metformin,7,F,18
+1031,Type 2 Diabetes,Sitagliptin,8,F,18
+1031,Type 2 Diabetes,Amlodipine,2,F,18
+1031,Type 2 Diabetes,Bismuth subsalicylate,1,F,18
+1031,COPD,Albuterol,7,F,18
+1031,COPD,Tiotropium,9,F,18
+1031,COPD,Loperamide,1,F,18
+1031,COPD,Sitagliptin,1,F,18
+1031,Hypertension,Lisinopril,8,F,18
+1031,Hypertension,Amlodipine,7,F,18
+1031,Hypertension,Fluticasone,2,F,18
+1031,Hypertension,Topiramate,1,F,18
+1032,Common Cold,Acetaminophen,6,F,22
+1032,Common Cold,Ibuprofen,6,F,22
+1032,Common Cold,Nitrofurantoin,1,F,22
+1032,Common Cold,Topiramate,1,F,22
+1032,Osteoarthritis,Celecoxib,9,F,22
+1032,Osteoarthritis,Ibuprofen,8,F,22
+1032,Osteoarthritis,Ondansetron,1,F,22
+1032,Osteoarthritis,Trimethoprim,1,F,22
+1032,COPD,Albuterol,8,F,22
+1032,COPD,Tiotropium,9,F,22
+1032,COPD,Loperamide,2,F,22
+1032,COPD,Sitagliptin,1,F,22
+1033,Depression,Sertraline,8,M,38
+1033,Depression,Escitalopram,10,M,38
+1033,Depression,Propranolol,3,M,38
+1033,Depression,Tiotropium,1,M,38
+1034,Urinary Tract Infection,Nitrofurantoin,9,M,37
+1034,Urinary Tract Infection,Ciprofloxacin,6,M,37
+1034,Urinary Tract Infection,Ibuprofen,3,M,37
+1034,Urinary Tract Infection,Acetaminophen,2,M,37
+1035,Depression,Sertraline,9,F,25
+1035,Depression,Escitalopram,8,F,25
+1035,Depression,Propranolol,3,F,25
+1035,Depression,Tiotropium,2,F,25
+1035,Anxiety,Sertraline,9,F,25
+1035,Anxiety,Escitalopram,7,F,25
+1035,Anxiety,Oseltamivir,2,F,25
+1035,Anxiety,Sumatriptan,1,F,25
+1035,Bronchitis,Azithromycin,10,F,25
+1035,Bronchitis,Amoxicillin,8,F,25
+1035,Bronchitis,Metformin,1,F,25
+1035,Bronchitis,Nitrofurantoin,1,F,25
+1036,Urinary Tract Infection,Nitrofurantoin,9,M,41
+1036,Urinary Tract Infection,Ciprofloxacin,9,M,41
+1036,Urinary Tract Infection,Ibuprofen,5,M,41
+1036,Urinary Tract Infection,Acetaminophen,1,M,41
+1036,Migraine,Sumatriptan,9,M,41
+1036,Migraine,Topiramate,8,M,41
+1036,Migraine,Albuterol,1,M,41
+1036,Migraine,Lisinopril,1,M,41
+1036,Anxiety,Sertraline,8,M,41
+1036,Anxiety,Escitalopram,8,M,41
+1036,Anxiety,Oseltamivir,1,M,41
+1036,Anxiety,Sumatriptan,2,M,41
+1037,Influenza,Oseltamivir,7,F,18
+1037,Influenza,Acetaminophen,6,F,18
+1037,Influenza,Nitrofurantoin,2,F,18
+1037,Influenza,Sumatriptan,1,F,18
+1037,Anxiety,Sertraline,7,F,18
+1037,Anxiety,Escitalopram,8,F,18
+1037,Anxiety,Oseltamivir,1,F,18
+1037,Anxiety,Sumatriptan,1,F,18
+1037,COPD,Albuterol,6,F,18
+1037,COPD,Tiotropium,8,F,18
+1037,COPD,Loperamide,3,F,18
+1037,COPD,Sitagliptin,2,F,18
+1038,Allergic Rhinitis,Cetirizine,8,F,18
+1038,Allergic Rhinitis,Fluticasone,8,F,18
+1038,Allergic Rhinitis,Ciprofloxacin,1,F,18
+1038,Allergic Rhinitis,Hydrochlorothiazide,1,F,18
+1039,Hypertension,Lisinopril,8,M,18
+1039,Hypertension,Amlodipine,7,M,18
+1039,Hypertension,Fluticasone,2,M,18
+1039,Hypertension,Topiramate,1,M,18
+1039,Asthma,Albuterol,10,M,18
+1039,Asthma,Fluticasone,7,M,18
+1039,Asthma,Trimethoprim,1,M,18
+1039,Asthma,Amlodipine,1,M,18
+1039,Anxiety,Sertraline,7,M,18
+1039,Anxiety,Escitalopram,7,M,18
+1039,Anxiety,Oseltamivir,1,M,18
+1039,Anxiety,Sumatriptan,1,M,18
+1040,Pneumonia,Azithromycin,9,F,24
+1040,Pneumonia,Amoxicillin,10,F,24
+1040,Pneumonia,Budesonide,1,F,24
+1040,Pneumonia,Ibuprofen,1,F,24
+1040,Common Cold,Acetaminophen,5,F,24
+1040,Common Cold,Ibuprofen,6,F,24
+1040,Common Cold,Nitrofurantoin,1,F,24
+1040,Common Cold,Topiramate,1,F,24
+1041,Urinary Tract Infection,Nitrofurantoin,9,M,23
+1041,Urinary Tract Infection,Ciprofloxacin,8,M,23
+1041,Urinary Tract Infection,Ibuprofen,3,M,23
+1041,Urinary Tract Infection,Acetaminophen,2,M,23
+1041,Pneumonia,Azithromycin,8,M,23
+1041,Pneumonia,Amoxicillin,9,M,23
+1041,Pneumonia,Budesonide,1,M,23
+1041,Pneumonia,Ibuprofen,1,M,23
+1041,Anxiety,Sertraline,8,M,23
+1041,Anxiety,Escitalopram,7,M,23
+1041,Anxiety,Oseltamivir,2,M,23
+1041,Anxiety,Sumatriptan,1,M,23
+1042,Anxiety,Sertraline,7,M,30
+1042,Anxiety,Escitalopram,8,M,30
+1042,Anxiety,Oseltamivir,1,M,30
+1042,Anxiety,Sumatriptan,3,M,30
+1042,Influenza,Oseltamivir,6,M,30
+1042,Influenza,Acetaminophen,6,M,30
+1042,Influenza,Nitrofurantoin,2,M,30
+1042,Influenza,Sumatriptan,1,M,30
+1043,Influenza,Oseltamivir,8,F,23
+1043,Influenza,Acetaminophen,6,F,23
+1043,Influenza,Nitrofurantoin,1,F,23
+1043,Influenza,Sumatriptan,1,F,23
+1044,Depression,Sertraline,8,F,42
+1044,Depression,Escitalopram,6,F,42
+1044,Depression,Propranolol,2,F,42
+1044,Depression,Tiotropium,1,F,42
+1045,Pneumonia,Azithromycin,9,F,18
+1045,Pneumonia,Amoxicillin,10,F,18
+1045,Pneumonia,Budesonide,1,F,18
+1045,Pneumonia,Ibuprofen,1,F,18
+1046,Influenza,Oseltamivir,8,F,20
+1046,Influenza,Acetaminophen,7,F,20
+1046,Influenza,Nitrofurantoin,1,F,20
+1046,Influenza,Sumatriptan,1,F,20
+1047,Depression,Sertraline,8,M,33
+1047,Depression,Escitalopram,7,M,33
+1047,Depression,Propranolol,2,M,33
+1047,Depression,Tiotropium,1,M,33
+1048,Migraine,Sumatriptan,9,M,18
+1048,Migraine,Topiramate,7,M,18
+1048,Migraine,Albuterol,1,M,18
+1048,Migraine,Lisinopril,1,M,18
+1048,Type 2 Diabetes,Metformin,9,M,18
+1048,Type 2 Diabetes,Sitagliptin,7,M,18
+1048,Type 2 Diabetes,Amlodipine,3,M,18
+1048,Type 2 Diabetes,Bismuth subsalicylate,1,M,18
+1049,Asthma,Albuterol,8,M,44
+1049,Asthma,Fluticasone,8,M,44
+1049,Asthma,Trimethoprim,3,M,44
+1049,Asthma,Amlodipine,1,M,44
+1049,Bronchitis,Azithromycin,9,M,44
+1049,Bronchitis,Amoxicillin,8,M,44
+1049,Bronchitis,Metformin,1,M,44
+1049,Bronchitis,Nitrofurantoin,1,M,44
+1050,Pneumonia,Azithromycin,8,F,38
+1050,Pneumonia,Amoxicillin,7,F,38
+1050,Pneumonia,Budesonide,2,F,38
+1050,Pneumonia,Ibuprofen,1,F,38
+1051,Bronchitis,Azithromycin,7,M,44
+1051,Bronchitis,Amoxicillin,8,M,44
+1051,Bronchitis,Metformin,2,M,44
+1051,Bronchitis,Nitrofurantoin,2,M,44
+1051,Anxiety,Sertraline,9,M,44
+1051,Anxiety,Escitalopram,9,M,44
+1051,Anxiety,Oseltamivir,2,M,44
+1051,Anxiety,Sumatriptan,3,M,44
+1051,Pneumonia,Azithromycin,7,M,44
+1051,Pneumonia,Amoxicillin,7,M,44
+1051,Pneumonia,Budesonide,1,M,44
+1051,Pneumonia,Ibuprofen,3,M,44
+1052,Osteoarthritis,Celecoxib,7,F,40
+1052,Osteoarthritis,Ibuprofen,10,F,40
+1052,Osteoarthritis,Ondansetron,2,F,40
+1052,Osteoarthritis,Trimethoprim,3,F,40
+1052,COPD,Albuterol,8,F,40
+1052,COPD,Tiotropium,8,F,40
+1052,COPD,Loperamide,3,F,40
+1052,COPD,Sitagliptin,1,F,40
+1052,Pneumonia,Azithromycin,7,F,40
+1052,Pneumonia,Amoxicillin,6,F,40
+1052,Pneumonia,Budesonide,1,F,40
+1052,Pneumonia,Ibuprofen,1,F,40
+1053,Bronchitis,Azithromycin,9,F,41
+1053,Bronchitis,Amoxicillin,9,F,41
+1053,Bronchitis,Metformin,1,F,41
+1053,Bronchitis,Nitrofurantoin,2,F,41
+1053,Allergic Rhinitis,Cetirizine,8,F,41
+1053,Allergic Rhinitis,Fluticasone,7,F,41
+1053,Allergic Rhinitis,Ciprofloxacin,1,F,41
+1053,Allergic Rhinitis,Hydrochlorothiazide,1,F,41
+1053,Gastroenteritis,Ondansetron,7,F,41
+1053,Gastroenteritis,Loperamide,6,F,41
+1053,Gastroenteritis,Amlodipine,3,F,41
+1053,Gastroenteritis,Doxycycline,1,F,41
+1054,Gastroenteritis,Ondansetron,8,M,51
+1054,Gastroenteritis,Loperamide,8,M,51
+1054,Gastroenteritis,Amlodipine,3,M,51
+1054,Gastroenteritis,Doxycycline,4,M,51
+1055,Common Cold,Acetaminophen,9,M,55
+1055,Common Cold,Ibuprofen,7,M,55
+1055,Common Cold,Nitrofurantoin,1,M,55
+1055,Common Cold,Topiramate,3,M,55
+1055,Type 2 Diabetes,Metformin,8,M,55
+1055,Type 2 Diabetes,Sitagliptin,9,M,55
+1055,Type 2 Diabetes,Amlodipine,2,M,55
+1055,Type 2 Diabetes,Bismuth subsalicylate,1,M,55
+1056,Common Cold,Acetaminophen,8,M,41
+1056,Common Cold,Ibuprofen,9,M,41
+1056,Common Cold,Nitrofurantoin,1,M,41
+1056,Common Cold,Topiramate,1,M,41
+1057,Anxiety,Sertraline,10,M,62
+1057,Anxiety,Escitalopram,10,M,62
+1057,Anxiety,Oseltamivir,2,M,62
+1057,Anxiety,Sumatriptan,1,M,62
+1057,Depression,Sertraline,9,M,62
+1057,Depression,Escitalopram,9,M,62
+1057,Depression,Propranolol,2,M,62
+1057,Depression,Tiotropium,1,M,62
+1057,Type 2 Diabetes,Metformin,10,M,62
+1057,Type 2 Diabetes,Sitagliptin,10,M,62
+1057,Type 2 Diabetes,Amlodipine,3,M,62
+1057,Type 2 Diabetes,Bismuth subsalicylate,3,M,62
+1058,Hypertension,Lisinopril,9,M,49
+1058,Hypertension,Amlodipine,8,M,49
+1058,Hypertension,Fluticasone,2,M,49
+1058,Hypertension,Topiramate,1,M,49
+1059,Allergic Rhinitis,Cetirizine,8,F,41
+1059,Allergic Rhinitis,Fluticasone,8,F,41
+1059,Allergic Rhinitis,Ciprofloxacin,1,F,41
+1059,Allergic Rhinitis,Hydrochlorothiazide,2,F,41
+1059,Pneumonia,Azithromycin,7,F,41
+1059,Pneumonia,Amoxicillin,10,F,41
+1059,Pneumonia,Budesonide,4,F,41
+1059,Pneumonia,Ibuprofen,1,F,41
+1059,Bronchitis,Azithromycin,10,F,41
+1059,Bronchitis,Amoxicillin,6,F,41
+1059,Bronchitis,Metformin,2,F,41
+1059,Bronchitis,Nitrofurantoin,1,F,41
+1060,Depression,Sertraline,8,M,41
+1060,Depression,Escitalopram,9,M,41
+1060,Depression,Propranolol,4,M,41
+1060,Depression,Tiotropium,1,M,41
+1061,Hypertension,Lisinopril,9,F,50
+1061,Hypertension,Amlodipine,8,F,50
+1061,Hypertension,Fluticasone,1,F,50
+1061,Hypertension,Topiramate,3,F,50
+1061,COPD,Albuterol,9,F,50
+1061,COPD,Tiotropium,8,F,50
+1061,COPD,Loperamide,2,F,50
+1061,COPD,Sitagliptin,1,F,50
+1061,Depression,Sertraline,8,F,50
+1061,Depression,Escitalopram,7,F,50
+1061,Depression,Propranolol,3,F,50
+1061,Depression,Tiotropium,1,F,50
+1062,Type 2 Diabetes,Metformin,8,M,52
+1062,Type 2 Diabetes,Sitagliptin,9,M,52
+1062,Type 2 Diabetes,Amlodipine,1,M,52
+1062,Type 2 Diabetes,Bismuth subsalicylate,3,M,52
+1062,Osteoarthritis,Celecoxib,8,M,52
+1062,Osteoarthritis,Ibuprofen,5,M,52
+1062,Osteoarthritis,Ondansetron,3,M,52
+1062,Osteoarthritis,Trimethoprim,2,M,52
+1062,Asthma,Albuterol,7,M,52
+1062,Asthma,Fluticasone,8,M,52
+1062,Asthma,Trimethoprim,1,M,52
+1062,Asthma,Amlodipine,1,M,52
+1063,Common Cold,Acetaminophen,7,M,50
+1063,Common Cold,Ibuprofen,6,M,50
+1063,Common Cold,Nitrofurantoin,2,M,50
+1063,Common Cold,Topiramate,1,M,50
+1063,Anxiety,Sertraline,7,M,50
+1063,Anxiety,Escitalopram,7,M,50
+1063,Anxiety,Oseltamivir,4,M,50
+1063,Anxiety,Sumatriptan,1,M,50
+1064,Pneumonia,Azithromycin,7,M,33
+1064,Pneumonia,Amoxicillin,10,M,33
+1064,Pneumonia,Budesonide,1,M,33
+1064,Pneumonia,Ibuprofen,1,M,33
+1065,Influenza,Oseltamivir,7,M,39
+1065,Influenza,Acetaminophen,7,M,39
+1065,Influenza,Nitrofurantoin,1,M,39
+1065,Influenza,Sumatriptan,2,M,39
+1065,Gastroenteritis,Ondansetron,6,M,39
+1065,Gastroenteritis,Loperamide,7,M,39
+1065,Gastroenteritis,Amlodipine,2,M,39
+1065,Gastroenteritis,Doxycycline,1,M,39
+1065,Depression,Sertraline,8,M,39
+1065,Depression,Escitalopram,9,M,39
+1065,Depression,Propranolol,1,M,39
+1065,Depression,Tiotropium,2,M,39
+1066,Common Cold,Acetaminophen,6,F,56
+1066,Common Cold,Ibuprofen,7,F,56
+1066,Common Cold,Nitrofurantoin,1,F,56
+1066,Common Cold,Topiramate,1,F,56
+1066,Allergic Rhinitis,Cetirizine,6,F,56
+1066,Allergic Rhinitis,Fluticasone,7,F,56
+1066,Allergic Rhinitis,Ciprofloxacin,1,F,56
+1066,Allergic Rhinitis,Hydrochlorothiazide,1,F,56
+1067,Type 2 Diabetes,Metformin,9,M,57
+1067,Type 2 Diabetes,Sitagliptin,8,M,57
+1067,Type 2 Diabetes,Amlodipine,1,M,57
+1067,Type 2 Diabetes,Bismuth subsalicylate,1,M,57
+1068,Bronchitis,Azithromycin,8,M,60
+1068,Bronchitis,Amoxicillin,8,M,60
+1068,Bronchitis,Metformin,2,M,60
+1068,Bronchitis,Nitrofurantoin,1,M,60
+1068,Gastroenteritis,Ondansetron,8,M,60
+1068,Gastroenteritis,Loperamide,9,M,60
+1068,Gastroenteritis,Amlodipine,4,M,60
+1068,Gastroenteritis,Doxycycline,1,M,60
+1068,Common Cold,Acetaminophen,7,M,60
+1068,Common Cold,Ibuprofen,8,M,60
+1068,Common Cold,Nitrofurantoin,1,M,60
+1068,Common Cold,Topiramate,1,M,60
+1069,Osteoarthritis,Celecoxib,9,F,35
+1069,Osteoarthritis,Ibuprofen,8,F,35
+1069,Osteoarthritis,Ondansetron,1,F,35
+1069,Osteoarthritis,Trimethoprim,1,F,35
+1069,Influenza,Oseltamivir,6,F,35
+1069,Influenza,Acetaminophen,5,F,35
+1069,Influenza,Nitrofurantoin,3,F,35
+1069,Influenza,Sumatriptan,2,F,35
+1070,Asthma,Albuterol,10,F,31
+1070,Asthma,Fluticasone,8,F,31
+1070,Asthma,Trimethoprim,1,F,31
+1070,Asthma,Amlodipine,1,F,31
+1070,Allergic Rhinitis,Cetirizine,9,F,31
+1070,Allergic Rhinitis,Fluticasone,9,F,31
+1070,Allergic Rhinitis,Ciprofloxacin,1,F,31
+1070,Allergic Rhinitis,Hydrochlorothiazide,2,F,31
+1071,Migraine,Sumatriptan,7,F,53
+1071,Migraine,Topiramate,9,F,53
+1071,Migraine,Albuterol,1,F,53
+1071,Migraine,Lisinopril,1,F,53
+1071,Depression,Sertraline,9,F,53
+1071,Depression,Escitalopram,8,F,53
+1071,Depression,Propranolol,2,F,53
+1071,Depression,Tiotropium,1,F,53
+1072,Urinary Tract Infection,Nitrofurantoin,9,M,46
+1072,Urinary Tract Infection,Ciprofloxacin,7,M,46
+1072,Urinary Tract Infection,Ibuprofen,2,M,46
+1072,Urinary Tract Infection,Acetaminophen,1,M,46
+1072,Bronchitis,Azithromycin,8,M,46
+1072,Bronchitis,Amoxicillin,8,M,46
+1072,Bronchitis,Metformin,1,M,46
+1072,Bronchitis,Nitrofurantoin,1,M,46
+1072,Osteoarthritis,Celecoxib,8,M,46
+1072,Osteoarthritis,Ibuprofen,9,M,46
+1072,Osteoarthritis,Ondansetron,2,M,46
+1072,Osteoarthritis,Trimethoprim,1,M,46
+1073,Type 2 Diabetes,Metformin,10,M,43
+1073,Type 2 Diabetes,Sitagliptin,7,M,43
+1073,Type 2 Diabetes,Amlodipine,1,M,43
+1073,Type 2 Diabetes,Bismuth subsalicylate,1,M,43
+1073,Asthma,Albuterol,10,M,43
+1073,Asthma,Fluticasone,8,M,43
+1073,Asthma,Trimethoprim,1,M,43
+1073,Asthma,Amlodipine,1,M,43
+1074,Anxiety,Sertraline,8,F,70
+1074,Anxiety,Escitalopram,8,F,70
+1074,Anxiety,Oseltamivir,5,F,70
+1074,Anxiety,Sumatriptan,1,F,70
+1074,Gastroenteritis,Ondansetron,8,F,70
+1074,Gastroenteritis,Loperamide,5,F,70
+1074,Gastroenteritis,Amlodipine,2,F,70
+1074,Gastroenteritis,Doxycycline,1,F,70
+1075,Urinary Tract Infection,Nitrofurantoin,6,M,44
+1075,Urinary Tract Infection,Ciprofloxacin,9,M,44
+1075,Urinary Tract Infection,Ibuprofen,3,M,44
+1075,Urinary Tract Infection,Acetaminophen,1,M,44
+1075,Migraine,Sumatriptan,9,M,44
+1075,Migraine,Topiramate,5,M,44
+1075,Migraine,Albuterol,2,M,44
+1075,Migraine,Lisinopril,1,M,44
+1075,Allergic Rhinitis,Cetirizine,7,M,44
+1075,Allergic Rhinitis,Fluticasone,7,M,44
+1075,Allergic Rhinitis,Ciprofloxacin,2,M,44
+1075,Allergic Rhinitis,Hydrochlorothiazide,2,M,44
+1076,Gastroenteritis,Ondansetron,6,M,57
+1076,Gastroenteritis,Loperamide,7,M,57
+1076,Gastroenteritis,Amlodipine,1,M,57
+1076,Gastroenteritis,Doxycycline,2,M,57
+1077,Common Cold,Acetaminophen,7,M,36
+1077,Common Cold,Ibuprofen,7,M,36
+1077,Common Cold,Nitrofurantoin,1,M,36
+1077,Common Cold,Topiramate,1,M,36
+1078,Pneumonia,Azithromycin,8,M,55
+1078,Pneumonia,Amoxicillin,8,M,55
+1078,Pneumonia,Budesonide,2,M,55
+1078,Pneumonia,Ibuprofen,1,M,55
+1079,Influenza,Oseltamivir,7,M,38
+1079,Influenza,Acetaminophen,7,M,38
+1079,Influenza,Nitrofurantoin,3,M,38
+1079,Influenza,Sumatriptan,2,M,38
+1080,Bronchitis,Azithromycin,10,F,56
+1080,Bronchitis,Amoxicillin,8,F,56
+1080,Bronchitis,Metformin,1,F,56
+1080,Bronchitis,Nitrofurantoin,1,F,56
+1080,Hypertension,Lisinopril,7,F,56
+1080,Hypertension,Amlodipine,9,F,56
+1080,Hypertension,Fluticasone,2,F,56
+1080,Hypertension,Topiramate,1,F,56
+1080,Allergic Rhinitis,Cetirizine,8,F,56
+1080,Allergic Rhinitis,Fluticasone,10,F,56
+1080,Allergic Rhinitis,Ciprofloxacin,1,F,56
+1080,Allergic Rhinitis,Hydrochlorothiazide,1,F,56
+1081,Common Cold,Acetaminophen,7,F,56
+1081,Common Cold,Ibuprofen,7,F,56
+1081,Common Cold,Nitrofurantoin,1,F,56
+1081,Common Cold,Topiramate,3,F,56
+1081,Osteoarthritis,Celecoxib,9,F,56
+1081,Osteoarthritis,Ibuprofen,7,F,56
+1081,Osteoarthritis,Ondansetron,1,F,56
+1081,Osteoarthritis,Trimethoprim,1,F,56
+1081,Type 2 Diabetes,Metformin,10,F,56
+1081,Type 2 Diabetes,Sitagliptin,8,F,56
+1081,Type 2 Diabetes,Amlodipine,3,F,56
+1081,Type 2 Diabetes,Bismuth subsalicylate,1,F,56
+1082,Anxiety,Sertraline,8,M,34
+1082,Anxiety,Escitalopram,8,M,34
+1082,Anxiety,Oseltamivir,1,M,34
+1082,Anxiety,Sumatriptan,2,M,34
+1082,Influenza,Oseltamivir,7,M,34
+1082,Influenza,Acetaminophen,5,M,34
+1082,Influenza,Nitrofurantoin,1,M,34
+1082,Influenza,Sumatriptan,1,M,34
+1083,Depression,Sertraline,9,F,59
+1083,Depression,Escitalopram,9,F,59
+1083,Depression,Propranolol,3,F,59
+1083,Depression,Tiotropium,1,F,59
+1083,Asthma,Albuterol,9,F,59
+1083,Asthma,Fluticasone,8,F,59
+1083,Asthma,Trimethoprim,2,F,59
+1083,Asthma,Amlodipine,1,F,59
+1083,Bronchitis,Azithromycin,8,F,59
+1083,Bronchitis,Amoxicillin,6,F,59
+1083,Bronchitis,Metformin,2,F,59
+1083,Bronchitis,Nitrofurantoin,1,F,59
+1084,Bronchitis,Azithromycin,9,M,57
+1084,Bronchitis,Amoxicillin,8,M,57
+1084,Bronchitis,Metformin,1,M,57
+1084,Bronchitis,Nitrofurantoin,2,M,57
+1084,Hypertension,Lisinopril,9,M,57
+1084,Hypertension,Amlodipine,8,M,57
+1084,Hypertension,Fluticasone,3,M,57
+1084,Hypertension,Topiramate,2,M,57
+1084,Depression,Sertraline,7,M,57
+1084,Depression,Escitalopram,8,M,57
+1084,Depression,Propranolol,3,M,57
+1084,Depression,Tiotropium,1,M,57
+1085,Depression,Sertraline,8,F,54
+1085,Depression,Escitalopram,7,F,54
+1085,Depression,Propranolol,3,F,54
+1085,Depression,Tiotropium,1,F,54
+1086,Allergic Rhinitis,Cetirizine,7,M,51
+1086,Allergic Rhinitis,Fluticasone,8,M,51
+1086,Allergic Rhinitis,Ciprofloxacin,2,M,51
+1086,Allergic Rhinitis,Hydrochlorothiazide,1,M,51
+1087,Migraine,Sumatriptan,9,M,50
+1087,Migraine,Topiramate,7,M,50
+1087,Migraine,Albuterol,1,M,50
+1087,Migraine,Lisinopril,1,M,50
+1088,Allergic Rhinitis,Cetirizine,8,M,44
+1088,Allergic Rhinitis,Fluticasone,8,M,44
+1088,Allergic Rhinitis,Ciprofloxacin,1,M,44
+1088,Allergic Rhinitis,Hydrochlorothiazide,1,M,44
+1088,Pneumonia,Azithromycin,9,M,44
+1088,Pneumonia,Amoxicillin,9,M,44
+1088,Pneumonia,Budesonide,1,M,44
+1088,Pneumonia,Ibuprofen,3,M,44
+1089,Gastroenteritis,Ondansetron,6,F,38
+1089,Gastroenteritis,Loperamide,6,F,38
+1089,Gastroenteritis,Amlodipine,3,F,38
+1089,Gastroenteritis,Doxycycline,2,F,38
+1089,Anxiety,Sertraline,7,F,38
+1089,Anxiety,Escitalopram,9,F,38
+1089,Anxiety,Oseltamivir,2,F,38
+1089,Anxiety,Sumatriptan,4,F,38
+1089,Depression,Sertraline,9,F,38
+1089,Depression,Escitalopram,8,F,38
+1089,Depression,Propranolol,1,F,38
+1089,Depression,Tiotropium,1,F,38
+1090,Pneumonia,Azithromycin,8,F,32
+1090,Pneumonia,Amoxicillin,7,F,32
+1090,Pneumonia,Budesonide,2,F,32
+1090,Pneumonia,Ibuprofen,1,F,32
+1091,Influenza,Oseltamivir,6,M,53
+1091,Influenza,Acetaminophen,7,M,53
+1091,Influenza,Nitrofurantoin,1,M,53
+1091,Influenza,Sumatriptan,1,M,53
+1091,Bronchitis,Azithromycin,9,M,53
+1091,Bronchitis,Amoxicillin,8,M,53
+1091,Bronchitis,Metformin,1,M,53
+1091,Bronchitis,Nitrofurantoin,2,M,53
+1092,Asthma,Albuterol,10,M,68
+1092,Asthma,Fluticasone,8,M,68
+1092,Asthma,Trimethoprim,1,M,68
+1092,Asthma,Amlodipine,2,M,68
+1092,Urinary Tract Infection,Nitrofurantoin,8,M,68
+1092,Urinary Tract Infection,Ciprofloxacin,6,M,68
+1092,Urinary Tract Infection,Ibuprofen,2,M,68
+1092,Urinary Tract Infection,Acetaminophen,3,M,68
+1092,Hypertension,Lisinopril,8,M,68
+1092,Hypertension,Amlodipine,7,M,68
+1092,Hypertension,Fluticasone,2,M,68
+1092,Hypertension,Topiramate,1,M,68
+1093,Migraine,Sumatriptan,9,F,46
+1093,Migraine,Topiramate,9,F,46
+1093,Migraine,Albuterol,3,F,46
+1093,Migraine,Lisinopril,2,F,46
+1093,Gastroenteritis,Ondansetron,9,F,46
+1093,Gastroenteritis,Loperamide,7,F,46
+1093,Gastroenteritis,Amlodipine,2,F,46
+1093,Gastroenteritis,Doxycycline,1,F,46
+1093,Common Cold,Acetaminophen,6,F,46
+1093,Common Cold,Ibuprofen,6,F,46
+1093,Common Cold,Nitrofurantoin,1,F,46
+1093,Common Cold,Topiramate,1,F,46
+1094,Allergic Rhinitis,Cetirizine,9,F,68
+1094,Allergic Rhinitis,Fluticasone,8,F,68
+1094,Allergic Rhinitis,Ciprofloxacin,2,F,68
+1094,Allergic Rhinitis,Hydrochlorothiazide,1,F,68
+1094,Type 2 Diabetes,Metformin,8,F,68
+1094,Type 2 Diabetes,Sitagliptin,8,F,68
+1094,Type 2 Diabetes,Amlodipine,2,F,68
+1094,Type 2 Diabetes,Bismuth subsalicylate,2,F,68
+1094,Bronchitis,Azithromycin,8,F,68
+1094,Bronchitis,Amoxicillin,7,F,68
+1094,Bronchitis,Metformin,1,F,68
+1094,Bronchitis,Nitrofurantoin,2,F,68
+1095,Bronchitis,Azithromycin,9,F,50
+1095,Bronchitis,Amoxicillin,7,F,50
+1095,Bronchitis,Metformin,1,F,50
+1095,Bronchitis,Nitrofurantoin,1,F,50
+1095,Allergic Rhinitis,Cetirizine,8,F,50
+1095,Allergic Rhinitis,Fluticasone,9,F,50
+1095,Allergic Rhinitis,Ciprofloxacin,1,F,50
+1095,Allergic Rhinitis,Hydrochlorothiazide,2,F,50
+1096,Influenza,Oseltamivir,7,F,49
+1096,Influenza,Acetaminophen,6,F,49
+1096,Influenza,Nitrofurantoin,1,F,49
+1096,Influenza,Sumatriptan,1,F,49
+1097,Migraine,Sumatriptan,7,M,50
+1097,Migraine,Topiramate,6,M,50
+1097,Migraine,Albuterol,1,M,50
+1097,Migraine,Lisinopril,1,M,50
+1097,Bronchitis,Azithromycin,9,M,50
+1097,Bronchitis,Amoxicillin,7,M,50
+1097,Bronchitis,Metformin,1,M,50
+1097,Bronchitis,Nitrofurantoin,2,M,50
+1097,Allergic Rhinitis,Cetirizine,8,M,50
+1097,Allergic Rhinitis,Fluticasone,7,M,50
+1097,Allergic Rhinitis,Ciprofloxacin,1,M,50
+1097,Allergic Rhinitis,Hydrochlorothiazide,2,M,50
+1098,Osteoarthritis,Celecoxib,8,M,48
+1098,Osteoarthritis,Ibuprofen,8,M,48
+1098,Osteoarthritis,Ondansetron,2,M,48
+1098,Osteoarthritis,Trimethoprim,1,M,48
+1098,Anxiety,Sertraline,10,M,48
+1098,Anxiety,Escitalopram,9,M,48
+1098,Anxiety,Oseltamivir,1,M,48
+1098,Anxiety,Sumatriptan,1,M,48
+1099,Gastroenteritis,Ondansetron,8,F,25
+1099,Gastroenteritis,Loperamide,7,F,25
+1099,Gastroenteritis,Amlodipine,1,F,25
+1099,Gastroenteritis,Doxycycline,1,F,25
+1099,Depression,Sertraline,7,F,25
+1099,Depression,Escitalopram,8,F,25
+1099,Depression,Propranolol,1,F,25
+1099,Depression,Tiotropium,1,F,25
+1100,Type 2 Diabetes,Metformin,9,F,52
+1100,Type 2 Diabetes,Sitagliptin,8,F,52
+1100,Type 2 Diabetes,Amlodipine,3,F,52
+1100,Type 2 Diabetes,Bismuth subsalicylate,2,F,52
+1101,Depression,Sertraline,7,F,58
+1101,Depression,Escitalopram,7,F,58
+1101,Depression,Propranolol,2,F,58
+1101,Depression,Tiotropium,1,F,58
+1101,Type 2 Diabetes,Metformin,8,F,58
+1101,Type 2 Diabetes,Sitagliptin,8,F,58
+1101,Type 2 Diabetes,Amlodipine,1,F,58
+1101,Type 2 Diabetes,Bismuth subsalicylate,1,F,58
+1102,Type 2 Diabetes,Metformin,10,M,40
+1102,Type 2 Diabetes,Sitagliptin,6,M,40
+1102,Type 2 Diabetes,Amlodipine,2,M,40
+1102,Type 2 Diabetes,Bismuth subsalicylate,1,M,40
+1102,COPD,Albuterol,8,M,40
+1102,COPD,Tiotropium,8,M,40
+1102,COPD,Loperamide,3,M,40
+1102,COPD,Sitagliptin,1,M,40
+1103,Influenza,Oseltamivir,9,F,70
+1103,Influenza,Acetaminophen,6,F,70
+1103,Influenza,Nitrofurantoin,1,F,70
+1103,Influenza,Sumatriptan,1,F,70
+1104,Migraine,Sumatriptan,8,F,67
+1104,Migraine,Topiramate,7,F,67
+1104,Migraine,Albuterol,1,F,67
+1104,Migraine,Lisinopril,2,F,67
+1105,Bronchitis,Azithromycin,8,F,65
+1105,Bronchitis,Amoxicillin,8,F,65
+1105,Bronchitis,Metformin,2,F,65
+1105,Bronchitis,Nitrofurantoin,1,F,65
+1105,Hypertension,Lisinopril,8,F,65
+1105,Hypertension,Amlodipine,7,F,65
+1105,Hypertension,Fluticasone,2,F,65
+1105,Hypertension,Topiramate,3,F,65
+1106,Depression,Sertraline,10,M,71
+1106,Depression,Escitalopram,7,M,71
+1106,Depression,Propranolol,3,M,71
+1106,Depression,Tiotropium,2,M,71
+1106,Bronchitis,Azithromycin,7,M,71
+1106,Bronchitis,Amoxicillin,8,M,71
+1106,Bronchitis,Metformin,1,M,71
+1106,Bronchitis,Nitrofurantoin,1,M,71
+1106,Allergic Rhinitis,Cetirizine,8,M,71
+1106,Allergic Rhinitis,Fluticasone,7,M,71
+1106,Allergic Rhinitis,Ciprofloxacin,1,M,71
+1106,Allergic Rhinitis,Hydrochlorothiazide,5,M,71
+1107,Pneumonia,Azithromycin,8,F,70
+1107,Pneumonia,Amoxicillin,7,F,70
+1107,Pneumonia,Budesonide,5,F,70
+1107,Pneumonia,Ibuprofen,2,F,70
+1107,Hypertension,Lisinopril,8,F,70
+1107,Hypertension,Amlodipine,7,F,70
+1107,Hypertension,Fluticasone,1,F,70
+1107,Hypertension,Topiramate,3,F,70
+1107,Anxiety,Sertraline,8,F,70
+1107,Anxiety,Escitalopram,7,F,70
+1107,Anxiety,Oseltamivir,2,F,70
+1107,Anxiety,Sumatriptan,3,F,70
+1108,Type 2 Diabetes,Metformin,9,F,73
+1108,Type 2 Diabetes,Sitagliptin,9,F,73
+1108,Type 2 Diabetes,Amlodipine,2,F,73
+1108,Type 2 Diabetes,Bismuth subsalicylate,3,F,73
+1108,Anxiety,Sertraline,9,F,73
+1108,Anxiety,Escitalopram,9,F,73
+1108,Anxiety,Oseltamivir,2,F,73
+1108,Anxiety,Sumatriptan,1,F,73
+1109,Urinary Tract Infection,Nitrofurantoin,7,M,62
+1109,Urinary Tract Infection,Ciprofloxacin,8,M,62
+1109,Urinary Tract Infection,Ibuprofen,2,M,62
+1109,Urinary Tract Infection,Acetaminophen,2,M,62
+1109,Asthma,Albuterol,10,M,62
+1109,Asthma,Fluticasone,7,M,62
+1109,Asthma,Trimethoprim,2,M,62
+1109,Asthma,Amlodipine,1,M,62
+1109,Influenza,Oseltamivir,8,M,62
+1109,Influenza,Acetaminophen,6,M,62
+1109,Influenza,Nitrofurantoin,2,M,62
+1109,Influenza,Sumatriptan,1,M,62
+1110,Urinary Tract Infection,Nitrofurantoin,10,M,57
+1110,Urinary Tract Infection,Ciprofloxacin,7,M,57
+1110,Urinary Tract Infection,Ibuprofen,4,M,57
+1110,Urinary Tract Infection,Acetaminophen,3,M,57
+1110,Gastroenteritis,Ondansetron,7,M,57
+1110,Gastroenteritis,Loperamide,8,M,57
+1110,Gastroenteritis,Amlodipine,1,M,57
+1110,Gastroenteritis,Doxycycline,2,M,57
+1110,Allergic Rhinitis,Cetirizine,8,M,57
+1110,Allergic Rhinitis,Fluticasone,8,M,57
+1110,Allergic Rhinitis,Ciprofloxacin,1,M,57
+1110,Allergic Rhinitis,Hydrochlorothiazide,1,M,57
+1111,Type 2 Diabetes,Metformin,8,M,70
+1111,Type 2 Diabetes,Sitagliptin,9,M,70
+1111,Type 2 Diabetes,Amlodipine,3,M,70
+1111,Type 2 Diabetes,Bismuth subsalicylate,2,M,70
+1111,Migraine,Sumatriptan,9,M,70
+1111,Migraine,Topiramate,6,M,70
+1111,Migraine,Albuterol,1,M,70
+1111,Migraine,Lisinopril,1,M,70
+1112,Migraine,Sumatriptan,10,M,65
+1112,Migraine,Topiramate,6,M,65
+1112,Migraine,Albuterol,1,M,65
+1112,Migraine,Lisinopril,1,M,65
+1112,Asthma,Albuterol,8,M,65
+1112,Asthma,Fluticasone,7,M,65
+1112,Asthma,Trimethoprim,1,M,65
+1112,Asthma,Amlodipine,1,M,65
+1113,Depression,Sertraline,9,M,58
+1113,Depression,Escitalopram,9,M,58
+1113,Depression,Propranolol,2,M,58
+1113,Depression,Tiotropium,1,M,58
+1114,Influenza,Oseltamivir,8,F,66
+1114,Influenza,Acetaminophen,4,F,66
+1114,Influenza,Nitrofurantoin,1,F,66
+1114,Influenza,Sumatriptan,1,F,66
+1115,COPD,Albuterol,8,M,57
+1115,COPD,Tiotropium,8,M,57
+1115,COPD,Loperamide,1,M,57
+1115,COPD,Sitagliptin,1,M,57
+1116,Depression,Sertraline,9,F,85
+1116,Depression,Escitalopram,7,F,85
+1116,Depression,Propranolol,2,F,85
+1116,Depression,Tiotropium,2,F,85
+1116,Hypertension,Lisinopril,7,F,85
+1116,Hypertension,Amlodipine,8,F,85
+1116,Hypertension,Fluticasone,2,F,85
+1116,Hypertension,Topiramate,3,F,85
+1116,Type 2 Diabetes,Metformin,9,F,85
+1116,Type 2 Diabetes,Sitagliptin,8,F,85
+1116,Type 2 Diabetes,Amlodipine,1,F,85
+1116,Type 2 Diabetes,Bismuth subsalicylate,1,F,85
+1117,Hypertension,Lisinopril,7,F,76
+1117,Hypertension,Amlodipine,9,F,76
+1117,Hypertension,Fluticasone,2,F,76
+1117,Hypertension,Topiramate,1,F,76
+1118,COPD,Albuterol,8,M,50
+1118,COPD,Tiotropium,7,M,50
+1118,COPD,Loperamide,4,M,50
+1118,COPD,Sitagliptin,1,M,50
+1119,Pneumonia,Azithromycin,8,F,68
+1119,Pneumonia,Amoxicillin,8,F,68
+1119,Pneumonia,Budesonide,1,F,68
+1119,Pneumonia,Ibuprofen,1,F,68
+1120,COPD,Albuterol,8,F,54
+1120,COPD,Tiotropium,8,F,54
+1120,COPD,Loperamide,1,F,54
+1120,COPD,Sitagliptin,1,F,54
+1120,Anxiety,Sertraline,9,F,54
+1120,Anxiety,Escitalopram,10,F,54
+1120,Anxiety,Oseltamivir,1,F,54
+1120,Anxiety,Sumatriptan,2,F,54
+1120,Common Cold,Acetaminophen,8,F,54
+1120,Common Cold,Ibuprofen,6,F,54
+1120,Common Cold,Nitrofurantoin,1,F,54
+1120,Common Cold,Topiramate,1,F,54
+1121,Depression,Sertraline,7,F,90
+1121,Depression,Escitalopram,10,F,90
+1121,Depression,Propranolol,1,F,90
+1121,Depression,Tiotropium,1,F,90
+1122,Allergic Rhinitis,Cetirizine,8,F,56
+1122,Allergic Rhinitis,Fluticasone,7,F,56
+1122,Allergic Rhinitis,Ciprofloxacin,2,F,56
+1122,Allergic Rhinitis,Hydrochlorothiazide,2,F,56
+1122,Hypertension,Lisinopril,7,F,56
+1122,Hypertension,Amlodipine,7,F,56
+1122,Hypertension,Fluticasone,2,F,56
+1122,Hypertension,Topiramate,2,F,56
+1122,Urinary Tract Infection,Nitrofurantoin,9,F,56
+1122,Urinary Tract Infection,Ciprofloxacin,8,F,56
+1122,Urinary Tract Infection,Ibuprofen,3,F,56
+1122,Urinary Tract Infection,Acetaminophen,3,F,56
+1123,Migraine,Sumatriptan,7,F,59
+1123,Migraine,Topiramate,9,F,59
+1123,Migraine,Albuterol,2,F,59
+1123,Migraine,Lisinopril,1,F,59
+1123,Hypertension,Lisinopril,7,F,59
+1123,Hypertension,Amlodipine,7,F,59
+1123,Hypertension,Fluticasone,3,F,59
+1123,Hypertension,Topiramate,1,F,59
+1124,Gastroenteritis,Ondansetron,6,F,67
+1124,Gastroenteritis,Loperamide,6,F,67
+1124,Gastroenteritis,Amlodipine,2,F,67
+1124,Gastroenteritis,Doxycycline,2,F,67
+1124,Allergic Rhinitis,Cetirizine,8,F,67
+1124,Allergic Rhinitis,Fluticasone,7,F,67
+1124,Allergic Rhinitis,Ciprofloxacin,3,F,67
+1124,Allergic Rhinitis,Hydrochlorothiazide,1,F,67
+1124,Type 2 Diabetes,Metformin,8,F,67
+1124,Type 2 Diabetes,Sitagliptin,6,F,67
+1124,Type 2 Diabetes,Amlodipine,1,F,67
+1124,Type 2 Diabetes,Bismuth subsalicylate,1,F,67
+1125,COPD,Albuterol,8,M,55
+1125,COPD,Tiotropium,10,M,55
+1125,COPD,Loperamide,2,M,55
+1125,COPD,Sitagliptin,2,M,55
+1125,Bronchitis,Azithromycin,9,M,55
+1125,Bronchitis,Amoxicillin,8,M,55
+1125,Bronchitis,Metformin,3,M,55
+1125,Bronchitis,Nitrofurantoin,1,M,55
+1125,Allergic Rhinitis,Cetirizine,8,M,55
+1125,Allergic Rhinitis,Fluticasone,8,M,55
+1125,Allergic Rhinitis,Ciprofloxacin,2,M,55
+1125,Allergic Rhinitis,Hydrochlorothiazide,2,M,55
+1126,Migraine,Sumatriptan,9,F,79
+1126,Migraine,Topiramate,9,F,79
+1126,Migraine,Albuterol,1,F,79
+1126,Migraine,Lisinopril,1,F,79
+1127,Gastroenteritis,Ondansetron,8,M,69
+1127,Gastroenteritis,Loperamide,8,M,69
+1127,Gastroenteritis,Amlodipine,3,M,69
+1127,Gastroenteritis,Doxycycline,1,M,69
+1128,Common Cold,Acetaminophen,7,F,78
+1128,Common Cold,Ibuprofen,8,F,78
+1128,Common Cold,Nitrofurantoin,1,F,78
+1128,Common Cold,Topiramate,1,F,78
+1128,Osteoarthritis,Celecoxib,7,F,78
+1128,Osteoarthritis,Ibuprofen,9,F,78
+1128,Osteoarthritis,Ondansetron,1,F,78
+1128,Osteoarthritis,Trimethoprim,1,F,78
+1129,Osteoarthritis,Celecoxib,6,M,77
+1129,Osteoarthritis,Ibuprofen,10,M,77
+1129,Osteoarthritis,Ondansetron,2,M,77
+1129,Osteoarthritis,Trimethoprim,1,M,77
+1129,Pneumonia,Azithromycin,10,M,77
+1129,Pneumonia,Amoxicillin,6,M,77
+1129,Pneumonia,Budesonide,1,M,77
+1129,Pneumonia,Ibuprofen,1,M,77
+1130,Type 2 Diabetes,Metformin,9,F,55
+1130,Type 2 Diabetes,Sitagliptin,8,F,55
+1130,Type 2 Diabetes,Amlodipine,3,F,55
+1130,Type 2 Diabetes,Bismuth subsalicylate,1,F,55
+1130,Depression,Sertraline,7,F,55
+1130,Depression,Escitalopram,8,F,55
+1130,Depression,Propranolol,1,F,55
+1130,Depression,Tiotropium,1,F,55
+1130,Osteoarthritis,Celecoxib,6,F,55
+1130,Osteoarthritis,Ibuprofen,7,F,55
+1130,Osteoarthritis,Ondansetron,1,F,55
+1130,Osteoarthritis,Trimethoprim,2,F,55
+1131,Pneumonia,Azithromycin,9,F,58
+1131,Pneumonia,Amoxicillin,8,F,58
+1131,Pneumonia,Budesonide,1,F,58
+1131,Pneumonia,Ibuprofen,1,F,58
+1132,Hypertension,Lisinopril,8,F,82
+1132,Hypertension,Amlodipine,7,F,82
+1132,Hypertension,Fluticasone,3,F,82
+1132,Hypertension,Topiramate,3,F,82
+1133,Gastroenteritis,Ondansetron,7,F,79
+1133,Gastroenteritis,Loperamide,7,F,79
+1133,Gastroenteritis,Amlodipine,1,F,79
+1133,Gastroenteritis,Doxycycline,1,F,79
+1134,Influenza,Oseltamivir,8,M,57
+1134,Influenza,Acetaminophen,7,M,57
+1134,Influenza,Nitrofurantoin,1,M,57
+1134,Influenza,Sumatriptan,1,M,57
+1134,COPD,Albuterol,8,M,57
+1134,COPD,Tiotropium,10,M,57
+1134,COPD,Loperamide,2,M,57
+1134,COPD,Sitagliptin,1,M,57
+1135,Bronchitis,Azithromycin,7,M,68
+1135,Bronchitis,Amoxicillin,8,M,68
+1135,Bronchitis,Metformin,1,M,68
+1135,Bronchitis,Nitrofurantoin,1,M,68
+1136,Influenza,Oseltamivir,9,M,54
+1136,Influenza,Acetaminophen,7,M,54
+1136,Influenza,Nitrofurantoin,1,M,54
+1136,Influenza,Sumatriptan,1,M,54
+1136,Depression,Sertraline,6,M,54
+1136,Depression,Escitalopram,8,M,54
+1136,Depression,Propranolol,2,M,54
+1136,Depression,Tiotropium,3,M,54
+1136,Osteoarthritis,Celecoxib,8,M,54
+1136,Osteoarthritis,Ibuprofen,7,M,54
+1136,Osteoarthritis,Ondansetron,2,M,54
+1136,Osteoarthritis,Trimethoprim,2,M,54
+1137,Asthma,Albuterol,7,M,71
+1137,Asthma,Fluticasone,7,M,71
+1137,Asthma,Trimethoprim,1,M,71
+1137,Asthma,Amlodipine,1,M,71
+1137,Common Cold,Acetaminophen,7,M,71
+1137,Common Cold,Ibuprofen,7,M,71
+1137,Common Cold,Nitrofurantoin,2,M,71
+1137,Common Cold,Topiramate,2,M,71
+1137,Type 2 Diabetes,Metformin,7,M,71
+1137,Type 2 Diabetes,Sitagliptin,8,M,71
+1137,Type 2 Diabetes,Amlodipine,4,M,71
+1137,Type 2 Diabetes,Bismuth subsalicylate,1,M,71
+1138,Pneumonia,Azithromycin,10,F,77
+1138,Pneumonia,Amoxicillin,9,F,77
+1138,Pneumonia,Budesonide,4,F,77
+1138,Pneumonia,Ibuprofen,2,F,77
+1138,Anxiety,Sertraline,8,F,77
+1138,Anxiety,Escitalopram,6,F,77
+1138,Anxiety,Oseltamivir,2,F,77
+1138,Anxiety,Sumatriptan,1,F,77
+1138,COPD,Albuterol,8,F,77
+1138,COPD,Tiotropium,7,F,77
+1138,COPD,Loperamide,3,F,77
+1138,COPD,Sitagliptin,2,F,77
+1139,Influenza,Oseltamivir,7,M,74
+1139,Influenza,Acetaminophen,6,M,74
+1139,Influenza,Nitrofurantoin,1,M,74
+1139,Influenza,Sumatriptan,3,M,74
+1139,Asthma,Albuterol,9,M,74
+1139,Asthma,Fluticasone,8,M,74
+1139,Asthma,Trimethoprim,1,M,74
+1139,Asthma,Amlodipine,1,M,74
+1139,Depression,Sertraline,9,M,74
+1139,Depression,Escitalopram,8,M,74
+1139,Depression,Propranolol,3,M,74
+1139,Depression,Tiotropium,1,M,74
+1140,Osteoarthritis,Celecoxib,8,M,55
+1140,Osteoarthritis,Ibuprofen,9,M,55
+1140,Osteoarthritis,Ondansetron,1,M,55
+1140,Osteoarthritis,Trimethoprim,1,M,55
+1141,Bronchitis,Azithromycin,10,M,63
+1141,Bronchitis,Amoxicillin,8,M,63
+1141,Bronchitis,Metformin,2,M,63
+1141,Bronchitis,Nitrofurantoin,1,M,63
+1142,Urinary Tract Infection,Nitrofurantoin,10,M,77
+1142,Urinary Tract Infection,Ciprofloxacin,7,M,77
+1142,Urinary Tract Infection,Ibuprofen,1,M,77
+1142,Urinary Tract Infection,Acetaminophen,3,M,77
+1143,Asthma,Albuterol,8,F,65
+1143,Asthma,Fluticasone,8,F,65
+1143,Asthma,Trimethoprim,1,F,65
+1143,Asthma,Amlodipine,1,F,65
+1143,COPD,Albuterol,9,F,65
+1143,COPD,Tiotropium,8,F,65
+1143,COPD,Loperamide,2,F,65
+1143,COPD,Sitagliptin,3,F,65
+1144,Bronchitis,Azithromycin,10,M,90
+1144,Bronchitis,Amoxicillin,6,M,90
+1144,Bronchitis,Metformin,1,M,90
+1144,Bronchitis,Nitrofurantoin,1,M,90
+1145,Migraine,Sumatriptan,8,F,66
+1145,Migraine,Topiramate,8,F,66
+1145,Migraine,Albuterol,2,F,66
+1145,Migraine,Lisinopril,1,F,66
+1145,Influenza,Oseltamivir,9,F,66
+1145,Influenza,Acetaminophen,6,F,66
+1145,Influenza,Nitrofurantoin,2,F,66
+1145,Influenza,Sumatriptan,1,F,66
+1146,Common Cold,Acetaminophen,7,M,63
+1146,Common Cold,Ibuprofen,6,M,63
+1146,Common Cold,Nitrofurantoin,1,M,63
+1146,Common Cold,Topiramate,1,M,63
+1146,Anxiety,Sertraline,7,M,63
+1146,Anxiety,Escitalopram,8,M,63
+1146,Anxiety,Oseltamivir,2,M,63
+1146,Anxiety,Sumatriptan,1,M,63
+1146,Hypertension,Lisinopril,8,M,63
+1146,Hypertension,Amlodipine,6,M,63
+1146,Hypertension,Fluticasone,1,M,63
+1146,Hypertension,Topiramate,4,M,63
+1147,Migraine,Sumatriptan,9,F,77
+1147,Migraine,Topiramate,8,F,77
+1147,Migraine,Albuterol,2,F,77
+1147,Migraine,Lisinopril,1,F,77
+1147,Type 2 Diabetes,Metformin,9,F,77
+1147,Type 2 Diabetes,Sitagliptin,8,F,77
+1147,Type 2 Diabetes,Amlodipine,2,F,77
+1147,Type 2 Diabetes,Bismuth subsalicylate,2,F,77
+1148,Gastroenteritis,Ondansetron,8,M,71
+1148,Gastroenteritis,Loperamide,7,M,71
+1148,Gastroenteritis,Amlodipine,3,M,71
+1148,Gastroenteritis,Doxycycline,1,M,71
+1149,Allergic Rhinitis,Cetirizine,7,F,66
+1149,Allergic Rhinitis,Fluticasone,8,F,66
+1149,Allergic Rhinitis,Ciprofloxacin,1,F,66
+1149,Allergic Rhinitis,Hydrochlorothiazide,1,F,66
+1149,Bronchitis,Azithromycin,9,F,66
+1149,Bronchitis,Amoxicillin,7,F,66
+1149,Bronchitis,Metformin,1,F,66
+1149,Bronchitis,Nitrofurantoin,1,F,66
+1150,Migraine,Sumatriptan,9,F,87
+1150,Migraine,Topiramate,7,F,87
+1150,Migraine,Albuterol,2,F,87
+1150,Migraine,Lisinopril,1,F,87
+1151,Anxiety,Sertraline,9,M,86
+1151,Anxiety,Escitalopram,8,M,86
+1151,Anxiety,Oseltamivir,1,M,86
+1151,Anxiety,Sumatriptan,1,M,86
+1152,Depression,Sertraline,6,M,53
+1152,Depression,Escitalopram,7,M,53
+1152,Depression,Propranolol,1,M,53
+1152,Depression,Tiotropium,1,M,53
+1152,Osteoarthritis,Celecoxib,7,M,53
+1152,Osteoarthritis,Ibuprofen,9,M,53
+1152,Osteoarthritis,Ondansetron,1,M,53
+1152,Osteoarthritis,Trimethoprim,2,M,53
+1153,Hypertension,Lisinopril,8,M,63
+1153,Hypertension,Amlodipine,6,M,63
+1153,Hypertension,Fluticasone,3,M,63
+1153,Hypertension,Topiramate,1,M,63
+1153,Bronchitis,Azithromycin,8,M,63
+1153,Bronchitis,Amoxicillin,8,M,63
+1153,Bronchitis,Metformin,2,M,63
+1153,Bronchitis,Nitrofurantoin,1,M,63
+1154,Influenza,Oseltamivir,7,F,70
+1154,Influenza,Acetaminophen,7,F,70
+1154,Influenza,Nitrofurantoin,2,F,70
+1154,Influenza,Sumatriptan,1,F,70
+1154,Hypertension,Lisinopril,8,F,70
+1154,Hypertension,Amlodipine,8,F,70
+1154,Hypertension,Fluticasone,2,F,70
+1154,Hypertension,Topiramate,4,F,70
+1154,Bronchitis,Azithromycin,9,F,70
+1154,Bronchitis,Amoxicillin,7,F,70
+1154,Bronchitis,Metformin,1,F,70
+1154,Bronchitis,Nitrofurantoin,2,F,70
+1155,Pneumonia,Azithromycin,7,M,82
+1155,Pneumonia,Amoxicillin,6,M,82
+1155,Pneumonia,Budesonide,1,M,82
+1155,Pneumonia,Ibuprofen,1,M,82
+1155,Type 2 Diabetes,Metformin,9,M,82
+1155,Type 2 Diabetes,Sitagliptin,7,M,82
+1155,Type 2 Diabetes,Amlodipine,1,M,82
+1155,Type 2 Diabetes,Bismuth subsalicylate,2,M,82
+1156,Gastroenteritis,Ondansetron,8,F,29
+1156,Gastroenteritis,Loperamide,8,F,29
+1156,Gastroenteritis,Amlodipine,2,F,29
+1156,Gastroenteritis,Doxycycline,1,F,29
+1157,Allergic Rhinitis,Cetirizine,8,F,47
+1157,Allergic Rhinitis,Fluticasone,7,F,47
+1157,Allergic Rhinitis,Ciprofloxacin,2,F,47
+1157,Allergic Rhinitis,Hydrochlorothiazide,1,F,47
+1157,COPD,Albuterol,10,F,47
+1157,COPD,Tiotropium,8,F,47
+1157,COPD,Loperamide,2,F,47
+1157,COPD,Sitagliptin,1,F,47
+1158,Hypertension,Lisinopril,9,M,48
+1158,Hypertension,Amlodipine,9,M,48
+1158,Hypertension,Fluticasone,3,M,48
+1158,Hypertension,Topiramate,1,M,48
+1159,COPD,Albuterol,8,F,68
+1159,COPD,Tiotropium,7,F,68
+1159,COPD,Loperamide,2,F,68
+1159,COPD,Sitagliptin,1,F,68
+1159,Urinary Tract Infection,Nitrofurantoin,9,F,68
+1159,Urinary Tract Infection,Ciprofloxacin,10,F,68
+1159,Urinary Tract Infection,Ibuprofen,2,F,68
+1159,Urinary Tract Infection,Acetaminophen,2,F,68
+1160,Type 2 Diabetes,Metformin,9,F,48
+1160,Type 2 Diabetes,Sitagliptin,10,F,48
+1160,Type 2 Diabetes,Amlodipine,3,F,48
+1160,Type 2 Diabetes,Bismuth subsalicylate,2,F,48
+1160,Migraine,Sumatriptan,9,F,48
+1160,Migraine,Topiramate,8,F,48
+1160,Migraine,Albuterol,1,F,48
+1160,Migraine,Lisinopril,2,F,48
+1160,Bronchitis,Azithromycin,10,F,48
+1160,Bronchitis,Amoxicillin,7,F,48
+1160,Bronchitis,Metformin,1,F,48
+1160,Bronchitis,Nitrofurantoin,1,F,48
+1161,Influenza,Oseltamivir,7,F,79
+1161,Influenza,Acetaminophen,6,F,79
+1161,Influenza,Nitrofurantoin,1,F,79
+1161,Influenza,Sumatriptan,1,F,79
+1162,Bronchitis,Azithromycin,8,M,78
+1162,Bronchitis,Amoxicillin,8,M,78
+1162,Bronchitis,Metformin,1,M,78
+1162,Bronchitis,Nitrofurantoin,1,M,78
+1162,Pneumonia,Azithromycin,7,M,78
+1162,Pneumonia,Amoxicillin,9,M,78
+1162,Pneumonia,Budesonide,1,M,78
+1162,Pneumonia,Ibuprofen,1,M,78
+1163,Depression,Sertraline,8,F,23
+1163,Depression,Escitalopram,9,F,23
+1163,Depression,Propranolol,1,F,23
+1163,Depression,Tiotropium,1,F,23
+1163,Common Cold,Acetaminophen,7,F,23
+1163,Common Cold,Ibuprofen,4,F,23
+1163,Common Cold,Nitrofurantoin,1,F,23
+1163,Common Cold,Topiramate,3,F,23
+1163,Pneumonia,Azithromycin,9,F,23
+1163,Pneumonia,Amoxicillin,8,F,23
+1163,Pneumonia,Budesonide,1,F,23
+1163,Pneumonia,Ibuprofen,1,F,23
+1164,Bronchitis,Azithromycin,9,M,39
+1164,Bronchitis,Amoxicillin,6,M,39
+1164,Bronchitis,Metformin,1,M,39
+1164,Bronchitis,Nitrofurantoin,1,M,39
+1164,Anxiety,Sertraline,8,M,39
+1164,Anxiety,Escitalopram,7,M,39
+1164,Anxiety,Oseltamivir,1,M,39
+1164,Anxiety,Sumatriptan,1,M,39
+1164,Type 2 Diabetes,Metformin,9,M,39
+1164,Type 2 Diabetes,Sitagliptin,7,M,39
+1164,Type 2 Diabetes,Amlodipine,4,M,39
+1164,Type 2 Diabetes,Bismuth subsalicylate,2,M,39
+1165,Common Cold,Acetaminophen,7,F,88
+1165,Common Cold,Ibuprofen,6,F,88
+1165,Common Cold,Nitrofurantoin,2,F,88
+1165,Common Cold,Topiramate,2,F,88
+1165,Asthma,Albuterol,7,F,88
+1165,Asthma,Fluticasone,7,F,88
+1165,Asthma,Trimethoprim,1,F,88
+1165,Asthma,Amlodipine,2,F,88
+1165,Migraine,Sumatriptan,7,F,88
+1165,Migraine,Topiramate,6,F,88
+1165,Migraine,Albuterol,1,F,88
+1165,Migraine,Lisinopril,1,F,88
+1166,Common Cold,Acetaminophen,8,F,20
+1166,Common Cold,Ibuprofen,6,F,20
+1166,Common Cold,Nitrofurantoin,1,F,20
+1166,Common Cold,Topiramate,2,F,20
+1167,Influenza,Oseltamivir,8,F,53
+1167,Influenza,Acetaminophen,7,F,53
+1167,Influenza,Nitrofurantoin,1,F,53
+1167,Influenza,Sumatriptan,1,F,53
+1168,Depression,Sertraline,7,F,86
+1168,Depression,Escitalopram,8,F,86
+1168,Depression,Propranolol,2,F,86
+1168,Depression,Tiotropium,1,F,86
+1168,Pneumonia,Azithromycin,10,F,86
+1168,Pneumonia,Amoxicillin,7,F,86
+1168,Pneumonia,Budesonide,2,F,86
+1168,Pneumonia,Ibuprofen,1,F,86
+1169,Common Cold,Acetaminophen,5,F,76
+1169,Common Cold,Ibuprofen,8,F,76
+1169,Common Cold,Nitrofurantoin,1,F,76
+1169,Common Cold,Topiramate,1,F,76
+1170,Gastroenteritis,Ondansetron,8,M,39
+1170,Gastroenteritis,Loperamide,7,M,39
+1170,Gastroenteritis,Amlodipine,2,M,39
+1170,Gastroenteritis,Doxycycline,1,M,39
+1170,Depression,Sertraline,7,M,39
+1170,Depression,Escitalopram,8,M,39
+1170,Depression,Propranolol,2,M,39
+1170,Depression,Tiotropium,1,M,39
+1170,Migraine,Sumatriptan,6,M,39
+1170,Migraine,Topiramate,9,M,39
+1170,Migraine,Albuterol,2,M,39
+1170,Migraine,Lisinopril,2,M,39
+1171,Type 2 Diabetes,Metformin,10,F,60
+1171,Type 2 Diabetes,Sitagliptin,9,F,60
+1171,Type 2 Diabetes,Amlodipine,2,F,60
+1171,Type 2 Diabetes,Bismuth subsalicylate,3,F,60
+1171,COPD,Albuterol,9,F,60
+1171,COPD,Tiotropium,10,F,60
+1171,COPD,Loperamide,2,F,60
+1171,COPD,Sitagliptin,2,F,60
+1171,Gastroenteritis,Ondansetron,8,F,60
+1171,Gastroenteritis,Loperamide,8,F,60
+1171,Gastroenteritis,Amlodipine,3,F,60
+1171,Gastroenteritis,Doxycycline,1,F,60
+1172,Bronchitis,Azithromycin,10,F,49
+1172,Bronchitis,Amoxicillin,7,F,49
+1172,Bronchitis,Metformin,1,F,49
+1172,Bronchitis,Nitrofurantoin,3,F,49
+1173,Pneumonia,Azithromycin,6,F,60
+1173,Pneumonia,Amoxicillin,8,F,60
+1173,Pneumonia,Budesonide,1,F,60
+1173,Pneumonia,Ibuprofen,1,F,60
+1174,Common Cold,Acetaminophen,8,F,82
+1174,Common Cold,Ibuprofen,7,F,82
+1174,Common Cold,Nitrofurantoin,1,F,82
+1174,Common Cold,Topiramate,1,F,82
+1174,COPD,Albuterol,7,F,82
+1174,COPD,Tiotropium,8,F,82
+1174,COPD,Loperamide,1,F,82
+1174,COPD,Sitagliptin,3,F,82
+1174,Type 2 Diabetes,Metformin,10,F,82
+1174,Type 2 Diabetes,Sitagliptin,7,F,82
+1174,Type 2 Diabetes,Amlodipine,2,F,82
+1174,Type 2 Diabetes,Bismuth subsalicylate,1,F,82
+1175,Influenza,Oseltamivir,9,M,57
+1175,Influenza,Acetaminophen,5,M,57
+1175,Influenza,Nitrofurantoin,1,M,57
+1175,Influenza,Sumatriptan,1,M,57
+1175,Anxiety,Sertraline,8,M,57
+1175,Anxiety,Escitalopram,6,M,57
+1175,Anxiety,Oseltamivir,1,M,57
+1175,Anxiety,Sumatriptan,2,M,57
+1176,Hypertension,Lisinopril,10,F,53
+1176,Hypertension,Amlodipine,8,F,53
+1176,Hypertension,Fluticasone,3,F,53
+1176,Hypertension,Topiramate,2,F,53
+1177,Gastroenteritis,Ondansetron,5,F,40
+1177,Gastroenteritis,Loperamide,7,F,40
+1177,Gastroenteritis,Amlodipine,2,F,40
+1177,Gastroenteritis,Doxycycline,3,F,40
+1177,Pneumonia,Azithromycin,8,F,40
+1177,Pneumonia,Amoxicillin,9,F,40
+1177,Pneumonia,Budesonide,1,F,40
+1177,Pneumonia,Ibuprofen,1,F,40
+1177,Migraine,Sumatriptan,8,F,40
+1177,Migraine,Topiramate,8,F,40
+1177,Migraine,Albuterol,1,F,40
+1177,Migraine,Lisinopril,1,F,40
+1178,Allergic Rhinitis,Cetirizine,8,F,36
+1178,Allergic Rhinitis,Fluticasone,7,F,36
+1178,Allergic Rhinitis,Ciprofloxacin,1,F,36
+1178,Allergic Rhinitis,Hydrochlorothiazide,1,F,36
+1179,Bronchitis,Azithromycin,8,M,57
+1179,Bronchitis,Amoxicillin,9,M,57
+1179,Bronchitis,Metformin,1,M,57
+1179,Bronchitis,Nitrofurantoin,1,M,57
+1179,Type 2 Diabetes,Metformin,8,M,57
+1179,Type 2 Diabetes,Sitagliptin,10,M,57
+1179,Type 2 Diabetes,Amlodipine,2,M,57
+1179,Type 2 Diabetes,Bismuth subsalicylate,1,M,57
+1179,Pneumonia,Azithromycin,8,M,57
+1179,Pneumonia,Amoxicillin,8,M,57
+1179,Pneumonia,Budesonide,3,M,57
+1179,Pneumonia,Ibuprofen,2,M,57
+1180,Depression,Sertraline,9,F,23
+1180,Depression,Escitalopram,10,F,23
+1180,Depression,Propranolol,3,F,23
+1180,Depression,Tiotropium,1,F,23
+1180,Allergic Rhinitis,Cetirizine,7,F,23
+1180,Allergic Rhinitis,Fluticasone,8,F,23
+1180,Allergic Rhinitis,Ciprofloxacin,2,F,23
+1180,Allergic Rhinitis,Hydrochlorothiazide,1,F,23
+1180,Gastroenteritis,Ondansetron,7,F,23
+1180,Gastroenteritis,Loperamide,6,F,23
+1180,Gastroenteritis,Amlodipine,2,F,23
+1180,Gastroenteritis,Doxycycline,2,F,23
+1181,Hypertension,Lisinopril,7,F,63
+1181,Hypertension,Amlodipine,7,F,63
+1181,Hypertension,Fluticasone,2,F,63
+1181,Hypertension,Topiramate,2,F,63
+1182,Gastroenteritis,Ondansetron,7,F,75
+1182,Gastroenteritis,Loperamide,6,F,75
+1182,Gastroenteritis,Amlodipine,1,F,75
+1182,Gastroenteritis,Doxycycline,2,F,75
+1183,Pneumonia,Azithromycin,9,M,86
+1183,Pneumonia,Amoxicillin,7,M,86
+1183,Pneumonia,Budesonide,2,M,86
+1183,Pneumonia,Ibuprofen,1,M,86
+1184,Pneumonia,Azithromycin,9,F,67
+1184,Pneumonia,Amoxicillin,8,F,67
+1184,Pneumonia,Budesonide,3,F,67
+1184,Pneumonia,Ibuprofen,1,F,67
+1184,Common Cold,Acetaminophen,7,F,67
+1184,Common Cold,Ibuprofen,6,F,67
+1184,Common Cold,Nitrofurantoin,2,F,67
+1184,Common Cold,Topiramate,1,F,67
+1184,Type 2 Diabetes,Metformin,10,F,67
+1184,Type 2 Diabetes,Sitagliptin,8,F,67
+1184,Type 2 Diabetes,Amlodipine,2,F,67
+1184,Type 2 Diabetes,Bismuth subsalicylate,2,F,67
+1185,Allergic Rhinitis,Cetirizine,8,M,53
+1185,Allergic Rhinitis,Fluticasone,7,M,53
+1185,Allergic Rhinitis,Ciprofloxacin,1,M,53
+1185,Allergic Rhinitis,Hydrochlorothiazide,1,M,53
+1186,Allergic Rhinitis,Cetirizine,8,M,52
+1186,Allergic Rhinitis,Fluticasone,9,M,52
+1186,Allergic Rhinitis,Ciprofloxacin,2,M,52
+1186,Allergic Rhinitis,Hydrochlorothiazide,1,M,52
+1186,Osteoarthritis,Celecoxib,10,M,52
+1186,Osteoarthritis,Ibuprofen,8,M,52
+1186,Osteoarthritis,Ondansetron,2,M,52
+1186,Osteoarthritis,Trimethoprim,1,M,52
+1186,Pneumonia,Azithromycin,8,M,52
+1186,Pneumonia,Amoxicillin,7,M,52
+1186,Pneumonia,Budesonide,1,M,52
+1186,Pneumonia,Ibuprofen,2,M,52
+1187,Hypertension,Lisinopril,6,F,87
+1187,Hypertension,Amlodipine,7,F,87
+1187,Hypertension,Fluticasone,1,F,87
+1187,Hypertension,Topiramate,1,F,87
+1188,Influenza,Oseltamivir,5,F,33
+1188,Influenza,Acetaminophen,7,F,33
+1188,Influenza,Nitrofurantoin,1,F,33
+1188,Influenza,Sumatriptan,1,F,33
+1188,Bronchitis,Azithromycin,8,F,33
+1188,Bronchitis,Amoxicillin,7,F,33
+1188,Bronchitis,Metformin,3,F,33
+1188,Bronchitis,Nitrofurantoin,3,F,33
+1188,Anxiety,Sertraline,7,F,33
+1188,Anxiety,Escitalopram,8,F,33
+1188,Anxiety,Oseltamivir,1,F,33
+1188,Anxiety,Sumatriptan,1,F,33
+1189,Bronchitis,Azithromycin,9,M,47
+1189,Bronchitis,Amoxicillin,9,M,47
+1189,Bronchitis,Metformin,1,M,47
+1189,Bronchitis,Nitrofurantoin,2,M,47
+1189,Allergic Rhinitis,Cetirizine,7,M,47
+1189,Allergic Rhinitis,Fluticasone,9,M,47
+1189,Allergic Rhinitis,Ciprofloxacin,1,M,47
+1189,Allergic Rhinitis,Hydrochlorothiazide,2,M,47
+1189,COPD,Albuterol,6,M,47
+1189,COPD,Tiotropium,7,M,47
+1189,COPD,Loperamide,3,M,47
+1189,COPD,Sitagliptin,1,M,47
+1190,Depression,Sertraline,9,M,89
+1190,Depression,Escitalopram,7,M,89
+1190,Depression,Propranolol,2,M,89
+1190,Depression,Tiotropium,1,M,89
+1190,Type 2 Diabetes,Metformin,10,M,89
+1190,Type 2 Diabetes,Sitagliptin,7,M,89
+1190,Type 2 Diabetes,Amlodipine,3,M,89
+1190,Type 2 Diabetes,Bismuth subsalicylate,1,M,89
+1190,Pneumonia,Azithromycin,9,M,89
+1190,Pneumonia,Amoxicillin,8,M,89
+1190,Pneumonia,Budesonide,3,M,89
+1190,Pneumonia,Ibuprofen,3,M,89
+1191,Bronchitis,Azithromycin,9,F,20
+1191,Bronchitis,Amoxicillin,10,F,20
+1191,Bronchitis,Metformin,1,F,20
+1191,Bronchitis,Nitrofurantoin,1,F,20
+1191,Depression,Sertraline,8,F,20
+1191,Depression,Escitalopram,8,F,20
+1191,Depression,Propranolol,3,F,20
+1191,Depression,Tiotropium,1,F,20
+1191,Hypertension,Lisinopril,8,F,20
+1191,Hypertension,Amlodipine,8,F,20
+1191,Hypertension,Fluticasone,4,F,20
+1191,Hypertension,Topiramate,2,F,20
+1192,Common Cold,Acetaminophen,7,M,68
+1192,Common Cold,Ibuprofen,6,M,68
+1192,Common Cold,Nitrofurantoin,2,M,68
+1192,Common Cold,Topiramate,1,M,68
+1192,Asthma,Albuterol,8,M,68
+1192,Asthma,Fluticasone,10,M,68
+1192,Asthma,Trimethoprim,1,M,68
+1192,Asthma,Amlodipine,1,M,68
+1193,Bronchitis,Azithromycin,8,F,19
+1193,Bronchitis,Amoxicillin,6,F,19
+1193,Bronchitis,Metformin,1,F,19
+1193,Bronchitis,Nitrofurantoin,1,F,19
+1193,COPD,Albuterol,8,F,19
+1193,COPD,Tiotropium,9,F,19
+1193,COPD,Loperamide,2,F,19
+1193,COPD,Sitagliptin,1,F,19
+1194,Asthma,Albuterol,9,M,41
+1194,Asthma,Fluticasone,9,M,41
+1194,Asthma,Trimethoprim,2,M,41
+1194,Asthma,Amlodipine,1,M,41
+1194,Urinary Tract Infection,Nitrofurantoin,7,M,41
+1194,Urinary Tract Infection,Ciprofloxacin,8,M,41
+1194,Urinary Tract Infection,Ibuprofen,1,M,41
+1194,Urinary Tract Infection,Acetaminophen,1,M,41
+1195,Osteoarthritis,Celecoxib,8,M,23
+1195,Osteoarthritis,Ibuprofen,7,M,23
+1195,Osteoarthritis,Ondansetron,1,M,23
+1195,Osteoarthritis,Trimethoprim,2,M,23
+1195,Bronchitis,Azithromycin,9,M,23
+1195,Bronchitis,Amoxicillin,9,M,23
+1195,Bronchitis,Metformin,1,M,23
+1195,Bronchitis,Nitrofurantoin,2,M,23
+1195,Allergic Rhinitis,Cetirizine,8,M,23
+1195,Allergic Rhinitis,Fluticasone,8,M,23
+1195,Allergic Rhinitis,Ciprofloxacin,1,M,23
+1195,Allergic Rhinitis,Hydrochlorothiazide,1,M,23
+1196,Asthma,Albuterol,10,F,22
+1196,Asthma,Fluticasone,10,F,22
+1196,Asthma,Trimethoprim,1,F,22
+1196,Asthma,Amlodipine,2,F,22
+1196,Anxiety,Sertraline,7,F,22
+1196,Anxiety,Escitalopram,7,F,22
+1196,Anxiety,Oseltamivir,1,F,22
+1196,Anxiety,Sumatriptan,1,F,22
+1197,Osteoarthritis,Celecoxib,9,M,26
+1197,Osteoarthritis,Ibuprofen,6,M,26
+1197,Osteoarthritis,Ondansetron,1,M,26
+1197,Osteoarthritis,Trimethoprim,2,M,26
+1198,Hypertension,Lisinopril,8,M,30
+1198,Hypertension,Amlodipine,6,M,30
+1198,Hypertension,Fluticasone,1,M,30
+1198,Hypertension,Topiramate,3,M,30
+1199,Common Cold,Acetaminophen,8,M,63
+1199,Common Cold,Ibuprofen,6,M,63
+1199,Common Cold,Nitrofurantoin,1,M,63
+1199,Common Cold,Topiramate,1,M,63
+1199,Hypertension,Lisinopril,9,M,63
+1199,Hypertension,Amlodipine,7,M,63
+1199,Hypertension,Fluticasone,2,M,63
+1199,Hypertension,Topiramate,3,M,63
+1199,Pneumonia,Azithromycin,9,M,63
+1199,Pneumonia,Amoxicillin,6,M,63
+1199,Pneumonia,Budesonide,1,M,63
+1199,Pneumonia,Ibuprofen,1,M,63

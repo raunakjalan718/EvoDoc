@@ -1,0 +1,6 @@
+scenario,top_predictions,expected_medications,match_percentage
+Elderly Patient with Hypertension,[],"['Lisinopril', 'Amlodipine', 'Hydrochlorothiazide']",0.0
+Young Adult with Respiratory Infection,[],"['Azithromycin', 'Amoxicillin', 'Doxycycline']",0.0
+Middle-aged Patient with Diabetes,[],"['Metformin', 'Glipizide', 'Sitagliptin']",0.0
+Child with Allergies,[],"['Cetirizine', 'Loratadine', 'Fluticasone']",0.0
+Adult with Mental Health Issues,[],"['Sertraline', 'Citalopram', 'Escitalopram']",0.0

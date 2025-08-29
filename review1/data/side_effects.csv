@@ -1,0 +1,25 @@
+medication,side_effect,frequency,severity
+Amoxicillin,Diarrhea,0.08119641817199315,3
+Amoxicillin,Nausea,0.05162612483458519,2
+Amoxicillin,Rash,0.0324087608553902,5
+Lisinopril,Dry cough,0.21115076883947062,4
+Lisinopril,Dizziness,0.06250609881060669,4
+Lisinopril,Headache,0.07336438380022121,1
+Azithromycin,Diarrhea,0.05580596104562413,4
+Azithromycin,Nausea,0.05256673270007978,2
+Azithromycin,Abdominal pain,0.02408072150445657,5
+Ibuprofen,Stomach pain,0.11512753177782721,4
+Ibuprofen,Heartburn,0.09863929590765537,4
+Ibuprofen,Dizziness,0.04031234690020776,2
+Loratadine,Drowsiness,0.08186475837145078,2
+Loratadine,Dry mouth,0.05854077780444332,1
+Loratadine,Headache,0.01390186567476455,2
+Metformin,Diarrhea,0.1505489315484849,4
+Metformin,Nausea,0.10068049231258142,4
+Metformin,Abdominal discomfort,0.07969354181627397,2
+Citalopram,Insomnia,0.10066565301894037,5
+Citalopram,Nausea,0.06517282839405439,4
+Citalopram,Sexual dysfunction,0.1399443809097899,6
+Cetirizine,Drowsiness,0.09997978515376849,3
+Cetirizine,Dry mouth,0.08384547413509826,1
+Cetirizine,Fatigue,0.04229647594157232,3

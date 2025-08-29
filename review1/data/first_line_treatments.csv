@@ -1,0 +1,21 @@
+condition,medication,drug_class
+Streptococcal pharyngitis,Amoxicillin,Penicillin antibiotic
+Otitis media,Amoxicillin,Penicillin antibiotic
+Uncomplicated UTI,Amoxicillin,Penicillin antibiotic
+Hypertension with diabetes,Lisinopril,ACE inhibitor
+Hypertension with heart failure,Lisinopril,ACE inhibitor
+Hypertension with kidney disease,Lisinopril,ACE inhibitor
+Community-acquired pneumonia,Azithromycin,Macrolide antibiotic
+Acute bronchitis,Azithromycin,Macrolide antibiotic
+Chlamydial infections,Azithromycin,Macrolide antibiotic
+Mild to moderate pain,Ibuprofen,NSAID
+Inflammatory conditions,Ibuprofen,NSAID
+Fever,Ibuprofen,NSAID
+Seasonal allergies,Loratadine,Second-generation antihistamine
+Chronic urticaria,Loratadine,Second-generation antihistamine
+Type 2 diabetes,Metformin,Biguanide
+Insulin resistance,Metformin,Biguanide
+Major depressive disorder,Citalopram,SSRI
+Generalized anxiety disorder,Citalopram,SSRI
+Allergic rhinitis,Cetirizine,Second-generation antihistamine
+Chronic urticaria,Cetirizine,Second-generation antihistamine

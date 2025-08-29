@@ -1,0 +1,999 @@
+subject_id,diagnosis,medication,effectiveness
+1,Osteoarthritis,Naproxen,6
+1,Osteoarthritis,Celecoxib,7
+1,Type 2 Diabetes,Sitagliptin,7
+1,Type 2 Diabetes,Metformin,8
+2,Type 2 Diabetes,Metformin,9
+2,Type 2 Diabetes,Glipizide,8
+2,Type 2 Diabetes,Sitagliptin,8
+3,Depression,Sertraline,8
+3,Depression,Escitalopram,8
+3,Anxiety,Sertraline,9
+4,Allergic Rhinitis,Cetirizine,8
+4,Asthma,Montelukast,7
+4,Asthma,Albuterol,7
+4,Asthma,Fluticasone,9
+5,Bronchitis,Amoxicillin,8
+6,Bronchitis,Amoxicillin,7
+6,Bronchitis,Doxycycline,8
+6,COPD,Albuterol,8
+6,COPD,Budesonide,7
+7,Asthma,Albuterol,9
+7,Asthma,Montelukast,7
+7,Asthma,Fluticasone,8
+7,Allergic Rhinitis,Loratadine,9
+7,Allergic Rhinitis,Cetirizine,9
+8,Allergic Rhinitis,Fluticasone,9
+8,Allergic Rhinitis,Loratadine,9
+9,Influenza,Dextromethorphan,6
+9,Influenza,Acetaminophen,6
+10,COPD,Albuterol,8
+10,COPD,Tiotropium,8
+10,Bronchitis,Amoxicillin,9
+10,Bronchitis,Doxycycline,7
+10,Bronchitis,Azithromycin,8
+11,COPD,Albuterol,8
+11,COPD,Budesonide,7
+11,Bronchitis,Azithromycin,10
+12,Bronchitis,Azithromycin,9
+12,COPD,Budesonide,9
+12,COPD,Tiotropium,8
+12,COPD,Albuterol,8
+13,Common Cold,Acetaminophen,8
+14,COPD,Albuterol,10
+14,Anxiety,Citalopram,7
+14,Anxiety,Sertraline,9
+14,Anxiety,Escitalopram,7
+15,COPD,Tiotropium,8
+16,Influenza,Oseltamivir,8
+16,Influenza,Dextromethorphan,6
+17,Gastroenteritis,Ondansetron,9
+18,Asthma,Albuterol,9
+18,Asthma,Montelukast,6
+18,Gastroenteritis,Bismuth subsalicylate,7
+18,Gastroenteritis,Ondansetron,8
+19,Urinary Tract Infection,Ciprofloxacin,9
+19,Urinary Tract Infection,Trimethoprim,6
+20,Depression,Citalopram,6
+21,Osteoarthritis,Ibuprofen,7
+21,Osteoarthritis,Naproxen,7
+21,Osteoarthritis,Celecoxib,9
+21,Hypertension,Lisinopril,7
+22,Type 2 Diabetes,Glipizide,8
+23,Influenza,Acetaminophen,7
+24,Allergic Rhinitis,Cetirizine,7
+24,Allergic Rhinitis,Loratadine,8
+25,Anxiety,Citalopram,8
+25,Anxiety,Escitalopram,9
+25,Osteoarthritis,Ibuprofen,7
+25,Osteoarthritis,Naproxen,8
+26,Anxiety,Sertraline,9
+26,Anxiety,Escitalopram,9
+26,Urinary Tract Infection,Nitrofurantoin,8
+26,Depression,Escitalopram,8
+26,Depression,Sertraline,7
+26,Depression,Citalopram,7
+27,Allergic Rhinitis,Fluticasone,9
+28,Migraine,Propranolol,7
+28,Osteoarthritis,Celecoxib,7
+28,Osteoarthritis,Ibuprofen,8
+28,Osteoarthritis,Naproxen,8
+28,Depression,Sertraline,10
+28,Depression,Citalopram,7
+29,Allergic Rhinitis,Loratadine,7
+29,Asthma,Montelukast,6
+30,Gastroenteritis,Bismuth subsalicylate,6
+31,Asthma,Fluticasone,9
+31,Asthma,Albuterol,8
+31,Allergic Rhinitis,Loratadine,9
+31,Allergic Rhinitis,Fluticasone,7
+31,Allergic Rhinitis,Cetirizine,9
+32,Pneumonia,Amoxicillin,9
+32,Pneumonia,Doxycycline,8
+32,Pneumonia,Azithromycin,7
+32,Common Cold,Dextromethorphan,6
+33,Pneumonia,Amoxicillin,8
+33,Pneumonia,Azithromycin,8
+33,Pneumonia,Doxycycline,7
+34,Anxiety,Sertraline,6
+34,Depression,Citalopram,7
+34,Depression,Sertraline,9
+35,Anxiety,Escitalopram,7
+35,Anxiety,Citalopram,7
+35,Depression,Sertraline,9
+36,Allergic Rhinitis,Fluticasone,9
+36,Allergic Rhinitis,Cetirizine,8
+36,Allergic Rhinitis,Loratadine,8
+36,Asthma,Fluticasone,8
+37,Migraine,Topiramate,8
+38,Bronchitis,Amoxicillin,7
+39,Hypertension,Amlodipine,8
+39,Hypertension,Hydrochlorothiazide,8
+39,Hypertension,Lisinopril,8
+39,COPD,Tiotropium,8
+39,COPD,Budesonide,7
+39,COPD,Albuterol,8
+40,Osteoarthritis,Naproxen,7
+40,Osteoarthritis,Ibuprofen,8
+40,Osteoarthritis,Celecoxib,9
+40,Hypertension,Hydrochlorothiazide,8
+40,Hypertension,Amlodipine,9
+40,Hypertension,Lisinopril,9
+41,Depression,Sertraline,7
+41,Depression,Escitalopram,8
+41,Depression,Citalopram,8
+41,COPD,Albuterol,9
+42,Depression,Sertraline,9
+42,Depression,Escitalopram,8
+42,Depression,Citalopram,8
+42,Anxiety,Sertraline,8
+42,Anxiety,Escitalopram,7
+42,Anxiety,Citalopram,7
+43,Depression,Citalopram,8
+43,Depression,Escitalopram,9
+43,Depression,Sertraline,8
+43,Anxiety,Citalopram,7
+43,Anxiety,Escitalopram,8
+44,Anxiety,Citalopram,7
+44,Depression,Sertraline,8
+44,Depression,Escitalopram,7
+45,Allergic Rhinitis,Cetirizine,7
+45,Allergic Rhinitis,Loratadine,9
+45,Allergic Rhinitis,Fluticasone,7
+46,Allergic Rhinitis,Cetirizine,8
+46,Allergic Rhinitis,Loratadine,8
+46,Asthma,Fluticasone,9
+46,Asthma,Montelukast,8
+47,Asthma,Fluticasone,7
+47,Common Cold,Acetaminophen,7
+47,Common Cold,Dextromethorphan,5
+48,Hypertension,Amlodipine,7
+48,Hypertension,Lisinopril,7
+48,Hypertension,Hydrochlorothiazide,7
+49,Asthma,Albuterol,9
+49,Asthma,Fluticasone,8
+49,Asthma,Montelukast,7
+49,Allergic Rhinitis,Cetirizine,8
+49,Allergic Rhinitis,Fluticasone,9
+49,Allergic Rhinitis,Loratadine,9
+50,Common Cold,Acetaminophen,6
+51,Asthma,Montelukast,7
+51,Asthma,Fluticasone,7
+51,Asthma,Albuterol,8
+52,Depression,Escitalopram,9
+53,Anxiety,Citalopram,8
+53,Anxiety,Sertraline,9
+53,Anxiety,Escitalopram,7
+54,Gastroenteritis,Loperamide,8
+54,Type 2 Diabetes,Metformin,10
+55,Type 2 Diabetes,Metformin,10
+55,Type 2 Diabetes,Sitagliptin,9
+55,Type 2 Diabetes,Glipizide,6
+55,Osteoarthritis,Naproxen,8
+56,Migraine,Sumatriptan,7
+56,Migraine,Propranolol,7
+56,Migraine,Topiramate,8
+57,Osteoarthritis,Celecoxib,9
+57,Osteoarthritis,Naproxen,6
+57,Type 2 Diabetes,Sitagliptin,8
+57,Type 2 Diabetes,Glipizide,8
+58,Allergic Rhinitis,Fluticasone,6
+58,Allergic Rhinitis,Loratadine,7
+58,Asthma,Fluticasone,7
+58,Pneumonia,Azithromycin,8
+58,Urinary Tract Infection,Ciprofloxacin,7
+58,Urinary Tract Infection,Nitrofurantoin,7
+58,Urinary Tract Infection,Trimethoprim,6
+58,Gastroenteritis,Bismuth subsalicylate,5
+58,Gastroenteritis,Ondansetron,7
+59,Bronchitis,Azithromycin,8
+59,Bronchitis,Doxycycline,6
+60,Anxiety,Escitalopram,7
+60,Anxiety,Sertraline,9
+60,Depression,Escitalopram,8
+60,Depression,Citalopram,7
+60,Gastroenteritis,Ondansetron,7
+61,Allergic Rhinitis,Cetirizine,9
+61,Allergic Rhinitis,Fluticasone,8
+61,Allergic Rhinitis,Loratadine,9
+61,Asthma,Albuterol,10
+61,Asthma,Montelukast,7
+62,COPD,Tiotropium,8
+62,COPD,Budesonide,7
+62,COPD,Albuterol,8
+63,Urinary Tract Infection,Trimethoprim,7
+63,Urinary Tract Infection,Ciprofloxacin,8
+63,Urinary Tract Infection,Nitrofurantoin,9
+63,Osteoarthritis,Ibuprofen,7
+64,Hypertension,Hydrochlorothiazide,6
+64,Type 2 Diabetes,Glipizide,8
+65,Depression,Sertraline,9
+65,Depression,Citalopram,9
+65,Pneumonia,Doxycycline,7
+66,Anxiety,Escitalopram,7
+66,Anxiety,Sertraline,9
+66,Anxiety,Citalopram,7
+67,Allergic Rhinitis,Fluticasone,8
+67,Allergic Rhinitis,Cetirizine,9
+67,Allergic Rhinitis,Loratadine,7
+67,Asthma,Albuterol,9
+68,Depression,Citalopram,7
+68,Depression,Sertraline,7
+68,Depression,Escitalopram,9
+69,Depression,Citalopram,8
+69,Anxiety,Citalopram,8
+69,Anxiety,Escitalopram,7
+69,Anxiety,Sertraline,9
+70,Influenza,Oseltamivir,7
+70,Influenza,Acetaminophen,7
+71,Type 2 Diabetes,Sitagliptin,8
+71,Hypertension,Lisinopril,8
+71,Osteoarthritis,Ibuprofen,8
+72,Allergic Rhinitis,Fluticasone,8
+72,Allergic Rhinitis,Loratadine,8
+72,Asthma,Albuterol,8
+73,Anxiety,Citalopram,8
+73,Anxiety,Escitalopram,7
+74,COPD,Albuterol,8
+74,COPD,Tiotropium,8
+75,Allergic Rhinitis,Loratadine,8
+75,Allergic Rhinitis,Cetirizine,8
+75,Asthma,Albuterol,8
+75,Gastroenteritis,Loperamide,7
+76,Bronchitis,Azithromycin,9
+76,Bronchitis,Doxycycline,7
+76,Bronchitis,Amoxicillin,7
+77,Asthma,Albuterol,7
+77,Asthma,Montelukast,7
+78,Anxiety,Sertraline,8
+78,Depression,Citalopram,7
+78,Depression,Sertraline,8
+78,Depression,Escitalopram,8
+79,Pneumonia,Azithromycin,9
+79,Pneumonia,Amoxicillin,10
+80,Osteoarthritis,Naproxen,8
+80,Osteoarthritis,Ibuprofen,8
+80,Osteoarthritis,Celecoxib,7
+80,Hypertension,Lisinopril,7
+80,Hypertension,Hydrochlorothiazide,7
+80,Type 2 Diabetes,Sitagliptin,8
+80,Type 2 Diabetes,Glipizide,8
+81,Asthma,Montelukast,7
+81,Asthma,Fluticasone,8
+82,COPD,Albuterol,9
+82,Bronchitis,Amoxicillin,9
+83,Asthma,Montelukast,7
+83,Allergic Rhinitis,Loratadine,9
+83,Migraine,Topiramate,7
+83,Migraine,Sumatriptan,8
+84,Depression,Citalopram,8
+84,Depression,Escitalopram,10
+85,Bronchitis,Azithromycin,9
+85,Bronchitis,Doxycycline,7
+85,Allergic Rhinitis,Loratadine,7
+85,Allergic Rhinitis,Fluticasone,8
+86,Urinary Tract Infection,Trimethoprim,6
+86,Urinary Tract Infection,Nitrofurantoin,8
+87,Hypertension,Amlodipine,8
+87,Hypertension,Lisinopril,8
+87,Osteoarthritis,Celecoxib,8
+87,Osteoarthritis,Ibuprofen,7
+87,Osteoarthritis,Naproxen,7
+88,Allergic Rhinitis,Loratadine,8
+88,Allergic Rhinitis,Cetirizine,8
+88,Allergic Rhinitis,Fluticasone,9
+88,Asthma,Fluticasone,7
+88,Asthma,Albuterol,10
+88,Asthma,Montelukast,7
+88,Pneumonia,Doxycycline,9
+88,Pneumonia,Azithromycin,7
+89,Depression,Sertraline,7
+89,Depression,Citalopram,9
+89,Depression,Escitalopram,9
+89,Anxiety,Citalopram,8
+90,Migraine,Propranolol,7
+90,Migraine,Sumatriptan,10
+90,Urinary Tract Infection,Trimethoprim,8
+90,Type 2 Diabetes,Metformin,8
+90,Type 2 Diabetes,Sitagliptin,8
+90,Type 2 Diabetes,Glipizide,7
+91,Bronchitis,Doxycycline,7
+91,Bronchitis,Amoxicillin,8
+91,Bronchitis,Azithromycin,9
+91,COPD,Albuterol,9
+92,Type 2 Diabetes,Sitagliptin,8
+92,Type 2 Diabetes,Glipizide,7
+92,Type 2 Diabetes,Metformin,9
+92,Hypertension,Hydrochlorothiazide,7
+92,Hypertension,Lisinopril,7
+92,Osteoarthritis,Ibuprofen,9
+92,Osteoarthritis,Naproxen,7
+92,Osteoarthritis,Celecoxib,9
+93,Depression,Citalopram,9
+93,Depression,Escitalopram,8
+93,Depression,Sertraline,8
+93,Osteoarthritis,Ibuprofen,8
+93,Osteoarthritis,Celecoxib,8
+93,Osteoarthritis,Naproxen,6
+94,Bronchitis,Amoxicillin,7
+94,Bronchitis,Doxycycline,7
+94,Bronchitis,Azithromycin,9
+94,Allergic Rhinitis,Cetirizine,8
+95,COPD,Tiotropium,8
+95,Bronchitis,Amoxicillin,7
+96,Type 2 Diabetes,Metformin,10
+96,Type 2 Diabetes,Glipizide,8
+96,Type 2 Diabetes,Sitagliptin,8
+96,Gastroenteritis,Bismuth subsalicylate,7
+97,Bronchitis,Azithromycin,9
+98,Osteoarthritis,Naproxen,7
+98,Osteoarthritis,Celecoxib,8
+98,Osteoarthritis,Ibuprofen,8
+98,Hypertension,Amlodipine,7
+98,Type 2 Diabetes,Sitagliptin,7
+98,Type 2 Diabetes,Glipizide,7
+99,Urinary Tract Infection,Ciprofloxacin,7
+99,Urinary Tract Infection,Trimethoprim,8
+100,Influenza,Dextromethorphan,6
+100,Influenza,Acetaminophen,6
+100,Pneumonia,Doxycycline,8
+100,Pneumonia,Azithromycin,9
+100,Anxiety,Escitalopram,8
+101,Depression,Citalopram,8
+101,Depression,Escitalopram,6
+101,Depression,Sertraline,6
+101,Anxiety,Sertraline,7
+101,Bronchitis,Azithromycin,8
+102,Osteoarthritis,Celecoxib,6
+102,Osteoarthritis,Naproxen,6
+102,Osteoarthritis,Ibuprofen,6
+102,Bronchitis,Doxycycline,7
+102,Urinary Tract Infection,Ciprofloxacin,8
+102,Urinary Tract Infection,Nitrofurantoin,8
+102,Depression,Escitalopram,7
+102,Depression,Citalopram,6
+102,Depression,Sertraline,7
+103,Influenza,Acetaminophen,6
+103,Influenza,Dextromethorphan,5
+104,Influenza,Acetaminophen,6
+104,Influenza,Oseltamivir,7
+104,Influenza,Dextromethorphan,6
+105,Depression,Sertraline,8
+105,Depression,Citalopram,6
+105,Depression,Escitalopram,8
+105,Anxiety,Citalopram,5
+105,Anxiety,Sertraline,7
+105,Anxiety,Escitalopram,8
+105,Allergic Rhinitis,Cetirizine,7
+105,Allergic Rhinitis,Fluticasone,8
+105,Gastroenteritis,Ondansetron,7
+105,Gastroenteritis,Bismuth subsalicylate,6
+105,Bronchitis,Amoxicillin,7
+105,Bronchitis,Doxycycline,6
+106,Migraine,Topiramate,7
+107,Depression,Escitalopram,9
+107,Anxiety,Escitalopram,7
+107,Anxiety,Sertraline,8
+107,Common Cold,Dextromethorphan,7
+107,Common Cold,Acetaminophen,7
+107,Common Cold,Ibuprofen,7
+107,Gastroenteritis,Bismuth subsalicylate,7
+107,Gastroenteritis,Ondansetron,7
+107,Gastroenteritis,Loperamide,8
+107,Allergic Rhinitis,Cetirizine,8
+107,Allergic Rhinitis,Loratadine,7
+107,Allergic Rhinitis,Fluticasone,9
+108,Allergic Rhinitis,Cetirizine,7
+108,Allergic Rhinitis,Fluticasone,8
+108,Asthma,Albuterol,8
+108,Asthma,Fluticasone,7
+108,Asthma,Montelukast,7
+108,Type 2 Diabetes,Metformin,9
+108,Type 2 Diabetes,Glipizide,6
+109,Depression,Escitalopram,8
+110,Allergic Rhinitis,Fluticasone,7
+110,Allergic Rhinitis,Cetirizine,8
+110,Allergic Rhinitis,Loratadine,9
+111,Type 2 Diabetes,Metformin,9
+111,Hypertension,Hydrochlorothiazide,7
+111,Hypertension,Lisinopril,8
+111,Hypertension,Amlodipine,7
+112,Pneumonia,Azithromycin,8
+112,Hypertension,Lisinopril,8
+112,Asthma,Albuterol,10
+113,COPD,Albuterol,9
+113,Bronchitis,Amoxicillin,7
+113,Gastroenteritis,Loperamide,8
+114,Bronchitis,Amoxicillin,9
+114,Bronchitis,Doxycycline,7
+114,Bronchitis,Azithromycin,8
+114,COPD,Tiotropium,9
+115,Migraine,Sumatriptan,8
+115,Migraine,Propranolol,6
+115,Migraine,Topiramate,6
+115,Hypertension,Hydrochlorothiazide,7
+115,Hypertension,Lisinopril,7
+115,Hypertension,Amlodipine,6
+116,Bronchitis,Amoxicillin,8
+116,COPD,Albuterol,8
+116,COPD,Budesonide,8
+117,Allergic Rhinitis,Loratadine,7
+117,Allergic Rhinitis,Fluticasone,8
+117,Allergic Rhinitis,Cetirizine,8
+117,Asthma,Albuterol,8
+117,Asthma,Fluticasone,8
+117,Asthma,Montelukast,7
+117,Anxiety,Escitalopram,9
+118,COPD,Budesonide,7
+118,COPD,Albuterol,8
+118,COPD,Tiotropium,9
+118,Bronchitis,Doxycycline,7
+118,Osteoarthritis,Naproxen,7
+118,Osteoarthritis,Celecoxib,9
+118,Depression,Sertraline,9
+118,Depression,Escitalopram,8
+118,Depression,Citalopram,8
+118,Influenza,Dextromethorphan,6
+118,Influenza,Acetaminophen,7
+119,Migraine,Sumatriptan,8
+119,COPD,Tiotropium,8
+119,COPD,Budesonide,6
+119,Allergic Rhinitis,Fluticasone,8
+119,Allergic Rhinitis,Loratadine,6
+120,COPD,Albuterol,8
+120,COPD,Budesonide,8
+120,Bronchitis,Doxycycline,8
+121,Osteoarthritis,Naproxen,6
+121,Osteoarthritis,Celecoxib,7
+121,Osteoarthritis,Ibuprofen,7
+121,Type 2 Diabetes,Metformin,9
+121,Type 2 Diabetes,Glipizide,7
+121,Type 2 Diabetes,Sitagliptin,7
+121,Hypertension,Hydrochlorothiazide,5
+121,Hypertension,Lisinopril,7
+121,Hypertension,Amlodipine,7
+122,Anxiety,Citalopram,7
+122,Anxiety,Sertraline,8
+123,Anxiety,Sertraline,8
+123,Gastroenteritis,Ondansetron,9
+123,Gastroenteritis,Bismuth subsalicylate,7
+124,Asthma,Fluticasone,7
+124,Asthma,Montelukast,7
+124,Allergic Rhinitis,Cetirizine,8
+124,Allergic Rhinitis,Loratadine,9
+124,Osteoarthritis,Ibuprofen,8
+124,Osteoarthritis,Naproxen,8
+124,Osteoarthritis,Celecoxib,9
+124,Anxiety,Escitalopram,9
+124,Anxiety,Citalopram,7
+124,Type 2 Diabetes,Sitagliptin,8
+125,Type 2 Diabetes,Metformin,10
+125,Type 2 Diabetes,Sitagliptin,8
+125,Type 2 Diabetes,Glipizide,6
+125,Hypertension,Hydrochlorothiazide,7
+125,Osteoarthritis,Celecoxib,8
+125,Osteoarthritis,Ibuprofen,6
+125,Anxiety,Escitalopram,9
+125,Anxiety,Citalopram,8
+125,COPD,Albuterol,8
+126,Type 2 Diabetes,Sitagliptin,9
+126,Type 2 Diabetes,Glipizide,8
+126,Influenza,Dextromethorphan,5
+126,Influenza,Acetaminophen,6
+126,Influenza,Oseltamivir,9
+127,Asthma,Fluticasone,8
+127,Asthma,Albuterol,9
+127,Asthma,Montelukast,6
+127,Allergic Rhinitis,Fluticasone,7
+127,Allergic Rhinitis,Loratadine,9
+127,Common Cold,Ibuprofen,7
+127,Common Cold,Acetaminophen,6
+127,Common Cold,Dextromethorphan,7
+128,COPD,Budesonide,7
+128,COPD,Albuterol,9
+128,Bronchitis,Doxycycline,7
+128,Bronchitis,Amoxicillin,8
+129,COPD,Budesonide,8
+129,COPD,Albuterol,9
+130,Depression,Escitalopram,8
+130,Anxiety,Sertraline,7
+130,Anxiety,Citalopram,9
+130,Anxiety,Escitalopram,8
+130,Pneumonia,Amoxicillin,8
+131,Anxiety,Citalopram,7
+131,Anxiety,Escitalopram,6
+131,Depression,Sertraline,8
+131,Asthma,Albuterol,7
+131,Asthma,Montelukast,5
+131,Influenza,Dextromethorphan,4
+131,COPD,Albuterol,6
+131,COPD,Tiotropium,8
+131,COPD,Budesonide,6
+132,Anxiety,Escitalopram,9
+132,Anxiety,Citalopram,7
+133,Anxiety,Citalopram,6
+133,Depression,Escitalopram,8
+133,Depression,Sertraline,9
+133,Depression,Citalopram,7
+133,Gastroenteritis,Bismuth subsalicylate,6
+133,Gastroenteritis,Ondansetron,7
+133,Gastroenteritis,Loperamide,7
+133,Allergic Rhinitis,Loratadine,6
+133,Allergic Rhinitis,Fluticasone,7
+133,Allergic Rhinitis,Cetirizine,7
+134,Type 2 Diabetes,Sitagliptin,8
+134,Osteoarthritis,Ibuprofen,7
+134,Osteoarthritis,Naproxen,7
+134,Osteoarthritis,Celecoxib,8
+134,Hypertension,Hydrochlorothiazide,7
+135,Common Cold,Ibuprofen,6
+135,Common Cold,Acetaminophen,7
+136,Allergic Rhinitis,Fluticasone,9
+136,Allergic Rhinitis,Loratadine,8
+136,Asthma,Fluticasone,9
+136,Asthma,Albuterol,9
+136,Migraine,Topiramate,7
+136,Hypertension,Lisinopril,10
+136,Hypertension,Amlodipine,8
+136,Urinary Tract Infection,Ciprofloxacin,9
+136,Urinary Tract Infection,Trimethoprim,7
+136,Urinary Tract Infection,Nitrofurantoin,9
+137,Hypertension,Lisinopril,9
+137,Hypertension,Amlodipine,8
+137,Influenza,Dextromethorphan,5
+137,Influenza,Acetaminophen,6
+137,Influenza,Oseltamivir,8
+138,Bronchitis,Doxycycline,8
+138,Bronchitis,Amoxicillin,9
+138,COPD,Budesonide,7
+138,COPD,Albuterol,7
+138,COPD,Tiotropium,9
+139,Depression,Escitalopram,9
+139,Depression,Sertraline,8
+139,Anxiety,Escitalopram,8
+139,Anxiety,Citalopram,8
+139,Anxiety,Sertraline,9
+140,Asthma,Fluticasone,9
+140,Asthma,Montelukast,6
+140,Asthma,Albuterol,9
+140,Allergic Rhinitis,Fluticasone,7
+140,Allergic Rhinitis,Cetirizine,8
+140,Bronchitis,Doxycycline,8
+141,Osteoarthritis,Ibuprofen,9
+141,Hypertension,Amlodipine,8
+141,Hypertension,Lisinopril,8
+141,Hypertension,Hydrochlorothiazide,7
+141,Type 2 Diabetes,Sitagliptin,8
+142,Gastroenteritis,Loperamide,5
+142,Gastroenteritis,Ondansetron,6
+142,Anxiety,Sertraline,8
+142,Anxiety,Citalopram,6
+142,Anxiety,Escitalopram,7
+142,Osteoarthritis,Celecoxib,6
+143,COPD,Budesonide,8
+143,COPD,Tiotropium,8
+143,Migraine,Sumatriptan,9
+143,Migraine,Topiramate,8
+143,Migraine,Propranolol,7
+144,Pneumonia,Azithromycin,9
+144,Pneumonia,Doxycycline,6
+144,Influenza,Dextromethorphan,5
+145,Migraine,Propranolol,5
+145,Influenza,Dextromethorphan,5
+145,Influenza,Oseltamivir,7
+145,Influenza,Acetaminophen,5
+145,Gastroenteritis,Bismuth subsalicylate,7
+145,Gastroenteritis,Loperamide,6
+145,Osteoarthritis,Celecoxib,7
+145,Osteoarthritis,Naproxen,6
+146,Hypertension,Lisinopril,7
+146,Hypertension,Hydrochlorothiazide,7
+146,Hypertension,Amlodipine,9
+146,Osteoarthritis,Ibuprofen,7
+146,Osteoarthritis,Celecoxib,8
+146,Osteoarthritis,Naproxen,7
+147,Allergic Rhinitis,Cetirizine,7
+147,Asthma,Albuterol,8
+147,Asthma,Montelukast,5
+147,Anxiety,Citalopram,8
+147,Bronchitis,Azithromycin,8
+147,Bronchitis,Doxycycline,6
+147,Bronchitis,Amoxicillin,7
+148,Urinary Tract Infection,Trimethoprim,7
+148,Urinary Tract Infection,Ciprofloxacin,8
+148,Urinary Tract Infection,Nitrofurantoin,8
+148,Migraine,Propranolol,7
+148,Migraine,Topiramate,7
+148,Bronchitis,Doxycycline,6
+148,Bronchitis,Amoxicillin,9
+148,Bronchitis,Azithromycin,9
+149,Urinary Tract Infection,Trimethoprim,8
+149,Urinary Tract Infection,Nitrofurantoin,10
+149,Urinary Tract Infection,Ciprofloxacin,8
+150,Depression,Sertraline,8
+150,Anxiety,Sertraline,7
+151,Depression,Sertraline,8
+151,Depression,Escitalopram,7
+151,Anxiety,Citalopram,8
+151,Anxiety,Sertraline,9
+151,Gastroenteritis,Ondansetron,9
+152,COPD,Albuterol,7
+152,COPD,Tiotropium,6
+152,COPD,Budesonide,7
+152,Bronchitis,Azithromycin,7
+152,Urinary Tract Infection,Trimethoprim,6
+152,Urinary Tract Infection,Nitrofurantoin,9
+153,Depression,Sertraline,7
+153,Depression,Citalopram,6
+153,Asthma,Montelukast,6
+153,Asthma,Fluticasone,7
+153,Influenza,Acetaminophen,5
+153,Migraine,Topiramate,7
+153,Migraine,Sumatriptan,6
+153,Migraine,Propranolol,6
+153,Allergic Rhinitis,Loratadine,7
+153,Allergic Rhinitis,Cetirizine,9
+154,Bronchitis,Azithromycin,10
+154,Bronchitis,Amoxicillin,7
+154,Bronchitis,Doxycycline,7
+154,COPD,Tiotropium,8
+154,COPD,Budesonide,7
+155,Allergic Rhinitis,Loratadine,8
+155,Asthma,Albuterol,7
+155,Asthma,Fluticasone,7
+155,Asthma,Montelukast,6
+155,Urinary Tract Infection,Trimethoprim,7
+156,Anxiety,Sertraline,8
+156,Anxiety,Citalopram,9
+156,Anxiety,Escitalopram,9
+156,Osteoarthritis,Ibuprofen,8
+156,Common Cold,Acetaminophen,7
+156,Gastroenteritis,Bismuth subsalicylate,7
+156,Gastroenteritis,Ondansetron,8
+156,Influenza,Oseltamivir,9
+157,Allergic Rhinitis,Cetirizine,8
+157,Allergic Rhinitis,Fluticasone,8
+158,Pneumonia,Azithromycin,9
+158,Pneumonia,Amoxicillin,8
+158,Asthma,Albuterol,9
+158,Influenza,Acetaminophen,6
+158,Influenza,Oseltamivir,7
+159,Anxiety,Escitalopram,7
+159,Anxiety,Sertraline,7
+159,Depression,Sertraline,8
+159,Depression,Escitalopram,7
+159,Depression,Citalopram,7
+160,Hypertension,Lisinopril,8
+160,Hypertension,Hydrochlorothiazide,6
+160,Osteoarthritis,Ibuprofen,6
+160,Osteoarthritis,Naproxen,7
+161,Hypertension,Amlodipine,7
+161,Hypertension,Hydrochlorothiazide,9
+161,Type 2 Diabetes,Metformin,9
+161,Type 2 Diabetes,Sitagliptin,8
+162,COPD,Albuterol,8
+162,COPD,Budesonide,6
+162,COPD,Tiotropium,8
+162,Bronchitis,Amoxicillin,8
+162,Bronchitis,Doxycycline,8
+162,Bronchitis,Azithromycin,8
+163,Depression,Escitalopram,7
+163,Depression,Sertraline,7
+163,Depression,Citalopram,6
+163,Anxiety,Sertraline,7
+163,Anxiety,Escitalopram,8
+164,Bronchitis,Azithromycin,8
+164,COPD,Albuterol,7
+164,COPD,Budesonide,7
+164,COPD,Tiotropium,6
+164,Allergic Rhinitis,Loratadine,6
+164,Allergic Rhinitis,Cetirizine,8
+164,Hypertension,Amlodipine,7
+164,Hypertension,Hydrochlorothiazide,6
+164,Pneumonia,Amoxicillin,6
+164,Pneumonia,Azithromycin,8
+165,Allergic Rhinitis,Fluticasone,9
+165,Allergic Rhinitis,Cetirizine,8
+165,Allergic Rhinitis,Loratadine,8
+165,Asthma,Montelukast,8
+165,Asthma,Fluticasone,9
+166,Type 2 Diabetes,Metformin,8
+166,Type 2 Diabetes,Sitagliptin,7
+166,Type 2 Diabetes,Glipizide,7
+166,Hypertension,Lisinopril,8
+166,Hypertension,Hydrochlorothiazide,7
+166,Hypertension,Amlodipine,6
+166,Osteoarthritis,Naproxen,6
+166,Gastroenteritis,Loperamide,7
+166,Gastroenteritis,Ondansetron,7
+166,Gastroenteritis,Bismuth subsalicylate,6
+167,Allergic Rhinitis,Loratadine,7
+167,Allergic Rhinitis,Fluticasone,7
+167,Depression,Sertraline,9
+167,Depression,Escitalopram,9
+167,Depression,Citalopram,8
+168,Anxiety,Citalopram,6
+168,Anxiety,Escitalopram,7
+168,Depression,Escitalopram,6
+168,COPD,Budesonide,6
+168,Influenza,Oseltamivir,8
+168,Migraine,Topiramate,7
+169,Depression,Escitalopram,9
+169,Depression,Citalopram,8
+169,Depression,Sertraline,8
+169,Anxiety,Escitalopram,7
+169,Anxiety,Sertraline,8
+169,Anxiety,Citalopram,7
+169,Asthma,Albuterol,9
+169,Asthma,Montelukast,8
+170,Depression,Escitalopram,8
+170,Depression,Sertraline,9
+170,Depression,Citalopram,7
+171,Anxiety,Citalopram,7
+171,Allergic Rhinitis,Fluticasone,7
+171,Allergic Rhinitis,Loratadine,8
+171,Allergic Rhinitis,Cetirizine,7
+171,Common Cold,Acetaminophen,6
+171,Common Cold,Dextromethorphan,6
+171,Common Cold,Ibuprofen,6
+171,Osteoarthritis,Naproxen,6
+171,Osteoarthritis,Ibuprofen,6
+171,Migraine,Topiramate,8
+171,Migraine,Sumatriptan,9
+172,Anxiety,Escitalopram,8
+173,Hypertension,Hydrochlorothiazide,7
+173,Type 2 Diabetes,Metformin,10
+174,COPD,Budesonide,8
+174,COPD,Tiotropium,8
+174,COPD,Albuterol,6
+174,Bronchitis,Doxycycline,7
+175,Bronchitis,Azithromycin,8
+175,Bronchitis,Doxycycline,6
+175,Bronchitis,Amoxicillin,7
+175,COPD,Budesonide,7
+175,COPD,Albuterol,6
+175,COPD,Tiotropium,7
+176,Urinary Tract Infection,Trimethoprim,7
+177,Hypertension,Lisinopril,8
+177,Hypertension,Hydrochlorothiazide,8
+177,COPD,Tiotropium,9
+177,COPD,Albuterol,8
+177,COPD,Budesonide,7
+177,Migraine,Sumatriptan,9
+177,Migraine,Propranolol,6
+177,Migraine,Topiramate,8
+178,Gastroenteritis,Loperamide,8
+178,Gastroenteritis,Bismuth subsalicylate,8
+179,Hypertension,Lisinopril,9
+179,Hypertension,Hydrochlorothiazide,7
+180,Pneumonia,Azithromycin,8
+181,Migraine,Sumatriptan,9
+181,Migraine,Propranolol,8
+182,Influenza,Acetaminophen,7
+182,Influenza,Dextromethorphan,6
+182,Influenza,Oseltamivir,7
+182,Asthma,Montelukast,8
+182,Asthma,Albuterol,8
+182,Hypertension,Amlodipine,9
+183,Allergic Rhinitis,Fluticasone,7
+183,Allergic Rhinitis,Loratadine,7
+183,Asthma,Montelukast,6
+183,Asthma,Fluticasone,6
+183,Asthma,Albuterol,7
+183,Pneumonia,Doxycycline,6
+183,Pneumonia,Amoxicillin,7
+183,Type 2 Diabetes,Metformin,7
+184,Type 2 Diabetes,Sitagliptin,6
+184,Type 2 Diabetes,Metformin,8
+184,Osteoarthritis,Naproxen,6
+184,Osteoarthritis,Ibuprofen,8
+184,Osteoarthritis,Celecoxib,9
+184,Hypertension,Amlodipine,8
+184,Hypertension,Hydrochlorothiazide,7
+184,Hypertension,Lisinopril,8
+184,Urinary Tract Infection,Nitrofurantoin,8
+184,Urinary Tract Infection,Trimethoprim,7
+185,Bronchitis,Doxycycline,6
+185,Bronchitis,Amoxicillin,9
+185,Asthma,Montelukast,8
+185,Asthma,Fluticasone,8
+185,Asthma,Albuterol,10
+186,Gastroenteritis,Bismuth subsalicylate,6
+186,Gastroenteritis,Loperamide,7
+186,Gastroenteritis,Ondansetron,8
+186,Migraine,Topiramate,7
+186,Migraine,Propranolol,7
+186,Migraine,Sumatriptan,8
+187,Hypertension,Lisinopril,7
+187,Hypertension,Amlodipine,8
+187,Hypertension,Hydrochlorothiazide,6
+188,Allergic Rhinitis,Loratadine,9
+188,Allergic Rhinitis,Fluticasone,9
+188,Allergic Rhinitis,Cetirizine,9
+189,Anxiety,Sertraline,7
+189,Anxiety,Citalopram,7
+189,Anxiety,Escitalopram,8
+189,Depression,Sertraline,9
+189,Depression,Citalopram,7
+190,Migraine,Propranolol,6
+190,Migraine,Topiramate,8
+190,Type 2 Diabetes,Metformin,7
+190,Type 2 Diabetes,Glipizide,5
+190,Type 2 Diabetes,Sitagliptin,7
+190,Allergic Rhinitis,Fluticasone,7
+190,Urinary Tract Infection,Nitrofurantoin,7
+190,Urinary Tract Infection,Trimethoprim,6
+190,Urinary Tract Infection,Ciprofloxacin,8
+190,Depression,Escitalopram,6
+191,Anxiety,Citalopram,7
+191,Anxiety,Escitalopram,8
+191,Depression,Sertraline,8
+192,Hypertension,Hydrochlorothiazide,7
+192,Hypertension,Lisinopril,8
+192,Type 2 Diabetes,Sitagliptin,8
+192,Type 2 Diabetes,Glipizide,8
+192,Type 2 Diabetes,Metformin,10
+193,Type 2 Diabetes,Metformin,8
+193,Type 2 Diabetes,Glipizide,7
+194,Osteoarthritis,Ibuprofen,7
+194,Osteoarthritis,Celecoxib,7
+194,Type 2 Diabetes,Glipizide,8
+194,Type 2 Diabetes,Metformin,9
+194,Hypertension,Hydrochlorothiazide,7
+194,Hypertension,Lisinopril,10
+195,Anxiety,Escitalopram,8
+195,Anxiety,Citalopram,8
+195,Anxiety,Sertraline,9
+195,Depression,Escitalopram,10
+196,Gastroenteritis,Loperamide,7
+196,Gastroenteritis,Bismuth subsalicylate,8
+196,Gastroenteritis,Ondansetron,8
+196,COPD,Albuterol,8
+197,Osteoarthritis,Ibuprofen,7
+197,Type 2 Diabetes,Glipizide,7
+197,Type 2 Diabetes,Metformin,8
+198,Pneumonia,Doxycycline,8
+198,Pneumonia,Amoxicillin,8
+198,Pneumonia,Azithromycin,7
+199,Depression,Citalopram,7
+199,Depression,Sertraline,8
+199,Depression,Escitalopram,8
+199,Anxiety,Citalopram,7
+200,Hypertension,Hydrochlorothiazide,7
+200,Hypertension,Amlodipine,7
+200,Hypertension,Lisinopril,7
+200,Osteoarthritis,Celecoxib,6
+200,Type 2 Diabetes,Glipizide,5
+200,Type 2 Diabetes,Metformin,8
+200,Gastroenteritis,Bismuth subsalicylate,6
+200,Asthma,Montelukast,6
+144,Type 2 Diabetes,Budesonide,3
+151,Asthma,Propranolol,4
+182,Asthma,Trimethoprim,1
+42,Asthma,Hydrochlorothiazide,2
+80,Osteoarthritis,Nitrofurantoin,3
+146,Type 2 Diabetes,Bismuth subsalicylate,1
+45,Bronchitis,Cetirizine,2
+70,Urinary Tract Infection,Dextromethorphan,3
+39,Allergic Rhinitis,Azithromycin,2
+30,Urinary Tract Infection,Acetaminophen,2
+188,Influenza,Citalopram,1
+73,Allergic Rhinitis,Amoxicillin,4
+191,Influenza,Nitrofurantoin,1
+137,Gastroenteritis,Doxycycline,1
+16,Allergic Rhinitis,Albuterol,1
+52,Pneumonia,Ibuprofen,1
+20,Allergic Rhinitis,Dextromethorphan,3
+2,Depression,Ondansetron,4
+170,Depression,Tiotropium,1
+95,Urinary Tract Infection,Loperamide,3
+191,Anxiety,Trimethoprim,2
+117,Migraine,Albuterol,1
+42,Depression,Doxycycline,4
+141,Osteoarthritis,Escitalopram,2
+73,COPD,Loperamide,2
+56,Osteoarthritis,Amlodipine,3
+40,Common Cold,Citalopram,3
+157,Anxiety,Metformin,3
+197,Common Cold,Topiramate,1
+31,Type 2 Diabetes,Citalopram,4
+183,Hypertension,Fluticasone,2
+153,Depression,Metformin,3
+106,Common Cold,Escitalopram,3
+186,Asthma,Oseltamivir,3
+118,COPD,Escitalopram,3
+59,Osteoarthritis,Oseltamivir,2
+111,Anxiety,Glipizide,4
+105,COPD,Sitagliptin,1
+183,Asthma,Ibuprofen,2
+177,Asthma,Loperamide,4
+7,Anxiety,Oseltamivir,1
+144,Allergic Rhinitis,Acetaminophen,4
+179,Influenza,Glipizide,4
+80,COPD,Oseltamivir,2
+17,Allergic Rhinitis,Ciprofloxacin,1
+7,Migraine,Azithromycin,2
+36,Urinary Tract Infection,Escitalopram,4
+146,Common Cold,Escitalopram,1
+126,Urinary Tract Infection,Ibuprofen,1
+174,Influenza,Trimethoprim,2
+127,Asthma,Sumatriptan,2
+28,Asthma,Ciprofloxacin,2
+189,Anxiety,Oseltamivir,2
+176,Pneumonia,Amlodipine,4
+103,Anxiety,Lisinopril,4
+179,COPD,Glipizide,4
+59,Common Cold,Nitrofurantoin,1
+129,Depression,Topiramate,4
+56,Bronchitis,Montelukast,3
+123,Asthma,Amlodipine,1
+104,Common Cold,Lisinopril,1
+199,Osteoarthritis,Amlodipine,1
+123,Migraine,Azithromycin,1
+161,Type 2 Diabetes,Topiramate,4
+165,Urinary Tract Infection,Lisinopril,3
+176,Pneumonia,Dextromethorphan,4
+3,COPD,Sitagliptin,2
+99,COPD,Amoxicillin,3
+112,Depression,Budesonide,3
+95,Hypertension,Loratadine,4
+116,Common Cold,Glipizide,2
+79,Allergic Rhinitis,Escitalopram,3
+15,Type 2 Diabetes,Doxycycline,3
+8,Allergic Rhinitis,Albuterol,2
+47,Depression,Trimethoprim,2
+96,Depression,Sumatriptan,4
+13,Hypertension,Albuterol,2
+79,Osteoarthritis,Ondansetron,1
+93,Type 2 Diabetes,Celecoxib,2
+199,Depression,Ibuprofen,3
+192,Depression,Propranolol,2
+14,Influenza,Lisinopril,2
+130,Hypertension,Escitalopram,2
+89,Influenza,Sumatriptan,1
+84,Pneumonia,Budesonide,1
+22,Asthma,Sertraline,4
+50,Gastroenteritis,Dextromethorphan,3
+17,Gastroenteritis,Amlodipine,2
+132,Pneumonia,Loperamide,2
+94,Bronchitis,Celecoxib,3
+69,Pneumonia,Acetaminophen,4
+16,Asthma,Trimethoprim,1
+197,Gastroenteritis,Propranolol,2
+9,Migraine,Doxycycline,2
+64,Bronchitis,Amlodipine,2
+183,Depression,Loperamide,3
+110,Hypertension,Dextromethorphan,3
+193,Allergic Rhinitis,Hydrochlorothiazide,1
+132,COPD,Loratadine,2
+27,Migraine,Bismuth subsalicylate,4
+161,Osteoarthritis,Trimethoprim,1
+183,COPD,Lisinopril,2
+62,Type 2 Diabetes,Amlodipine,2
+106,Influenza,Bismuth subsalicylate,1
+13,Influenza,Glipizide,2
+113,Pneumonia,Ciprofloxacin,3
+189,Gastroenteritis,Dextromethorphan,3
+146,Common Cold,Cetirizine,3
+30,Gastroenteritis,Naproxen,2
+196,Asthma,Nitrofurantoin,4
+146,Gastroenteritis,Sertraline,4
+70,Bronchitis,Metformin,1
+68,Anxiety,Dextromethorphan,4
+114,Migraine,Lisinopril,1
+78,Urinary Tract Infection,Lisinopril,3
+76,Gastroenteritis,Oseltamivir,4
+179,Bronchitis,Acetaminophen,4
+155,Bronchitis,Nitrofurantoin,1
+182,Hypertension,Glipizide,4
+128,Allergic Rhinitis,Sertraline,3
+63,Urinary Tract Infection,Ibuprofen,4
+99,Anxiety,Sumatriptan,1
+22,Migraine,Celecoxib,2
+157,Asthma,Trimethoprim,2
+98,Hypertension,Topiramate,2
+112,Type 2 Diabetes,Amlodipine,2
+17,Bronchitis,Sitagliptin,3
+110,Influenza,Amlodipine,3
+56,Common Cold,Celecoxib,1
+172,Type 2 Diabetes,Albuterol,2

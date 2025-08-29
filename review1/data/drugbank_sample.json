@@ -1,0 +1,218 @@
+{
+  "drugs": [
+    {
+      "name": "Amoxicillin",
+      "description": "Penicillin antibiotic",
+      "mechanism": "Inhibits bacterial cell wall synthesis by binding to PBPs",
+      "indications": [
+        "Bacterial infections",
+        "Pneumonia",
+        "Bronchitis",
+        "Sinusitis"
+      ],
+      "contraindications": [
+        "Penicillin allergy",
+        "Infectious mononucleosis"
+      ],
+      "drug_class": "Penicillin antibiotic",
+      "typical_dosage": "250-500mg three times daily",
+      "ingredients": [
+        "Amoxicillin trihydrate",
+        "Sodium starch glycolate",
+        "Magnesium stearate"
+      ],
+      "first_line_for": [
+        "Streptococcal pharyngitis",
+        "Otitis media",
+        "Uncomplicated UTI"
+      ]
+    },
+    {
+      "name": "Lisinopril",
+      "description": "ACE inhibitor for hypertension",
+      "mechanism": "Inhibits angiotensin-converting enzyme, reducing angiotensin II production",
+      "indications": [
+        "Hypertension",
+        "Heart failure",
+        "Post-myocardial infarction"
+      ],
+      "contraindications": [
+        "Pregnancy",
+        "History of angioedema",
+        "ACE inhibitor allergy",
+        "Bilateral renal artery stenosis"
+      ],
+      "drug_class": "ACE inhibitor",
+      "typical_dosage": "10-40mg once daily",
+      "ingredients": [
+        "Lisinopril dihydrate",
+        "Calcium phosphate",
+        "Magnesium stearate"
+      ],
+      "first_line_for": [
+        "Hypertension with diabetes",
+        "Hypertension with heart failure",
+        "Hypertension with kidney disease"
+      ]
+    },
+    {
+      "name": "Azithromycin",
+      "description": "Macrolide antibiotic",
+      "mechanism": "Inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit",
+      "indications": [
+        "Respiratory infections",
+        "Skin infections",
+        "STDs",
+        "Strep throat"
+      ],
+      "contraindications": [
+        "Macrolide allergy",
+        "Severe liver disease",
+        "History of QT prolongation"
+      ],
+      "drug_class": "Macrolide antibiotic",
+      "typical_dosage": "500mg on day 1, then 250mg for 4 days",
+      "ingredients": [
+        "Azithromycin dihydrate",
+        "Pregelatinized starch",
+        "Magnesium stearate"
+      ],
+      "first_line_for": [
+        "Community-acquired pneumonia",
+        "Acute bronchitis",
+        "Chlamydial infections"
+      ]
+    },
+    {
+      "name": "Ibuprofen",
+      "description": "NSAID for pain and inflammation",
+      "mechanism": "Inhibits COX enzymes reducing prostaglandin synthesis",
+      "indications": [
+        "Pain",
+        "Inflammation",
+        "Fever",
+        "Menstrual cramps"
+      ],
+      "contraindications": [
+        "Aspirin allergy",
+        "NSAID allergy",
+        "Peptic ulcer",
+        "Severe heart failure",
+        "Third trimester pregnancy"
+      ],
+      "drug_class": "NSAID",
+      "typical_dosage": "200-800mg every 4-6 hours",
+      "ingredients": [
+        "Ibuprofen",
+        "Microcrystalline cellulose",
+        "Croscarmellose sodium"
+      ],
+      "first_line_for": [
+        "Mild to moderate pain",
+        "Inflammatory conditions",
+        "Fever"
+      ]
+    },
+    {
+      "name": "Loratadine",
+      "description": "Second-generation antihistamine for allergies",
+      "mechanism": "H1 receptor antagonist with minimal sedation",
+      "indications": [
+        "Allergic rhinitis",
+        "Urticaria",
+        "Seasonal allergies"
+      ],
+      "contraindications": [
+        "Antihistamine hypersensitivity"
+      ],
+      "drug_class": "Second-generation antihistamine",
+      "typical_dosage": "10mg once daily",
+      "ingredients": [
+        "Loratadine",
+        "Lactose monohydrate",
+        "Magnesium stearate"
+      ],
+      "first_line_for": [
+        "Seasonal allergies",
+        "Chronic urticaria"
+      ]
+    },
+    {
+      "name": "Metformin",
+      "description": "Biguanide antidiabetic",
+      "mechanism": "Decreases hepatic glucose production and improves insulin sensitivity",
+      "indications": [
+        "Type 2 diabetes mellitus",
+        "Prediabetes",
+        "PCOS"
+      ],
+      "contraindications": [
+        "Kidney disease",
+        "Metabolic acidosis",
+        "Severe liver disease"
+      ],
+      "drug_class": "Biguanide",
+      "typical_dosage": "500-1000mg twice daily",
+      "ingredients": [
+        "Metformin hydrochloride",
+        "Povidone",
+        "Magnesium stearate"
+      ],
+      "first_line_for": [
+        "Type 2 diabetes",
+        "Insulin resistance"
+      ]
+    },
+    {
+      "name": "Citalopram",
+      "description": "SSRI antidepressant",
+      "mechanism": "Selective serotonin reuptake inhibitor",
+      "indications": [
+        "Depression",
+        "Anxiety disorders",
+        "Panic disorder"
+      ],
+      "contraindications": [
+        "MAO inhibitor use",
+        "QT interval prolongation",
+        "Recent heart attack"
+      ],
+      "drug_class": "SSRI",
+      "typical_dosage": "20-40mg once daily",
+      "ingredients": [
+        "Citalopram hydrobromide",
+        "Microcrystalline cellulose",
+        "Lactose monohydrate"
+      ],
+      "first_line_for": [
+        "Major depressive disorder",
+        "Generalized anxiety disorder"
+      ]
+    },
+    {
+      "name": "Cetirizine",
+      "description": "Second-generation antihistamine",
+      "mechanism": "H1 receptor antagonist with minimal anticholinergic effects",
+      "indications": [
+        "Allergic rhinitis",
+        "Urticaria",
+        "Atopic dermatitis"
+      ],
+      "contraindications": [
+        "Antihistamine hypersensitivity",
+        "Severe kidney disease"
+      ],
+      "drug_class": "Second-generation antihistamine",
+      "typical_dosage": "10mg once daily",
+      "ingredients": [
+        "Cetirizine hydrochloride",
+        "Microcrystalline cellulose",
+        "Lactose"
+      ],
+      "first_line_for": [
+        "Allergic rhinitis",
+        "Chronic urticaria"
+      ]
+    }
+  ]
+}

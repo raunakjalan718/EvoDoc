@@ -1,0 +1,24 @@
+medication,contraindication
+Amoxicillin,Penicillin allergy
+Amoxicillin,Infectious mononucleosis
+Lisinopril,Pregnancy
+Lisinopril,History of angioedema
+Lisinopril,ACE inhibitor allergy
+Lisinopril,Bilateral renal artery stenosis
+Azithromycin,Macrolide allergy
+Azithromycin,Severe liver disease
+Azithromycin,History of QT prolongation
+Ibuprofen,Aspirin allergy
+Ibuprofen,NSAID allergy
+Ibuprofen,Peptic ulcer
+Ibuprofen,Severe heart failure
+Ibuprofen,Third trimester pregnancy
+Loratadine,Antihistamine hypersensitivity
+Metformin,Kidney disease
+Metformin,Metabolic acidosis
+Metformin,Severe liver disease
+Citalopram,MAO inhibitor use
+Citalopram,QT interval prolongation
+Citalopram,Recent heart attack
+Cetirizine,Antihistamine hypersensitivity
+Cetirizine,Severe kidney disease

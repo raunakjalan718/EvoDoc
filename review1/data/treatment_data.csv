@@ -1,0 +1,999 @@
+subject_id,diagnosis,medication,effectiveness,gender,age,is_appropriate,age_group
+1,Osteoarthritis,Naproxen,6,M,24,1,young_adult
+1,Osteoarthritis,Celecoxib,7,M,24,1,young_adult
+1,Type 2 Diabetes,Sitagliptin,7,M,24,1,young_adult
+1,Type 2 Diabetes,Metformin,8,M,24,1,young_adult
+2,Type 2 Diabetes,Metformin,9,F,31,1,young_adult
+2,Type 2 Diabetes,Glipizide,8,F,31,1,young_adult
+2,Type 2 Diabetes,Sitagliptin,8,F,31,1,young_adult
+3,Depression,Sertraline,8,F,32,1,young_adult
+3,Depression,Escitalopram,8,F,32,1,young_adult
+3,Anxiety,Sertraline,9,F,32,1,young_adult
+4,Allergic Rhinitis,Cetirizine,8,F,24,1,young_adult
+4,Asthma,Montelukast,7,F,24,1,young_adult
+4,Asthma,Albuterol,7,F,24,1,young_adult
+4,Asthma,Fluticasone,9,F,24,1,young_adult
+5,Bronchitis,Amoxicillin,8,M,44,1,middle_age
+6,Bronchitis,Amoxicillin,7,M,33,1,young_adult
+6,Bronchitis,Doxycycline,8,M,33,1,young_adult
+6,COPD,Albuterol,8,M,33,1,young_adult
+6,COPD,Budesonide,7,M,33,1,young_adult
+7,Asthma,Albuterol,9,M,20,1,young_adult
+7,Asthma,Montelukast,7,M,20,1,young_adult
+7,Asthma,Fluticasone,8,M,20,1,young_adult
+7,Allergic Rhinitis,Loratadine,9,M,20,1,young_adult
+7,Allergic Rhinitis,Cetirizine,9,M,20,1,young_adult
+8,Allergic Rhinitis,Fluticasone,9,F,35,1,young_adult
+8,Allergic Rhinitis,Loratadine,9,F,35,1,young_adult
+9,Influenza,Dextromethorphan,6,F,22,1,young_adult
+9,Influenza,Acetaminophen,6,F,22,1,young_adult
+10,COPD,Albuterol,8,F,36,1,young_adult
+10,COPD,Tiotropium,8,F,36,1,young_adult
+10,Bronchitis,Amoxicillin,9,F,36,1,young_adult
+10,Bronchitis,Doxycycline,7,F,36,1,young_adult
+10,Bronchitis,Azithromycin,8,F,36,1,young_adult
+11,COPD,Albuterol,8,M,39,1,young_adult
+11,COPD,Budesonide,7,M,39,1,young_adult
+11,Bronchitis,Azithromycin,10,M,39,1,young_adult
+12,Bronchitis,Azithromycin,9,F,23,1,young_adult
+12,COPD,Budesonide,9,F,23,1,young_adult
+12,COPD,Tiotropium,8,F,23,1,young_adult
+12,COPD,Albuterol,8,F,23,1,young_adult
+13,Common Cold,Acetaminophen,8,F,37,1,young_adult
+14,COPD,Albuterol,10,M,33,1,young_adult
+14,Anxiety,Citalopram,7,M,33,1,young_adult
+14,Anxiety,Sertraline,9,M,33,1,young_adult
+14,Anxiety,Escitalopram,7,M,33,1,young_adult
+15,COPD,Tiotropium,8,M,36,1,young_adult
+16,Influenza,Oseltamivir,8,M,45,1,middle_age
+16,Influenza,Dextromethorphan,6,M,45,1,middle_age
+17,Gastroenteritis,Ondansetron,9,M,28,1,young_adult
+18,Asthma,Albuterol,9,F,23,1,young_adult
+18,Asthma,Montelukast,6,F,23,1,young_adult
+18,Gastroenteritis,Bismuth subsalicylate,7,F,23,1,young_adult
+18,Gastroenteritis,Ondansetron,8,F,23,1,young_adult
+19,Urinary Tract Infection,Ciprofloxacin,9,M,22,1,young_adult
+19,Urinary Tract Infection,Trimethoprim,6,M,22,1,young_adult
+20,Depression,Citalopram,6,M,23,1,young_adult
+21,Osteoarthritis,Ibuprofen,7,F,29,1,young_adult
+21,Osteoarthritis,Naproxen,7,F,29,1,young_adult
+21,Osteoarthritis,Celecoxib,9,F,29,1,young_adult
+21,Hypertension,Lisinopril,7,F,29,1,young_adult
+22,Type 2 Diabetes,Glipizide,8,M,32,1,young_adult
+23,Influenza,Acetaminophen,7,M,32,1,young_adult
+24,Allergic Rhinitis,Cetirizine,7,M,36,1,young_adult
+24,Allergic Rhinitis,Loratadine,8,M,36,1,young_adult
+25,Anxiety,Citalopram,8,M,30,1,young_adult
+25,Anxiety,Escitalopram,9,M,30,1,young_adult
+25,Osteoarthritis,Ibuprofen,7,M,30,1,young_adult
+25,Osteoarthritis,Naproxen,8,M,30,1,young_adult
+26,Anxiety,Sertraline,9,F,41,1,middle_age
+26,Anxiety,Escitalopram,9,F,41,1,middle_age
+26,Urinary Tract Infection,Nitrofurantoin,8,F,41,1,middle_age
+26,Depression,Escitalopram,8,F,41,1,middle_age
+26,Depression,Sertraline,7,F,41,1,middle_age
+26,Depression,Citalopram,7,F,41,1,middle_age
+27,Allergic Rhinitis,Fluticasone,9,M,27,1,young_adult
+28,Migraine,Propranolol,7,F,51,1,middle_age
+28,Osteoarthritis,Celecoxib,7,F,51,1,middle_age
+28,Osteoarthritis,Ibuprofen,8,F,51,1,middle_age
+28,Osteoarthritis,Naproxen,8,F,51,1,middle_age
+28,Depression,Sertraline,10,F,51,1,middle_age
+28,Depression,Citalopram,7,F,51,1,middle_age
+29,Allergic Rhinitis,Loratadine,7,F,35,1,young_adult
+29,Asthma,Montelukast,6,F,35,1,young_adult
+30,Gastroenteritis,Bismuth subsalicylate,6,M,23,1,young_adult
+31,Asthma,Fluticasone,9,F,21,1,young_adult
+31,Asthma,Albuterol,8,F,21,1,young_adult
+31,Allergic Rhinitis,Loratadine,9,F,21,1,young_adult
+31,Allergic Rhinitis,Fluticasone,7,F,21,1,young_adult
+31,Allergic Rhinitis,Cetirizine,9,F,21,1,young_adult
+32,Pneumonia,Amoxicillin,9,M,33,1,young_adult
+32,Pneumonia,Doxycycline,8,M,33,1,young_adult
+32,Pneumonia,Azithromycin,7,M,33,1,young_adult
+32,Common Cold,Dextromethorphan,6,M,33,1,young_adult
+33,Pneumonia,Amoxicillin,8,M,28,1,young_adult
+33,Pneumonia,Azithromycin,8,M,28,1,young_adult
+33,Pneumonia,Doxycycline,7,M,28,1,young_adult
+34,Anxiety,Sertraline,6,F,35,1,young_adult
+34,Depression,Citalopram,7,F,35,1,young_adult
+34,Depression,Sertraline,9,F,35,1,young_adult
+35,Anxiety,Escitalopram,7,F,33,1,young_adult
+35,Anxiety,Citalopram,7,F,33,1,young_adult
+35,Depression,Sertraline,9,F,33,1,young_adult
+36,Allergic Rhinitis,Fluticasone,9,F,29,1,young_adult
+36,Allergic Rhinitis,Cetirizine,8,F,29,1,young_adult
+36,Allergic Rhinitis,Loratadine,8,F,29,1,young_adult
+36,Asthma,Fluticasone,8,F,29,1,young_adult
+37,Migraine,Topiramate,8,M,23,1,young_adult
+38,Bronchitis,Amoxicillin,7,M,18,1,pediatric
+39,Hypertension,Amlodipine,8,F,26,1,young_adult
+39,Hypertension,Hydrochlorothiazide,8,F,26,1,young_adult
+39,Hypertension,Lisinopril,8,F,26,1,young_adult
+39,COPD,Tiotropium,8,F,26,1,young_adult
+39,COPD,Budesonide,7,F,26,1,young_adult
+39,COPD,Albuterol,8,F,26,1,young_adult
+40,Osteoarthritis,Naproxen,7,M,36,1,young_adult
+40,Osteoarthritis,Ibuprofen,8,M,36,1,young_adult
+40,Osteoarthritis,Celecoxib,9,M,36,1,young_adult
+40,Hypertension,Hydrochlorothiazide,8,M,36,1,young_adult
+40,Hypertension,Amlodipine,9,M,36,1,young_adult
+40,Hypertension,Lisinopril,9,M,36,1,young_adult
+41,Depression,Sertraline,7,M,31,1,young_adult
+41,Depression,Escitalopram,8,M,31,1,young_adult
+41,Depression,Citalopram,8,M,31,1,young_adult
+41,COPD,Albuterol,9,M,31,1,young_adult
+42,Depression,Sertraline,9,M,20,1,young_adult
+42,Depression,Escitalopram,8,M,20,1,young_adult
+42,Depression,Citalopram,8,M,20,1,young_adult
+42,Anxiety,Sertraline,8,M,20,1,young_adult
+42,Anxiety,Escitalopram,7,M,20,1,young_adult
+42,Anxiety,Citalopram,7,M,20,1,young_adult
+43,Depression,Citalopram,8,M,31,1,young_adult
+43,Depression,Escitalopram,9,M,31,1,young_adult
+43,Depression,Sertraline,8,M,31,1,young_adult
+43,Anxiety,Citalopram,7,M,31,1,young_adult
+43,Anxiety,Escitalopram,8,M,31,1,young_adult
+44,Anxiety,Citalopram,7,F,33,1,young_adult
+44,Depression,Sertraline,8,F,33,1,young_adult
+44,Depression,Escitalopram,7,F,33,1,young_adult
+45,Allergic Rhinitis,Cetirizine,7,M,22,1,young_adult
+45,Allergic Rhinitis,Loratadine,9,M,22,1,young_adult
+45,Allergic Rhinitis,Fluticasone,7,M,22,1,young_adult
+46,Allergic Rhinitis,Cetirizine,8,F,31,1,young_adult
+46,Allergic Rhinitis,Loratadine,8,F,31,1,young_adult
+46,Asthma,Fluticasone,9,F,31,1,young_adult
+46,Asthma,Montelukast,8,F,31,1,young_adult
+47,Asthma,Fluticasone,7,M,30,1,young_adult
+47,Common Cold,Acetaminophen,7,M,30,1,young_adult
+47,Common Cold,Dextromethorphan,5,M,30,1,young_adult
+48,Hypertension,Amlodipine,7,F,20,1,young_adult
+48,Hypertension,Lisinopril,7,F,20,1,young_adult
+48,Hypertension,Hydrochlorothiazide,7,F,20,1,young_adult
+49,Asthma,Albuterol,9,F,32,1,young_adult
+49,Asthma,Fluticasone,8,F,32,1,young_adult
+49,Asthma,Montelukast,7,F,32,1,young_adult
+49,Allergic Rhinitis,Cetirizine,8,F,32,1,young_adult
+49,Allergic Rhinitis,Fluticasone,9,F,32,1,young_adult
+49,Allergic Rhinitis,Loratadine,9,F,32,1,young_adult
+50,Common Cold,Acetaminophen,6,M,34,1,young_adult
+51,Asthma,Montelukast,7,F,55,1,middle_age
+51,Asthma,Fluticasone,7,F,55,1,middle_age
+51,Asthma,Albuterol,8,F,55,1,middle_age
+52,Depression,Escitalopram,9,F,55,1,middle_age
+53,Anxiety,Citalopram,8,F,31,1,young_adult
+53,Anxiety,Sertraline,9,F,31,1,young_adult
+53,Anxiety,Escitalopram,7,F,31,1,young_adult
+54,Gastroenteritis,Loperamide,8,F,35,1,young_adult
+54,Type 2 Diabetes,Metformin,10,F,35,1,young_adult
+55,Type 2 Diabetes,Metformin,10,F,50,1,middle_age
+55,Type 2 Diabetes,Sitagliptin,9,F,50,1,middle_age
+55,Type 2 Diabetes,Glipizide,6,F,50,1,middle_age
+55,Osteoarthritis,Naproxen,8,F,50,1,middle_age
+56,Migraine,Sumatriptan,7,F,50,1,middle_age
+56,Migraine,Propranolol,7,F,50,1,middle_age
+56,Migraine,Topiramate,8,F,50,1,middle_age
+57,Osteoarthritis,Celecoxib,9,M,50,1,middle_age
+57,Osteoarthritis,Naproxen,6,M,50,1,middle_age
+57,Type 2 Diabetes,Sitagliptin,8,M,50,1,middle_age
+57,Type 2 Diabetes,Glipizide,8,M,50,1,middle_age
+58,Allergic Rhinitis,Fluticasone,6,M,83,1,elderly
+58,Allergic Rhinitis,Loratadine,7,M,83,1,elderly
+58,Asthma,Fluticasone,7,M,83,1,elderly
+58,Pneumonia,Azithromycin,8,M,83,1,elderly
+58,Urinary Tract Infection,Ciprofloxacin,7,M,83,1,elderly
+58,Urinary Tract Infection,Nitrofurantoin,7,M,83,1,elderly
+58,Urinary Tract Infection,Trimethoprim,6,M,83,1,elderly
+58,Gastroenteritis,Bismuth subsalicylate,5,M,83,1,elderly
+58,Gastroenteritis,Ondansetron,7,M,83,1,elderly
+59,Bronchitis,Azithromycin,8,M,50,1,middle_age
+59,Bronchitis,Doxycycline,6,M,50,1,middle_age
+60,Anxiety,Escitalopram,7,M,56,1,middle_age
+60,Anxiety,Sertraline,9,M,56,1,middle_age
+60,Depression,Escitalopram,8,M,56,1,middle_age
+60,Depression,Citalopram,7,M,56,1,middle_age
+60,Gastroenteritis,Ondansetron,7,M,56,1,middle_age
+61,Allergic Rhinitis,Cetirizine,9,M,54,1,middle_age
+61,Allergic Rhinitis,Fluticasone,8,M,54,1,middle_age
+61,Allergic Rhinitis,Loratadine,9,M,54,1,middle_age
+61,Asthma,Albuterol,10,M,54,1,middle_age
+61,Asthma,Montelukast,7,M,54,1,middle_age
+62,COPD,Tiotropium,8,M,51,1,middle_age
+62,COPD,Budesonide,7,M,51,1,middle_age
+62,COPD,Albuterol,8,M,51,1,middle_age
+63,Urinary Tract Infection,Trimethoprim,7,F,41,1,middle_age
+63,Urinary Tract Infection,Ciprofloxacin,8,F,41,1,middle_age
+63,Urinary Tract Infection,Nitrofurantoin,9,F,41,1,middle_age
+63,Osteoarthritis,Ibuprofen,7,F,41,1,middle_age
+64,Hypertension,Hydrochlorothiazide,6,M,52,1,middle_age
+64,Type 2 Diabetes,Glipizide,8,M,52,1,middle_age
+65,Depression,Sertraline,9,M,37,1,young_adult
+65,Depression,Citalopram,9,M,37,1,young_adult
+65,Pneumonia,Doxycycline,7,M,37,1,young_adult
+66,Anxiety,Escitalopram,7,F,42,1,middle_age
+66,Anxiety,Sertraline,9,F,42,1,middle_age
+66,Anxiety,Citalopram,7,F,42,1,middle_age
+67,Allergic Rhinitis,Fluticasone,8,M,40,1,young_adult
+67,Allergic Rhinitis,Cetirizine,9,M,40,1,young_adult
+67,Allergic Rhinitis,Loratadine,7,M,40,1,young_adult
+67,Asthma,Albuterol,9,M,40,1,young_adult
+68,Depression,Citalopram,7,F,45,1,middle_age
+68,Depression,Sertraline,7,F,45,1,middle_age
+68,Depression,Escitalopram,9,F,45,1,middle_age
+69,Depression,Citalopram,8,M,68,1,elderly
+69,Anxiety,Citalopram,8,M,68,1,elderly
+69,Anxiety,Escitalopram,7,M,68,1,elderly
+69,Anxiety,Sertraline,9,M,68,1,elderly
+70,Influenza,Oseltamivir,7,F,26,1,young_adult
+70,Influenza,Acetaminophen,7,F,26,1,young_adult
+71,Type 2 Diabetes,Sitagliptin,8,F,51,1,middle_age
+71,Hypertension,Lisinopril,8,F,51,1,middle_age
+71,Osteoarthritis,Ibuprofen,8,F,51,1,middle_age
+72,Allergic Rhinitis,Fluticasone,8,M,28,1,young_adult
+72,Allergic Rhinitis,Loratadine,8,M,28,1,young_adult
+72,Asthma,Albuterol,8,M,28,1,young_adult
+73,Anxiety,Citalopram,8,M,40,1,young_adult
+73,Anxiety,Escitalopram,7,M,40,1,young_adult
+74,COPD,Albuterol,8,F,55,1,middle_age
+74,COPD,Tiotropium,8,F,55,1,middle_age
+75,Allergic Rhinitis,Loratadine,8,F,45,1,middle_age
+75,Allergic Rhinitis,Cetirizine,8,F,45,1,middle_age
+75,Asthma,Albuterol,8,F,45,1,middle_age
+75,Gastroenteritis,Loperamide,7,F,45,1,middle_age
+76,Bronchitis,Azithromycin,9,F,34,1,young_adult
+76,Bronchitis,Doxycycline,7,F,34,1,young_adult
+76,Bronchitis,Amoxicillin,7,F,34,1,young_adult
+77,Asthma,Albuterol,7,F,37,1,young_adult
+77,Asthma,Montelukast,7,F,37,1,young_adult
+78,Anxiety,Sertraline,8,M,51,1,middle_age
+78,Depression,Citalopram,7,M,51,1,middle_age
+78,Depression,Sertraline,8,M,51,1,middle_age
+78,Depression,Escitalopram,8,M,51,1,middle_age
+79,Pneumonia,Azithromycin,9,M,37,1,young_adult
+79,Pneumonia,Amoxicillin,10,M,37,1,young_adult
+80,Osteoarthritis,Naproxen,8,M,47,1,middle_age
+80,Osteoarthritis,Ibuprofen,8,M,47,1,middle_age
+80,Osteoarthritis,Celecoxib,7,M,47,1,middle_age
+80,Hypertension,Lisinopril,7,M,47,1,middle_age
+80,Hypertension,Hydrochlorothiazide,7,M,47,1,middle_age
+80,Type 2 Diabetes,Sitagliptin,8,M,47,1,middle_age
+80,Type 2 Diabetes,Glipizide,8,M,47,1,middle_age
+81,Asthma,Montelukast,7,F,45,1,middle_age
+81,Asthma,Fluticasone,8,F,45,1,middle_age
+82,COPD,Albuterol,9,F,38,1,young_adult
+82,Bronchitis,Amoxicillin,9,F,38,1,young_adult
+83,Asthma,Montelukast,7,M,66,1,elderly
+83,Allergic Rhinitis,Loratadine,9,M,66,1,elderly
+83,Migraine,Topiramate,7,M,66,1,elderly
+83,Migraine,Sumatriptan,8,M,66,1,elderly
+84,Depression,Citalopram,8,M,51,1,middle_age
+84,Depression,Escitalopram,10,M,51,1,middle_age
+85,Bronchitis,Azithromycin,9,M,24,1,young_adult
+85,Bronchitis,Doxycycline,7,M,24,1,young_adult
+85,Allergic Rhinitis,Loratadine,7,M,24,1,young_adult
+85,Allergic Rhinitis,Fluticasone,8,M,24,1,young_adult
+86,Urinary Tract Infection,Trimethoprim,6,M,46,1,middle_age
+86,Urinary Tract Infection,Nitrofurantoin,8,M,46,1,middle_age
+87,Hypertension,Amlodipine,8,F,38,1,young_adult
+87,Hypertension,Lisinopril,8,F,38,1,young_adult
+87,Osteoarthritis,Celecoxib,8,F,38,1,young_adult
+87,Osteoarthritis,Ibuprofen,7,F,38,1,young_adult
+87,Osteoarthritis,Naproxen,7,F,38,1,young_adult
+88,Allergic Rhinitis,Loratadine,8,F,53,1,middle_age
+88,Allergic Rhinitis,Cetirizine,8,F,53,1,middle_age
+88,Allergic Rhinitis,Fluticasone,9,F,53,1,middle_age
+88,Asthma,Fluticasone,7,F,53,1,middle_age
+88,Asthma,Albuterol,10,F,53,1,middle_age
+88,Asthma,Montelukast,7,F,53,1,middle_age
+88,Pneumonia,Doxycycline,9,F,53,1,middle_age
+88,Pneumonia,Azithromycin,7,F,53,1,middle_age
+89,Depression,Sertraline,7,F,37,1,young_adult
+89,Depression,Citalopram,9,F,37,1,young_adult
+89,Depression,Escitalopram,9,F,37,1,young_adult
+89,Anxiety,Citalopram,8,F,37,1,young_adult
+90,Migraine,Propranolol,7,M,43,1,middle_age
+90,Migraine,Sumatriptan,10,M,43,1,middle_age
+90,Urinary Tract Infection,Trimethoprim,8,M,43,1,middle_age
+90,Type 2 Diabetes,Metformin,8,M,43,1,middle_age
+90,Type 2 Diabetes,Sitagliptin,8,M,43,1,middle_age
+90,Type 2 Diabetes,Glipizide,7,M,43,1,middle_age
+91,Bronchitis,Doxycycline,7,M,50,1,middle_age
+91,Bronchitis,Amoxicillin,8,M,50,1,middle_age
+91,Bronchitis,Azithromycin,9,M,50,1,middle_age
+91,COPD,Albuterol,9,M,50,1,middle_age
+92,Type 2 Diabetes,Sitagliptin,8,F,53,1,middle_age
+92,Type 2 Diabetes,Glipizide,7,F,53,1,middle_age
+92,Type 2 Diabetes,Metformin,9,F,53,1,middle_age
+92,Hypertension,Hydrochlorothiazide,7,F,53,1,middle_age
+92,Hypertension,Lisinopril,7,F,53,1,middle_age
+92,Osteoarthritis,Ibuprofen,9,F,53,1,middle_age
+92,Osteoarthritis,Naproxen,7,F,53,1,middle_age
+92,Osteoarthritis,Celecoxib,9,F,53,1,middle_age
+93,Depression,Citalopram,9,F,32,1,young_adult
+93,Depression,Escitalopram,8,F,32,1,young_adult
+93,Depression,Sertraline,8,F,32,1,young_adult
+93,Osteoarthritis,Ibuprofen,8,F,32,1,young_adult
+93,Osteoarthritis,Celecoxib,8,F,32,1,young_adult
+93,Osteoarthritis,Naproxen,6,F,32,1,young_adult
+94,Bronchitis,Amoxicillin,7,F,41,1,middle_age
+94,Bronchitis,Doxycycline,7,F,41,1,middle_age
+94,Bronchitis,Azithromycin,9,F,41,1,middle_age
+94,Allergic Rhinitis,Cetirizine,8,F,41,1,middle_age
+95,COPD,Tiotropium,8,F,40,1,young_adult
+95,Bronchitis,Amoxicillin,7,F,40,1,young_adult
+96,Type 2 Diabetes,Metformin,10,M,38,1,young_adult
+96,Type 2 Diabetes,Glipizide,8,M,38,1,young_adult
+96,Type 2 Diabetes,Sitagliptin,8,M,38,1,young_adult
+96,Gastroenteritis,Bismuth subsalicylate,7,M,38,1,young_adult
+97,Bronchitis,Azithromycin,9,F,62,1,middle_age
+98,Osteoarthritis,Naproxen,7,M,49,1,middle_age
+98,Osteoarthritis,Celecoxib,8,M,49,1,middle_age
+98,Osteoarthritis,Ibuprofen,8,M,49,1,middle_age
+98,Hypertension,Amlodipine,7,M,49,1,middle_age
+98,Type 2 Diabetes,Sitagliptin,7,M,49,1,middle_age
+98,Type 2 Diabetes,Glipizide,7,M,49,1,middle_age
+99,Urinary Tract Infection,Ciprofloxacin,7,M,32,1,young_adult
+99,Urinary Tract Infection,Trimethoprim,8,M,32,1,young_adult
+100,Influenza,Dextromethorphan,6,M,54,1,middle_age
+100,Influenza,Acetaminophen,6,M,54,1,middle_age
+100,Pneumonia,Doxycycline,8,M,54,1,middle_age
+100,Pneumonia,Azithromycin,9,M,54,1,middle_age
+100,Anxiety,Escitalopram,8,M,54,1,middle_age
+101,Depression,Citalopram,8,M,81,1,elderly
+101,Depression,Escitalopram,6,M,81,1,elderly
+101,Depression,Sertraline,6,M,81,1,elderly
+101,Anxiety,Sertraline,7,M,81,1,elderly
+101,Bronchitis,Azithromycin,8,M,81,1,elderly
+102,Osteoarthritis,Celecoxib,6,F,73,1,elderly
+102,Osteoarthritis,Naproxen,6,F,73,1,elderly
+102,Osteoarthritis,Ibuprofen,6,F,73,1,elderly
+102,Bronchitis,Doxycycline,7,F,73,1,elderly
+102,Urinary Tract Infection,Ciprofloxacin,8,F,73,1,elderly
+102,Urinary Tract Infection,Nitrofurantoin,8,F,73,1,elderly
+102,Depression,Escitalopram,7,F,73,1,elderly
+102,Depression,Citalopram,6,F,73,1,elderly
+102,Depression,Sertraline,7,F,73,1,elderly
+103,Influenza,Acetaminophen,6,M,52,1,middle_age
+103,Influenza,Dextromethorphan,5,M,52,1,middle_age
+104,Influenza,Acetaminophen,6,F,61,1,middle_age
+104,Influenza,Oseltamivir,7,F,61,1,middle_age
+104,Influenza,Dextromethorphan,6,F,61,1,middle_age
+105,Depression,Sertraline,8,F,75,1,elderly
+105,Depression,Citalopram,6,F,75,1,elderly
+105,Depression,Escitalopram,8,F,75,1,elderly
+105,Anxiety,Citalopram,5,F,75,1,elderly
+105,Anxiety,Sertraline,7,F,75,1,elderly
+105,Anxiety,Escitalopram,8,F,75,1,elderly
+105,Allergic Rhinitis,Cetirizine,7,F,75,1,elderly
+105,Allergic Rhinitis,Fluticasone,8,F,75,1,elderly
+105,Gastroenteritis,Ondansetron,7,F,75,1,elderly
+105,Gastroenteritis,Bismuth subsalicylate,6,F,75,1,elderly
+105,Bronchitis,Amoxicillin,7,F,75,1,elderly
+105,Bronchitis,Doxycycline,6,F,75,1,elderly
+106,Migraine,Topiramate,7,M,59,1,middle_age
+107,Depression,Escitalopram,9,M,68,1,elderly
+107,Anxiety,Escitalopram,7,M,68,1,elderly
+107,Anxiety,Sertraline,8,M,68,1,elderly
+107,Common Cold,Dextromethorphan,7,M,68,1,elderly
+107,Common Cold,Acetaminophen,7,M,68,1,elderly
+107,Common Cold,Ibuprofen,7,M,68,1,elderly
+107,Gastroenteritis,Bismuth subsalicylate,7,M,68,1,elderly
+107,Gastroenteritis,Ondansetron,7,M,68,1,elderly
+107,Gastroenteritis,Loperamide,8,M,68,1,elderly
+107,Allergic Rhinitis,Cetirizine,8,M,68,1,elderly
+107,Allergic Rhinitis,Loratadine,7,M,68,1,elderly
+107,Allergic Rhinitis,Fluticasone,9,M,68,1,elderly
+108,Allergic Rhinitis,Cetirizine,7,F,71,1,elderly
+108,Allergic Rhinitis,Fluticasone,8,F,71,1,elderly
+108,Asthma,Albuterol,8,F,71,1,elderly
+108,Asthma,Fluticasone,7,F,71,1,elderly
+108,Asthma,Montelukast,7,F,71,1,elderly
+108,Type 2 Diabetes,Metformin,9,F,71,1,elderly
+108,Type 2 Diabetes,Glipizide,6,F,71,1,elderly
+109,Depression,Escitalopram,8,M,57,1,middle_age
+110,Allergic Rhinitis,Fluticasone,7,M,64,1,middle_age
+110,Allergic Rhinitis,Cetirizine,8,M,64,1,middle_age
+110,Allergic Rhinitis,Loratadine,9,M,64,1,middle_age
+111,Type 2 Diabetes,Metformin,9,M,39,1,young_adult
+111,Hypertension,Hydrochlorothiazide,7,M,39,1,young_adult
+111,Hypertension,Lisinopril,8,M,39,1,young_adult
+111,Hypertension,Amlodipine,7,M,39,1,young_adult
+112,Pneumonia,Azithromycin,8,M,56,1,middle_age
+112,Hypertension,Lisinopril,8,M,56,1,middle_age
+112,Asthma,Albuterol,10,M,56,1,middle_age
+113,COPD,Albuterol,9,F,62,1,middle_age
+113,Bronchitis,Amoxicillin,7,F,62,1,middle_age
+113,Gastroenteritis,Loperamide,8,F,62,1,middle_age
+114,Bronchitis,Amoxicillin,9,F,55,1,middle_age
+114,Bronchitis,Doxycycline,7,F,55,1,middle_age
+114,Bronchitis,Azithromycin,8,F,55,1,middle_age
+114,COPD,Tiotropium,9,F,55,1,middle_age
+115,Migraine,Sumatriptan,8,F,78,1,elderly
+115,Migraine,Propranolol,6,F,78,1,elderly
+115,Migraine,Topiramate,6,F,78,1,elderly
+115,Hypertension,Hydrochlorothiazide,7,F,78,1,elderly
+115,Hypertension,Lisinopril,7,F,78,1,elderly
+115,Hypertension,Amlodipine,6,F,78,1,elderly
+116,Bronchitis,Amoxicillin,8,F,53,1,middle_age
+116,COPD,Albuterol,8,F,53,1,middle_age
+116,COPD,Budesonide,8,F,53,1,middle_age
+117,Allergic Rhinitis,Loratadine,7,F,61,1,middle_age
+117,Allergic Rhinitis,Fluticasone,8,F,61,1,middle_age
+117,Allergic Rhinitis,Cetirizine,8,F,61,1,middle_age
+117,Asthma,Albuterol,8,F,61,1,middle_age
+117,Asthma,Fluticasone,8,F,61,1,middle_age
+117,Asthma,Montelukast,7,F,61,1,middle_age
+117,Anxiety,Escitalopram,9,F,61,1,middle_age
+118,COPD,Budesonide,7,M,66,1,elderly
+118,COPD,Albuterol,8,M,66,1,elderly
+118,COPD,Tiotropium,9,M,66,1,elderly
+118,Bronchitis,Doxycycline,7,M,66,1,elderly
+118,Osteoarthritis,Naproxen,7,M,66,1,elderly
+118,Osteoarthritis,Celecoxib,9,M,66,1,elderly
+118,Depression,Sertraline,9,M,66,1,elderly
+118,Depression,Escitalopram,8,M,66,1,elderly
+118,Depression,Citalopram,8,M,66,1,elderly
+118,Influenza,Dextromethorphan,6,M,66,1,elderly
+118,Influenza,Acetaminophen,7,M,66,1,elderly
+119,Migraine,Sumatriptan,8,F,76,1,elderly
+119,COPD,Tiotropium,8,F,76,1,elderly
+119,COPD,Budesonide,6,F,76,1,elderly
+119,Allergic Rhinitis,Fluticasone,8,F,76,1,elderly
+119,Allergic Rhinitis,Loratadine,6,F,76,1,elderly
+120,COPD,Albuterol,8,F,53,1,middle_age
+120,COPD,Budesonide,8,F,53,1,middle_age
+120,Bronchitis,Doxycycline,8,F,53,1,middle_age
+121,Osteoarthritis,Naproxen,6,F,74,1,elderly
+121,Osteoarthritis,Celecoxib,7,F,74,1,elderly
+121,Osteoarthritis,Ibuprofen,7,F,74,1,elderly
+121,Type 2 Diabetes,Metformin,9,F,74,1,elderly
+121,Type 2 Diabetes,Glipizide,7,F,74,1,elderly
+121,Type 2 Diabetes,Sitagliptin,7,F,74,1,elderly
+121,Hypertension,Hydrochlorothiazide,5,F,74,1,elderly
+121,Hypertension,Lisinopril,7,F,74,1,elderly
+121,Hypertension,Amlodipine,7,F,74,1,elderly
+122,Anxiety,Citalopram,7,F,65,1,middle_age
+122,Anxiety,Sertraline,8,F,65,1,middle_age
+123,Anxiety,Sertraline,8,M,57,1,middle_age
+123,Gastroenteritis,Ondansetron,9,M,57,1,middle_age
+123,Gastroenteritis,Bismuth subsalicylate,7,M,57,1,middle_age
+124,Asthma,Fluticasone,7,M,68,1,elderly
+124,Asthma,Montelukast,7,M,68,1,elderly
+124,Allergic Rhinitis,Cetirizine,8,M,68,1,elderly
+124,Allergic Rhinitis,Loratadine,9,M,68,1,elderly
+124,Osteoarthritis,Ibuprofen,8,M,68,1,elderly
+124,Osteoarthritis,Naproxen,8,M,68,1,elderly
+124,Osteoarthritis,Celecoxib,9,M,68,1,elderly
+124,Anxiety,Escitalopram,9,M,68,1,elderly
+124,Anxiety,Citalopram,7,M,68,1,elderly
+124,Type 2 Diabetes,Sitagliptin,8,M,68,1,elderly
+125,Type 2 Diabetes,Metformin,10,M,66,1,elderly
+125,Type 2 Diabetes,Sitagliptin,8,M,66,1,elderly
+125,Type 2 Diabetes,Glipizide,6,M,66,1,elderly
+125,Hypertension,Hydrochlorothiazide,7,M,66,1,elderly
+125,Osteoarthritis,Celecoxib,8,M,66,1,elderly
+125,Osteoarthritis,Ibuprofen,6,M,66,1,elderly
+125,Anxiety,Escitalopram,9,M,66,1,elderly
+125,Anxiety,Citalopram,8,M,66,1,elderly
+125,COPD,Albuterol,8,M,66,1,elderly
+126,Type 2 Diabetes,Sitagliptin,9,M,60,1,middle_age
+126,Type 2 Diabetes,Glipizide,8,M,60,1,middle_age
+126,Influenza,Dextromethorphan,5,M,60,1,middle_age
+126,Influenza,Acetaminophen,6,M,60,1,middle_age
+126,Influenza,Oseltamivir,9,M,60,1,middle_age
+127,Asthma,Fluticasone,8,F,65,1,middle_age
+127,Asthma,Albuterol,9,F,65,1,middle_age
+127,Asthma,Montelukast,6,F,65,1,middle_age
+127,Allergic Rhinitis,Fluticasone,7,F,65,1,middle_age
+127,Allergic Rhinitis,Loratadine,9,F,65,1,middle_age
+127,Common Cold,Ibuprofen,7,F,65,1,middle_age
+127,Common Cold,Acetaminophen,6,F,65,1,middle_age
+127,Common Cold,Dextromethorphan,7,F,65,1,middle_age
+128,COPD,Budesonide,7,F,61,1,middle_age
+128,COPD,Albuterol,9,F,61,1,middle_age
+128,Bronchitis,Doxycycline,7,F,61,1,middle_age
+128,Bronchitis,Amoxicillin,8,F,61,1,middle_age
+129,COPD,Budesonide,8,M,65,1,middle_age
+129,COPD,Albuterol,9,M,65,1,middle_age
+130,Depression,Escitalopram,8,F,70,1,elderly
+130,Anxiety,Sertraline,7,F,70,1,elderly
+130,Anxiety,Citalopram,9,F,70,1,elderly
+130,Anxiety,Escitalopram,8,F,70,1,elderly
+130,Pneumonia,Amoxicillin,8,F,70,1,elderly
+131,Anxiety,Citalopram,7,M,77,1,elderly
+131,Anxiety,Escitalopram,6,M,77,1,elderly
+131,Depression,Sertraline,8,M,77,1,elderly
+131,Asthma,Albuterol,7,M,77,1,elderly
+131,Asthma,Montelukast,5,M,77,1,elderly
+131,Influenza,Dextromethorphan,4,M,77,1,elderly
+131,COPD,Albuterol,6,M,77,1,elderly
+131,COPD,Tiotropium,8,M,77,1,elderly
+131,COPD,Budesonide,6,M,77,1,elderly
+132,Anxiety,Escitalopram,9,M,55,1,middle_age
+132,Anxiety,Citalopram,7,M,55,1,middle_age
+133,Anxiety,Citalopram,6,M,82,1,elderly
+133,Depression,Escitalopram,8,M,82,1,elderly
+133,Depression,Sertraline,9,M,82,1,elderly
+133,Depression,Citalopram,7,M,82,1,elderly
+133,Gastroenteritis,Bismuth subsalicylate,6,M,82,1,elderly
+133,Gastroenteritis,Ondansetron,7,M,82,1,elderly
+133,Gastroenteritis,Loperamide,7,M,82,1,elderly
+133,Allergic Rhinitis,Loratadine,6,M,82,1,elderly
+133,Allergic Rhinitis,Fluticasone,7,M,82,1,elderly
+133,Allergic Rhinitis,Cetirizine,7,M,82,1,elderly
+134,Type 2 Diabetes,Sitagliptin,8,M,49,1,middle_age
+134,Osteoarthritis,Ibuprofen,7,M,49,1,middle_age
+134,Osteoarthritis,Naproxen,7,M,49,1,middle_age
+134,Osteoarthritis,Celecoxib,8,M,49,1,middle_age
+134,Hypertension,Hydrochlorothiazide,7,M,49,1,middle_age
+135,Common Cold,Ibuprofen,6,F,63,1,middle_age
+135,Common Cold,Acetaminophen,7,F,63,1,middle_age
+136,Allergic Rhinitis,Fluticasone,9,M,69,1,elderly
+136,Allergic Rhinitis,Loratadine,8,M,69,1,elderly
+136,Asthma,Fluticasone,9,M,69,1,elderly
+136,Asthma,Albuterol,9,M,69,1,elderly
+136,Migraine,Topiramate,7,M,69,1,elderly
+136,Hypertension,Lisinopril,10,M,69,1,elderly
+136,Hypertension,Amlodipine,8,M,69,1,elderly
+136,Urinary Tract Infection,Ciprofloxacin,9,M,69,1,elderly
+136,Urinary Tract Infection,Trimethoprim,7,M,69,1,elderly
+136,Urinary Tract Infection,Nitrofurantoin,9,M,69,1,elderly
+137,Hypertension,Lisinopril,9,F,67,1,elderly
+137,Hypertension,Amlodipine,8,F,67,1,elderly
+137,Influenza,Dextromethorphan,5,F,67,1,elderly
+137,Influenza,Acetaminophen,6,F,67,1,elderly
+137,Influenza,Oseltamivir,8,F,67,1,elderly
+138,Bronchitis,Doxycycline,8,F,60,1,middle_age
+138,Bronchitis,Amoxicillin,9,F,60,1,middle_age
+138,COPD,Budesonide,7,F,60,1,middle_age
+138,COPD,Albuterol,7,F,60,1,middle_age
+138,COPD,Tiotropium,9,F,60,1,middle_age
+139,Depression,Escitalopram,9,M,63,1,middle_age
+139,Depression,Sertraline,8,M,63,1,middle_age
+139,Anxiety,Escitalopram,8,M,63,1,middle_age
+139,Anxiety,Citalopram,8,M,63,1,middle_age
+139,Anxiety,Sertraline,9,M,63,1,middle_age
+140,Asthma,Fluticasone,9,F,61,1,middle_age
+140,Asthma,Montelukast,6,F,61,1,middle_age
+140,Asthma,Albuterol,9,F,61,1,middle_age
+140,Allergic Rhinitis,Fluticasone,7,F,61,1,middle_age
+140,Allergic Rhinitis,Cetirizine,8,F,61,1,middle_age
+140,Bronchitis,Doxycycline,8,F,61,1,middle_age
+141,Osteoarthritis,Ibuprofen,9,F,60,1,middle_age
+141,Hypertension,Amlodipine,8,F,60,1,middle_age
+141,Hypertension,Lisinopril,8,F,60,1,middle_age
+141,Hypertension,Hydrochlorothiazide,7,F,60,1,middle_age
+141,Type 2 Diabetes,Sitagliptin,8,F,60,1,middle_age
+142,Gastroenteritis,Loperamide,5,M,71,1,elderly
+142,Gastroenteritis,Ondansetron,6,M,71,1,elderly
+142,Anxiety,Sertraline,8,M,71,1,elderly
+142,Anxiety,Citalopram,6,M,71,1,elderly
+142,Anxiety,Escitalopram,7,M,71,1,elderly
+142,Osteoarthritis,Celecoxib,6,M,71,1,elderly
+143,COPD,Budesonide,8,M,67,1,elderly
+143,COPD,Tiotropium,8,M,67,1,elderly
+143,Migraine,Sumatriptan,9,M,67,1,elderly
+143,Migraine,Topiramate,8,M,67,1,elderly
+143,Migraine,Propranolol,7,M,67,1,elderly
+144,Pneumonia,Azithromycin,9,M,59,1,middle_age
+144,Pneumonia,Doxycycline,6,M,59,1,middle_age
+144,Influenza,Dextromethorphan,5,M,59,1,middle_age
+145,Migraine,Propranolol,5,M,72,1,elderly
+145,Influenza,Dextromethorphan,5,M,72,1,elderly
+145,Influenza,Oseltamivir,7,M,72,1,elderly
+145,Influenza,Acetaminophen,5,M,72,1,elderly
+145,Gastroenteritis,Bismuth subsalicylate,7,M,72,1,elderly
+145,Gastroenteritis,Loperamide,6,M,72,1,elderly
+145,Osteoarthritis,Celecoxib,7,M,72,1,elderly
+145,Osteoarthritis,Naproxen,6,M,72,1,elderly
+146,Hypertension,Lisinopril,7,M,67,1,elderly
+146,Hypertension,Hydrochlorothiazide,7,M,67,1,elderly
+146,Hypertension,Amlodipine,9,M,67,1,elderly
+146,Osteoarthritis,Ibuprofen,7,M,67,1,elderly
+146,Osteoarthritis,Celecoxib,8,M,67,1,elderly
+146,Osteoarthritis,Naproxen,7,M,67,1,elderly
+147,Allergic Rhinitis,Cetirizine,7,F,71,1,elderly
+147,Asthma,Albuterol,8,F,71,1,elderly
+147,Asthma,Montelukast,5,F,71,1,elderly
+147,Anxiety,Citalopram,8,F,71,1,elderly
+147,Bronchitis,Azithromycin,8,F,71,1,elderly
+147,Bronchitis,Doxycycline,6,F,71,1,elderly
+147,Bronchitis,Amoxicillin,7,F,71,1,elderly
+148,Urinary Tract Infection,Trimethoprim,7,F,70,1,elderly
+148,Urinary Tract Infection,Ciprofloxacin,8,F,70,1,elderly
+148,Urinary Tract Infection,Nitrofurantoin,8,F,70,1,elderly
+148,Migraine,Propranolol,7,F,70,1,elderly
+148,Migraine,Topiramate,7,F,70,1,elderly
+148,Bronchitis,Doxycycline,6,F,70,1,elderly
+148,Bronchitis,Amoxicillin,9,F,70,1,elderly
+148,Bronchitis,Azithromycin,9,F,70,1,elderly
+149,Urinary Tract Infection,Trimethoprim,8,M,58,1,middle_age
+149,Urinary Tract Infection,Nitrofurantoin,10,M,58,1,middle_age
+149,Urinary Tract Infection,Ciprofloxacin,8,M,58,1,middle_age
+150,Depression,Sertraline,8,M,60,1,middle_age
+150,Anxiety,Sertraline,7,M,60,1,middle_age
+151,Depression,Sertraline,8,F,68,1,elderly
+151,Depression,Escitalopram,7,F,68,1,elderly
+151,Anxiety,Citalopram,8,F,68,1,elderly
+151,Anxiety,Sertraline,9,F,68,1,elderly
+151,Gastroenteritis,Ondansetron,9,F,68,1,elderly
+152,COPD,Albuterol,7,M,72,1,elderly
+152,COPD,Tiotropium,6,M,72,1,elderly
+152,COPD,Budesonide,7,M,72,1,elderly
+152,Bronchitis,Azithromycin,7,M,72,1,elderly
+152,Urinary Tract Infection,Trimethoprim,6,M,72,1,elderly
+152,Urinary Tract Infection,Nitrofurantoin,9,M,72,1,elderly
+153,Depression,Sertraline,7,M,84,1,elderly
+153,Depression,Citalopram,6,M,84,1,elderly
+153,Asthma,Montelukast,6,M,84,1,elderly
+153,Asthma,Fluticasone,7,M,84,1,elderly
+153,Influenza,Acetaminophen,5,M,84,1,elderly
+153,Migraine,Topiramate,7,M,84,1,elderly
+153,Migraine,Sumatriptan,6,M,84,1,elderly
+153,Migraine,Propranolol,6,M,84,1,elderly
+153,Allergic Rhinitis,Loratadine,7,M,84,1,elderly
+153,Allergic Rhinitis,Cetirizine,9,M,84,1,elderly
+154,Bronchitis,Azithromycin,10,M,45,1,middle_age
+154,Bronchitis,Amoxicillin,7,M,45,1,middle_age
+154,Bronchitis,Doxycycline,7,M,45,1,middle_age
+154,COPD,Tiotropium,8,M,45,1,middle_age
+154,COPD,Budesonide,7,M,45,1,middle_age
+155,Allergic Rhinitis,Loratadine,8,F,42,1,middle_age
+155,Asthma,Albuterol,7,F,42,1,middle_age
+155,Asthma,Fluticasone,7,F,42,1,middle_age
+155,Asthma,Montelukast,6,F,42,1,middle_age
+155,Urinary Tract Infection,Trimethoprim,7,F,42,1,middle_age
+156,Anxiety,Sertraline,8,M,70,1,elderly
+156,Anxiety,Citalopram,9,M,70,1,elderly
+156,Anxiety,Escitalopram,9,M,70,1,elderly
+156,Osteoarthritis,Ibuprofen,8,M,70,1,elderly
+156,Common Cold,Acetaminophen,7,M,70,1,elderly
+156,Gastroenteritis,Bismuth subsalicylate,7,M,70,1,elderly
+156,Gastroenteritis,Ondansetron,8,M,70,1,elderly
+156,Influenza,Oseltamivir,9,M,70,1,elderly
+157,Allergic Rhinitis,Cetirizine,8,F,40,1,young_adult
+157,Allergic Rhinitis,Fluticasone,8,F,40,1,young_adult
+158,Pneumonia,Azithromycin,9,F,80,1,elderly
+158,Pneumonia,Amoxicillin,8,F,80,1,elderly
+158,Asthma,Albuterol,9,F,80,1,elderly
+158,Influenza,Acetaminophen,6,F,80,1,elderly
+158,Influenza,Oseltamivir,7,F,80,1,elderly
+159,Anxiety,Escitalopram,7,M,75,1,elderly
+159,Anxiety,Sertraline,7,M,75,1,elderly
+159,Depression,Sertraline,8,M,75,1,elderly
+159,Depression,Escitalopram,7,M,75,1,elderly
+159,Depression,Citalopram,7,M,75,1,elderly
+160,Hypertension,Lisinopril,8,F,46,1,middle_age
+160,Hypertension,Hydrochlorothiazide,6,F,46,1,middle_age
+160,Osteoarthritis,Ibuprofen,6,F,46,1,middle_age
+160,Osteoarthritis,Naproxen,7,F,46,1,middle_age
+161,Hypertension,Amlodipine,7,M,68,1,elderly
+161,Hypertension,Hydrochlorothiazide,9,M,68,1,elderly
+161,Type 2 Diabetes,Metformin,9,M,68,1,elderly
+161,Type 2 Diabetes,Sitagliptin,8,M,68,1,elderly
+162,COPD,Albuterol,8,F,68,1,elderly
+162,COPD,Budesonide,6,F,68,1,elderly
+162,COPD,Tiotropium,8,F,68,1,elderly
+162,Bronchitis,Amoxicillin,8,F,68,1,elderly
+162,Bronchitis,Doxycycline,8,F,68,1,elderly
+162,Bronchitis,Azithromycin,8,F,68,1,elderly
+163,Depression,Escitalopram,7,F,24,1,young_adult
+163,Depression,Sertraline,7,F,24,1,young_adult
+163,Depression,Citalopram,6,F,24,1,young_adult
+163,Anxiety,Sertraline,7,F,24,1,young_adult
+163,Anxiety,Escitalopram,8,F,24,1,young_adult
+164,Bronchitis,Azithromycin,8,F,78,1,elderly
+164,COPD,Albuterol,7,F,78,1,elderly
+164,COPD,Budesonide,7,F,78,1,elderly
+164,COPD,Tiotropium,6,F,78,1,elderly
+164,Allergic Rhinitis,Loratadine,6,F,78,1,elderly
+164,Allergic Rhinitis,Cetirizine,8,F,78,1,elderly
+164,Hypertension,Amlodipine,7,F,78,1,elderly
+164,Hypertension,Hydrochlorothiazide,6,F,78,1,elderly
+164,Pneumonia,Amoxicillin,6,F,78,1,elderly
+164,Pneumonia,Azithromycin,8,F,78,1,elderly
+165,Allergic Rhinitis,Fluticasone,9,M,51,1,middle_age
+165,Allergic Rhinitis,Cetirizine,8,M,51,1,middle_age
+165,Allergic Rhinitis,Loratadine,8,M,51,1,middle_age
+165,Asthma,Montelukast,8,M,51,1,middle_age
+165,Asthma,Fluticasone,9,M,51,1,middle_age
+166,Type 2 Diabetes,Metformin,8,F,73,1,elderly
+166,Type 2 Diabetes,Sitagliptin,7,F,73,1,elderly
+166,Type 2 Diabetes,Glipizide,7,F,73,1,elderly
+166,Hypertension,Lisinopril,8,F,73,1,elderly
+166,Hypertension,Hydrochlorothiazide,7,F,73,1,elderly
+166,Hypertension,Amlodipine,6,F,73,1,elderly
+166,Osteoarthritis,Naproxen,6,F,73,1,elderly
+166,Gastroenteritis,Loperamide,7,F,73,1,elderly
+166,Gastroenteritis,Ondansetron,7,F,73,1,elderly
+166,Gastroenteritis,Bismuth subsalicylate,6,F,73,1,elderly
+167,Allergic Rhinitis,Loratadine,7,M,39,1,young_adult
+167,Allergic Rhinitis,Fluticasone,7,M,39,1,young_adult
+167,Depression,Sertraline,9,M,39,1,young_adult
+167,Depression,Escitalopram,9,M,39,1,young_adult
+167,Depression,Citalopram,8,M,39,1,young_adult
+168,Anxiety,Citalopram,6,M,78,1,elderly
+168,Anxiety,Escitalopram,7,M,78,1,elderly
+168,Depression,Escitalopram,6,M,78,1,elderly
+168,COPD,Budesonide,6,M,78,1,elderly
+168,Influenza,Oseltamivir,8,M,78,1,elderly
+168,Migraine,Topiramate,7,M,78,1,elderly
+169,Depression,Escitalopram,9,M,44,1,middle_age
+169,Depression,Citalopram,8,M,44,1,middle_age
+169,Depression,Sertraline,8,M,44,1,middle_age
+169,Anxiety,Escitalopram,7,M,44,1,middle_age
+169,Anxiety,Sertraline,8,M,44,1,middle_age
+169,Anxiety,Citalopram,7,M,44,1,middle_age
+169,Asthma,Albuterol,9,M,44,1,middle_age
+169,Asthma,Montelukast,8,M,44,1,middle_age
+170,Depression,Escitalopram,8,F,18,1,pediatric
+170,Depression,Sertraline,9,F,18,1,pediatric
+170,Depression,Citalopram,7,F,18,1,pediatric
+171,Anxiety,Citalopram,7,F,78,1,elderly
+171,Allergic Rhinitis,Fluticasone,7,F,78,1,elderly
+171,Allergic Rhinitis,Loratadine,8,F,78,1,elderly
+171,Allergic Rhinitis,Cetirizine,7,F,78,1,elderly
+171,Common Cold,Acetaminophen,6,F,78,1,elderly
+171,Common Cold,Dextromethorphan,6,F,78,1,elderly
+171,Common Cold,Ibuprofen,6,F,78,1,elderly
+171,Osteoarthritis,Naproxen,6,F,78,1,elderly
+171,Osteoarthritis,Ibuprofen,6,F,78,1,elderly
+171,Migraine,Topiramate,8,F,78,1,elderly
+171,Migraine,Sumatriptan,9,F,78,1,elderly
+172,Anxiety,Escitalopram,8,M,24,1,young_adult
+173,Hypertension,Hydrochlorothiazide,7,F,39,1,young_adult
+173,Type 2 Diabetes,Metformin,10,F,39,1,young_adult
+174,COPD,Budesonide,8,M,81,1,elderly
+174,COPD,Tiotropium,8,M,81,1,elderly
+174,COPD,Albuterol,6,M,81,1,elderly
+174,Bronchitis,Doxycycline,7,M,81,1,elderly
+175,Bronchitis,Azithromycin,8,F,81,1,elderly
+175,Bronchitis,Doxycycline,6,F,81,1,elderly
+175,Bronchitis,Amoxicillin,7,F,81,1,elderly
+175,COPD,Budesonide,7,F,81,1,elderly
+175,COPD,Albuterol,6,F,81,1,elderly
+175,COPD,Tiotropium,7,F,81,1,elderly
+176,Urinary Tract Infection,Trimethoprim,7,M,56,1,middle_age
+177,Hypertension,Lisinopril,8,F,60,1,middle_age
+177,Hypertension,Hydrochlorothiazide,8,F,60,1,middle_age
+177,COPD,Tiotropium,9,F,60,1,middle_age
+177,COPD,Albuterol,8,F,60,1,middle_age
+177,COPD,Budesonide,7,F,60,1,middle_age
+177,Migraine,Sumatriptan,9,F,60,1,middle_age
+177,Migraine,Propranolol,6,F,60,1,middle_age
+177,Migraine,Topiramate,8,F,60,1,middle_age
+178,Gastroenteritis,Loperamide,8,M,48,1,middle_age
+178,Gastroenteritis,Bismuth subsalicylate,8,M,48,1,middle_age
+179,Hypertension,Lisinopril,9,F,37,1,young_adult
+179,Hypertension,Hydrochlorothiazide,7,F,37,1,young_adult
+180,Pneumonia,Azithromycin,8,M,40,1,young_adult
+181,Migraine,Sumatriptan,9,M,63,1,middle_age
+181,Migraine,Propranolol,8,M,63,1,middle_age
+182,Influenza,Acetaminophen,7,M,68,1,elderly
+182,Influenza,Dextromethorphan,6,M,68,1,elderly
+182,Influenza,Oseltamivir,7,M,68,1,elderly
+182,Asthma,Montelukast,8,M,68,1,elderly
+182,Asthma,Albuterol,8,M,68,1,elderly
+182,Hypertension,Amlodipine,9,M,68,1,elderly
+183,Allergic Rhinitis,Fluticasone,7,F,71,1,elderly
+183,Allergic Rhinitis,Loratadine,7,F,71,1,elderly
+183,Asthma,Montelukast,6,F,71,1,elderly
+183,Asthma,Fluticasone,6,F,71,1,elderly
+183,Asthma,Albuterol,7,F,71,1,elderly
+183,Pneumonia,Doxycycline,6,F,71,1,elderly
+183,Pneumonia,Amoxicillin,7,F,71,1,elderly
+183,Type 2 Diabetes,Metformin,7,F,71,1,elderly
+184,Type 2 Diabetes,Sitagliptin,6,F,70,1,elderly
+184,Type 2 Diabetes,Metformin,8,F,70,1,elderly
+184,Osteoarthritis,Naproxen,6,F,70,1,elderly
+184,Osteoarthritis,Ibuprofen,8,F,70,1,elderly
+184,Osteoarthritis,Celecoxib,9,F,70,1,elderly
+184,Hypertension,Amlodipine,8,F,70,1,elderly
+184,Hypertension,Hydrochlorothiazide,7,F,70,1,elderly
+184,Hypertension,Lisinopril,8,F,70,1,elderly
+184,Urinary Tract Infection,Nitrofurantoin,8,F,70,1,elderly
+184,Urinary Tract Infection,Trimethoprim,7,F,70,1,elderly
+185,Bronchitis,Doxycycline,6,M,24,1,young_adult
+185,Bronchitis,Amoxicillin,9,M,24,1,young_adult
+185,Asthma,Montelukast,8,M,24,1,young_adult
+185,Asthma,Fluticasone,8,M,24,1,young_adult
+185,Asthma,Albuterol,10,M,24,1,young_adult
+186,Gastroenteritis,Bismuth subsalicylate,6,F,51,1,middle_age
+186,Gastroenteritis,Loperamide,7,F,51,1,middle_age
+186,Gastroenteritis,Ondansetron,8,F,51,1,middle_age
+186,Migraine,Topiramate,7,F,51,1,middle_age
+186,Migraine,Propranolol,7,F,51,1,middle_age
+186,Migraine,Sumatriptan,8,F,51,1,middle_age
+187,Hypertension,Lisinopril,7,F,21,1,young_adult
+187,Hypertension,Amlodipine,8,F,21,1,young_adult
+187,Hypertension,Hydrochlorothiazide,6,F,21,1,young_adult
+188,Allergic Rhinitis,Loratadine,9,F,54,1,middle_age
+188,Allergic Rhinitis,Fluticasone,9,F,54,1,middle_age
+188,Allergic Rhinitis,Cetirizine,9,F,54,1,middle_age
+189,Anxiety,Sertraline,7,F,47,1,middle_age
+189,Anxiety,Citalopram,7,F,47,1,middle_age
+189,Anxiety,Escitalopram,8,F,47,1,middle_age
+189,Depression,Sertraline,9,F,47,1,middle_age
+189,Depression,Citalopram,7,F,47,1,middle_age
+190,Migraine,Propranolol,6,M,77,1,elderly
+190,Migraine,Topiramate,8,M,77,1,elderly
+190,Type 2 Diabetes,Metformin,7,M,77,1,elderly
+190,Type 2 Diabetes,Glipizide,5,M,77,1,elderly
+190,Type 2 Diabetes,Sitagliptin,7,M,77,1,elderly
+190,Allergic Rhinitis,Fluticasone,7,M,77,1,elderly
+190,Urinary Tract Infection,Nitrofurantoin,7,M,77,1,elderly
+190,Urinary Tract Infection,Trimethoprim,6,M,77,1,elderly
+190,Urinary Tract Infection,Ciprofloxacin,8,M,77,1,elderly
+190,Depression,Escitalopram,6,M,77,1,elderly
+191,Anxiety,Citalopram,7,M,41,1,middle_age
+191,Anxiety,Escitalopram,8,M,41,1,middle_age
+191,Depression,Sertraline,8,M,41,1,middle_age
+192,Hypertension,Hydrochlorothiazide,7,F,25,1,young_adult
+192,Hypertension,Lisinopril,8,F,25,1,young_adult
+192,Type 2 Diabetes,Sitagliptin,8,F,25,1,young_adult
+192,Type 2 Diabetes,Glipizide,8,F,25,1,young_adult
+192,Type 2 Diabetes,Metformin,10,F,25,1,young_adult
+193,Type 2 Diabetes,Metformin,8,F,27,1,young_adult
+193,Type 2 Diabetes,Glipizide,7,F,27,1,young_adult
+194,Osteoarthritis,Ibuprofen,7,F,69,1,elderly
+194,Osteoarthritis,Celecoxib,7,F,69,1,elderly
+194,Type 2 Diabetes,Glipizide,8,F,69,1,elderly
+194,Type 2 Diabetes,Metformin,9,F,69,1,elderly
+194,Hypertension,Hydrochlorothiazide,7,F,69,1,elderly
+194,Hypertension,Lisinopril,10,F,69,1,elderly
+195,Anxiety,Escitalopram,8,M,59,1,middle_age
+195,Anxiety,Citalopram,8,M,59,1,middle_age
+195,Anxiety,Sertraline,9,M,59,1,middle_age
+195,Depression,Escitalopram,10,M,59,1,middle_age
+196,Gastroenteritis,Loperamide,7,M,24,1,young_adult
+196,Gastroenteritis,Bismuth subsalicylate,8,M,24,1,young_adult
+196,Gastroenteritis,Ondansetron,8,M,24,1,young_adult
+196,COPD,Albuterol,8,M,24,1,young_adult
+197,Osteoarthritis,Ibuprofen,7,F,23,1,young_adult
+197,Type 2 Diabetes,Glipizide,7,F,23,1,young_adult
+197,Type 2 Diabetes,Metformin,8,F,23,1,young_adult
+198,Pneumonia,Doxycycline,8,F,64,1,middle_age
+198,Pneumonia,Amoxicillin,8,F,64,1,middle_age
+198,Pneumonia,Azithromycin,7,F,64,1,middle_age
+199,Depression,Citalopram,7,F,22,1,young_adult
+199,Depression,Sertraline,8,F,22,1,young_adult
+199,Depression,Escitalopram,8,F,22,1,young_adult
+199,Anxiety,Citalopram,7,F,22,1,young_adult
+200,Hypertension,Hydrochlorothiazide,7,F,73,1,elderly
+200,Hypertension,Amlodipine,7,F,73,1,elderly
+200,Hypertension,Lisinopril,7,F,73,1,elderly
+200,Osteoarthritis,Celecoxib,6,F,73,1,elderly
+200,Type 2 Diabetes,Glipizide,5,F,73,1,elderly
+200,Type 2 Diabetes,Metformin,8,F,73,1,elderly
+200,Gastroenteritis,Bismuth subsalicylate,6,F,73,1,elderly
+200,Asthma,Montelukast,6,F,73,1,elderly
+144,Type 2 Diabetes,Budesonide,3,M,59,0,middle_age
+151,Asthma,Propranolol,4,F,68,0,elderly
+182,Asthma,Trimethoprim,1,M,68,0,elderly
+42,Asthma,Hydrochlorothiazide,2,M,20,0,young_adult
+80,Osteoarthritis,Nitrofurantoin,3,M,47,0,middle_age
+146,Type 2 Diabetes,Bismuth subsalicylate,1,M,67,0,elderly
+45,Bronchitis,Cetirizine,2,M,22,0,young_adult
+70,Urinary Tract Infection,Dextromethorphan,3,F,26,0,young_adult
+39,Allergic Rhinitis,Azithromycin,2,F,26,0,young_adult
+30,Urinary Tract Infection,Acetaminophen,2,M,23,0,young_adult
+188,Influenza,Citalopram,1,F,54,0,middle_age
+73,Allergic Rhinitis,Amoxicillin,4,M,40,0,young_adult
+191,Influenza,Nitrofurantoin,1,M,41,0,middle_age
+137,Gastroenteritis,Doxycycline,1,F,67,0,elderly
+16,Allergic Rhinitis,Albuterol,1,M,45,0,middle_age
+52,Pneumonia,Ibuprofen,1,F,55,0,middle_age
+20,Allergic Rhinitis,Dextromethorphan,3,M,23,0,young_adult
+2,Depression,Ondansetron,4,F,31,0,young_adult
+170,Depression,Tiotropium,1,F,18,0,pediatric
+95,Urinary Tract Infection,Loperamide,3,F,40,0,young_adult
+191,Anxiety,Trimethoprim,2,M,41,0,middle_age
+117,Migraine,Albuterol,1,F,61,0,middle_age
+42,Depression,Doxycycline,4,M,20,0,young_adult
+141,Osteoarthritis,Escitalopram,2,F,60,0,middle_age
+73,COPD,Loperamide,2,M,40,0,young_adult
+56,Osteoarthritis,Amlodipine,3,F,50,0,middle_age
+40,Common Cold,Citalopram,3,M,36,0,young_adult
+157,Anxiety,Metformin,3,F,40,0,young_adult
+197,Common Cold,Topiramate,1,F,23,0,young_adult
+31,Type 2 Diabetes,Citalopram,4,F,21,0,young_adult
+183,Hypertension,Fluticasone,2,F,71,0,elderly
+153,Depression,Metformin,3,M,84,0,elderly
+106,Common Cold,Escitalopram,3,M,59,0,middle_age
+186,Asthma,Oseltamivir,3,F,51,0,middle_age
+118,COPD,Escitalopram,3,M,66,0,elderly
+59,Osteoarthritis,Oseltamivir,2,M,50,0,middle_age
+111,Anxiety,Glipizide,4,M,39,0,young_adult
+105,COPD,Sitagliptin,1,F,75,0,elderly
+183,Asthma,Ibuprofen,2,F,71,0,elderly
+177,Asthma,Loperamide,4,F,60,0,middle_age
+7,Anxiety,Oseltamivir,1,M,20,0,young_adult
+144,Allergic Rhinitis,Acetaminophen,4,M,59,0,middle_age
+179,Influenza,Glipizide,4,F,37,0,young_adult
+80,COPD,Oseltamivir,2,M,47,0,middle_age
+17,Allergic Rhinitis,Ciprofloxacin,1,M,28,0,young_adult
+7,Migraine,Azithromycin,2,M,20,0,young_adult
+36,Urinary Tract Infection,Escitalopram,4,F,29,0,young_adult
+146,Common Cold,Escitalopram,1,M,67,0,elderly
+126,Urinary Tract Infection,Ibuprofen,1,M,60,0,middle_age
+174,Influenza,Trimethoprim,2,M,81,0,elderly
+127,Asthma,Sumatriptan,2,F,65,0,middle_age
+28,Asthma,Ciprofloxacin,2,F,51,0,middle_age
+189,Anxiety,Oseltamivir,2,F,47,0,middle_age
+176,Pneumonia,Amlodipine,4,M,56,0,middle_age
+103,Anxiety,Lisinopril,4,M,52,0,middle_age
+179,COPD,Glipizide,4,F,37,0,young_adult
+59,Common Cold,Nitrofurantoin,1,M,50,0,middle_age
+129,Depression,Topiramate,4,M,65,0,middle_age
+56,Bronchitis,Montelukast,3,F,50,0,middle_age
+123,Asthma,Amlodipine,1,M,57,0,middle_age
+104,Common Cold,Lisinopril,1,F,61,0,middle_age
+199,Osteoarthritis,Amlodipine,1,F,22,0,young_adult
+123,Migraine,Azithromycin,1,M,57,0,middle_age
+161,Type 2 Diabetes,Topiramate,4,M,68,0,elderly
+165,Urinary Tract Infection,Lisinopril,3,M,51,0,middle_age
+176,Pneumonia,Dextromethorphan,4,M,56,0,middle_age
+3,COPD,Sitagliptin,2,F,32,0,young_adult
+99,COPD,Amoxicillin,3,M,32,0,young_adult
+112,Depression,Budesonide,3,M,56,0,middle_age
+95,Hypertension,Loratadine,4,F,40,0,young_adult
+116,Common Cold,Glipizide,2,F,53,0,middle_age
+79,Allergic Rhinitis,Escitalopram,3,M,37,0,young_adult
+15,Type 2 Diabetes,Doxycycline,3,M,36,0,young_adult
+8,Allergic Rhinitis,Albuterol,2,F,35,0,young_adult
+47,Depression,Trimethoprim,2,M,30,0,young_adult
+96,Depression,Sumatriptan,4,M,38,0,young_adult
+13,Hypertension,Albuterol,2,F,37,0,young_adult
+79,Osteoarthritis,Ondansetron,1,M,37,0,young_adult
+93,Type 2 Diabetes,Celecoxib,2,F,32,0,young_adult
+199,Depression,Ibuprofen,3,F,22,0,young_adult
+192,Depression,Propranolol,2,F,25,0,young_adult
+14,Influenza,Lisinopril,2,M,33,0,young_adult
+130,Hypertension,Escitalopram,2,F,70,0,elderly
+89,Influenza,Sumatriptan,1,F,37,0,young_adult
+84,Pneumonia,Budesonide,1,M,51,0,middle_age
+22,Asthma,Sertraline,4,M,32,0,young_adult
+50,Gastroenteritis,Dextromethorphan,3,M,34,0,young_adult
+17,Gastroenteritis,Amlodipine,2,M,28,0,young_adult
+132,Pneumonia,Loperamide,2,M,55,0,middle_age
+94,Bronchitis,Celecoxib,3,F,41,0,middle_age
+69,Pneumonia,Acetaminophen,4,M,68,0,elderly
+16,Asthma,Trimethoprim,1,M,45,0,middle_age
+197,Gastroenteritis,Propranolol,2,F,23,0,young_adult
+9,Migraine,Doxycycline,2,F,22,0,young_adult
+64,Bronchitis,Amlodipine,2,M,52,0,middle_age
+183,Depression,Loperamide,3,F,71,0,elderly
+110,Hypertension,Dextromethorphan,3,M,64,0,middle_age
+193,Allergic Rhinitis,Hydrochlorothiazide,1,F,27,0,young_adult
+132,COPD,Loratadine,2,M,55,0,middle_age
+27,Migraine,Bismuth subsalicylate,4,M,27,0,young_adult
+161,Osteoarthritis,Trimethoprim,1,M,68,0,elderly
+183,COPD,Lisinopril,2,F,71,0,elderly
+62,Type 2 Diabetes,Amlodipine,2,M,51,0,middle_age
+106,Influenza,Bismuth subsalicylate,1,M,59,0,middle_age
+13,Influenza,Glipizide,2,F,37,0,young_adult
+113,Pneumonia,Ciprofloxacin,3,F,62,0,middle_age
+189,Gastroenteritis,Dextromethorphan,3,F,47,0,middle_age
+146,Common Cold,Cetirizine,3,M,67,0,elderly
+30,Gastroenteritis,Naproxen,2,M,23,0,young_adult
+196,Asthma,Nitrofurantoin,4,M,24,0,young_adult
+146,Gastroenteritis,Sertraline,4,M,67,0,elderly
+70,Bronchitis,Metformin,1,F,26,0,young_adult
+68,Anxiety,Dextromethorphan,4,F,45,0,middle_age
+114,Migraine,Lisinopril,1,F,55,0,middle_age
+78,Urinary Tract Infection,Lisinopril,3,M,51,0,middle_age
+76,Gastroenteritis,Oseltamivir,4,F,34,0,young_adult
+179,Bronchitis,Acetaminophen,4,F,37,0,young_adult
+155,Bronchitis,Nitrofurantoin,1,F,42,0,middle_age
+182,Hypertension,Glipizide,4,M,68,0,elderly
+128,Allergic Rhinitis,Sertraline,3,F,61,0,middle_age
+63,Urinary Tract Infection,Ibuprofen,4,F,41,0,middle_age
+99,Anxiety,Sumatriptan,1,M,32,0,young_adult
+22,Migraine,Celecoxib,2,M,32,0,young_adult
+157,Asthma,Trimethoprim,2,F,40,0,young_adult
+98,Hypertension,Topiramate,2,M,49,0,middle_age
+112,Type 2 Diabetes,Amlodipine,2,M,56,0,middle_age
+17,Bronchitis,Sitagliptin,3,M,28,0,young_adult
+110,Influenza,Amlodipine,3,M,64,0,middle_age
+56,Common Cold,Celecoxib,1,F,50,0,middle_age
+172,Type 2 Diabetes,Albuterol,2,M,24,0,young_adult

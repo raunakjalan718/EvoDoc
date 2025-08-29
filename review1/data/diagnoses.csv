@@ -1,0 +1,432 @@
+subject_id,diagnosis
+1,Osteoarthritis
+1,Type 2 Diabetes
+2,Type 2 Diabetes
+3,Depression
+3,Anxiety
+4,Allergic Rhinitis
+4,Asthma
+5,Bronchitis
+6,Bronchitis
+6,COPD
+7,Asthma
+7,Allergic Rhinitis
+8,Allergic Rhinitis
+9,Influenza
+10,COPD
+10,Bronchitis
+11,COPD
+11,Bronchitis
+12,Bronchitis
+12,COPD
+13,Common Cold
+14,COPD
+14,Anxiety
+15,COPD
+16,Influenza
+17,Gastroenteritis
+18,Asthma
+18,Gastroenteritis
+19,Urinary Tract Infection
+20,Depression
+21,Osteoarthritis
+21,Hypertension
+22,Type 2 Diabetes
+23,Influenza
+24,Allergic Rhinitis
+25,Anxiety
+25,Osteoarthritis
+26,Anxiety
+26,Urinary Tract Infection
+26,Depression
+27,Allergic Rhinitis
+28,Migraine
+28,Osteoarthritis
+28,Depression
+29,Allergic Rhinitis
+29,Asthma
+30,Gastroenteritis
+31,Asthma
+31,Allergic Rhinitis
+32,Pneumonia
+32,Common Cold
+33,Pneumonia
+34,Anxiety
+34,Depression
+35,Anxiety
+35,Depression
+36,Allergic Rhinitis
+36,Asthma
+37,Migraine
+38,Bronchitis
+39,Hypertension
+39,COPD
+40,Osteoarthritis
+40,Hypertension
+41,Depression
+41,COPD
+42,Depression
+42,Anxiety
+43,Depression
+43,Anxiety
+44,Anxiety
+44,Depression
+45,Allergic Rhinitis
+46,Allergic Rhinitis
+46,Asthma
+47,Asthma
+47,Common Cold
+48,Hypertension
+49,Asthma
+49,Allergic Rhinitis
+50,Common Cold
+51,Asthma
+52,Depression
+53,Anxiety
+54,Gastroenteritis
+54,Type 2 Diabetes
+55,Type 2 Diabetes
+55,Osteoarthritis
+56,Migraine
+57,Osteoarthritis
+57,Type 2 Diabetes
+58,Allergic Rhinitis
+58,Asthma
+58,Pneumonia
+58,Urinary Tract Infection
+58,Gastroenteritis
+59,Bronchitis
+60,Anxiety
+60,Depression
+60,Gastroenteritis
+61,Allergic Rhinitis
+61,Asthma
+62,COPD
+63,Urinary Tract Infection
+63,Osteoarthritis
+64,Hypertension
+64,Type 2 Diabetes
+65,Depression
+65,Pneumonia
+66,Anxiety
+67,Allergic Rhinitis
+67,Asthma
+68,Depression
+69,Depression
+69,Anxiety
+70,Influenza
+71,Type 2 Diabetes
+71,Hypertension
+71,Osteoarthritis
+72,Allergic Rhinitis
+72,Asthma
+73,Anxiety
+74,COPD
+75,Allergic Rhinitis
+75,Asthma
+75,Gastroenteritis
+76,Bronchitis
+77,Asthma
+78,Anxiety
+78,Depression
+79,Pneumonia
+80,Osteoarthritis
+80,Hypertension
+80,Type 2 Diabetes
+81,Asthma
+82,COPD
+82,Bronchitis
+83,Asthma
+83,Allergic Rhinitis
+83,Migraine
+84,Depression
+85,Bronchitis
+85,Allergic Rhinitis
+86,Urinary Tract Infection
+87,Hypertension
+87,Osteoarthritis
+88,Allergic Rhinitis
+88,Asthma
+88,Pneumonia
+89,Depression
+89,Anxiety
+90,Migraine
+90,Urinary Tract Infection
+90,Type 2 Diabetes
+91,Bronchitis
+91,COPD
+92,Type 2 Diabetes
+92,Hypertension
+92,Osteoarthritis
+93,Depression
+93,Osteoarthritis
+94,Bronchitis
+94,Allergic Rhinitis
+95,COPD
+95,Bronchitis
+96,Type 2 Diabetes
+96,Gastroenteritis
+97,Bronchitis
+98,Osteoarthritis
+98,Hypertension
+98,Type 2 Diabetes
+99,Urinary Tract Infection
+100,Influenza
+100,Pneumonia
+100,Anxiety
+101,Depression
+101,Anxiety
+101,Bronchitis
+102,Osteoarthritis
+102,Bronchitis
+102,Urinary Tract Infection
+102,Depression
+103,Influenza
+104,Influenza
+105,Depression
+105,Anxiety
+105,Allergic Rhinitis
+105,Gastroenteritis
+105,Bronchitis
+106,Migraine
+107,Depression
+107,Anxiety
+107,Common Cold
+107,Gastroenteritis
+107,Allergic Rhinitis
+108,Allergic Rhinitis
+108,Asthma
+108,Type 2 Diabetes
+109,Depression
+110,Allergic Rhinitis
+111,Type 2 Diabetes
+111,Hypertension
+112,Pneumonia
+112,Hypertension
+112,Asthma
+113,COPD
+113,Bronchitis
+113,Gastroenteritis
+114,Bronchitis
+114,COPD
+115,Migraine
+115,Hypertension
+116,Bronchitis
+116,COPD
+117,Allergic Rhinitis
+117,Asthma
+117,Anxiety
+118,COPD
+118,Bronchitis
+118,Osteoarthritis
+118,Depression
+118,Influenza
+119,Migraine
+119,COPD
+119,Allergic Rhinitis
+120,COPD
+120,Bronchitis
+121,Osteoarthritis
+121,Type 2 Diabetes
+121,Hypertension
+122,Anxiety
+123,Anxiety
+123,Gastroenteritis
+124,Asthma
+124,Allergic Rhinitis
+124,Osteoarthritis
+124,Anxiety
+124,Type 2 Diabetes
+125,Type 2 Diabetes
+125,Hypertension
+125,Osteoarthritis
+125,Anxiety
+125,COPD
+126,Type 2 Diabetes
+126,Influenza
+127,Asthma
+127,Allergic Rhinitis
+127,Common Cold
+128,COPD
+128,Bronchitis
+129,COPD
+130,Depression
+130,Anxiety
+130,Pneumonia
+131,Anxiety
+131,Depression
+131,Asthma
+131,Influenza
+131,COPD
+132,Anxiety
+133,Anxiety
+133,Depression
+133,Gastroenteritis
+133,Allergic Rhinitis
+134,Type 2 Diabetes
+134,Osteoarthritis
+134,Hypertension
+135,Common Cold
+136,Allergic Rhinitis
+136,Asthma
+136,Migraine
+136,Hypertension
+136,Urinary Tract Infection
+137,Hypertension
+137,Influenza
+138,Bronchitis
+138,COPD
+139,Depression
+139,Anxiety
+140,Asthma
+140,Allergic Rhinitis
+140,Bronchitis
+141,Osteoarthritis
+141,Hypertension
+141,Type 2 Diabetes
+142,Gastroenteritis
+142,Anxiety
+142,Osteoarthritis
+143,COPD
+143,Migraine
+144,Pneumonia
+144,Influenza
+145,Migraine
+145,Influenza
+145,Gastroenteritis
+145,Osteoarthritis
+146,Hypertension
+146,Osteoarthritis
+147,Allergic Rhinitis
+147,Asthma
+147,Anxiety
+147,Bronchitis
+148,Urinary Tract Infection
+148,Migraine
+148,Bronchitis
+149,Urinary Tract Infection
+150,Depression
+150,Anxiety
+151,Depression
+151,Anxiety
+151,Gastroenteritis
+152,COPD
+152,Bronchitis
+152,Urinary Tract Infection
+153,Depression
+153,Asthma
+153,Influenza
+153,Migraine
+153,Allergic Rhinitis
+154,Bronchitis
+154,COPD
+155,Allergic Rhinitis
+155,Asthma
+155,Urinary Tract Infection
+156,Anxiety
+156,Osteoarthritis
+156,Common Cold
+156,Gastroenteritis
+156,Influenza
+157,Allergic Rhinitis
+158,Pneumonia
+158,Asthma
+158,Influenza
+159,Anxiety
+159,Depression
+160,Hypertension
+160,Osteoarthritis
+161,Hypertension
+161,Type 2 Diabetes
+162,COPD
+162,Bronchitis
+163,Depression
+163,Anxiety
+164,Bronchitis
+164,COPD
+164,Allergic Rhinitis
+164,Hypertension
+164,Pneumonia
+165,Allergic Rhinitis
+165,Asthma
+166,Type 2 Diabetes
+166,Hypertension
+166,Osteoarthritis
+166,Gastroenteritis
+167,Allergic Rhinitis
+167,Depression
+168,Anxiety
+168,Depression
+168,COPD
+168,Influenza
+168,Migraine
+169,Depression
+169,Anxiety
+169,Asthma
+170,Depression
+171,Anxiety
+171,Allergic Rhinitis
+171,Common Cold
+171,Osteoarthritis
+171,Migraine
+172,Anxiety
+173,Hypertension
+173,Type 2 Diabetes
+174,COPD
+174,Bronchitis
+175,Bronchitis
+175,COPD
+176,Urinary Tract Infection
+177,Hypertension
+177,COPD
+177,Migraine
+178,Gastroenteritis
+179,Hypertension
+180,Pneumonia
+181,Migraine
+182,Influenza
+182,Asthma
+182,Hypertension
+183,Allergic Rhinitis
+183,Asthma
+183,Pneumonia
+183,Type 2 Diabetes
+184,Type 2 Diabetes
+184,Osteoarthritis
+184,Hypertension
+184,Urinary Tract Infection
+185,Bronchitis
+185,Asthma
+186,Gastroenteritis
+186,Migraine
+187,Hypertension
+188,Allergic Rhinitis
+189,Anxiety
+189,Depression
+190,Migraine
+190,Type 2 Diabetes
+190,Allergic Rhinitis
+190,Urinary Tract Infection
+190,Depression
+191,Anxiety
+191,Depression
+192,Hypertension
+192,Type 2 Diabetes
+193,Type 2 Diabetes
+194,Osteoarthritis
+194,Type 2 Diabetes
+194,Hypertension
+195,Anxiety
+195,Depression
+196,Gastroenteritis
+196,COPD
+197,Osteoarthritis
+197,Type 2 Diabetes
+198,Pneumonia
+199,Depression
+199,Anxiety
+200,Hypertension
+200,Osteoarthritis
+200,Type 2 Diabetes
+200,Gastroenteritis
+200,Asthma
